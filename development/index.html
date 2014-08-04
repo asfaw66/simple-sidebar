@@ -105,10 +105,9 @@ $( document ).ready(function() {
 	$.ajaxSetup({
 		cache: false
 	});
-	
-	$( '.sidebar' ).load( 'sidebar.html' );
 
 	$( '.sidebar' )
+		.load( 'sidebar.html' );
 		.simpleSidebar({
 			settings: {
 				opener: '#open-sb',
