@@ -181,8 +181,9 @@
 			
 			$opener.click( animateToRight );
 			
-			maskDiv.add( $links )
-				.click( animateToLeft );
+			maskDiv.click( animateToLeft );
+			
+			$sidebar.on( 'click', $links, animateToRight );
 		} else {
 			$sidebar.css({
 				position: 'fixed',
@@ -200,9 +201,10 @@
 			
 			maskDiv.click( animateToRight );
 			
-			console.log( $links );
 			$sidebar.on( 'click', $links, animateToRight );
 		}
+		
+		console.log( $links );
 		
 		//Adding responsive to $sidebar
 		$( window ).resize(function() {
