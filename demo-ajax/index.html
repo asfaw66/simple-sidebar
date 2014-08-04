@@ -79,7 +79,6 @@ $( document ).ready(function() {
 	});
 
 	$( '.sidebar' )
-		.load( 'sidebar.html' )
 		.simpleSidebar({
 			settings: {
 				opener: '#open-sb',
@@ -94,6 +93,7 @@ $( document ).ready(function() {
 				width: 200,
 				closingLinks: 'a',
 			}
-		});
+		})
+		.load( 'sidebar.html' );
 });
 </script>
