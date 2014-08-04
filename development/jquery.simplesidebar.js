@@ -201,9 +201,7 @@
 			maskDiv.click( animateToRight );
 			
 			console.log( $links );
-			$sidebar.on( click, $links, function() {
-				console.log(this);
-			});
+			$sidebar.on( 'click', $links, animateToRight );
 		}
 		
 		//Adding responsive to $sidebar
