@@ -17,7 +17,7 @@ header {
 input {
     margin: .5em;
     border: 0;
-    width: 100px;
+    min-width: 100px;
     background-color: #056f00
 ;
     color: black;

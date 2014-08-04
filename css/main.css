@@ -52,7 +52,7 @@
 input {
     margin: .5em;
     border: 0;
-    width: 100px;
+    min-width: 100px;
     background-color: #2e2e2e;
     color: #f8f8f8;
     font-family: inherit;
