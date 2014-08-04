@@ -57,7 +57,7 @@
 				<h2>Set-Up</h2>
 			</header>
 			
-			<p>Since this demo uses the left-sidebar, please, see <a href="http://dcdeiv.github.io/simple-sidebar/demo-left/index.html/"> for more info!</p>			
+			<p>Since this demo uses the left-sidebar, please, see <a href="http://dcdeiv.github.io/simple-sidebar/demo-left/index.html">for more info!</a></p>			
 		</section>
 		
 	</main>
@@ -78,7 +78,9 @@ $( document ).ready(function() {
 		cache: false
 	});
 
-	$( '.sidebar' ).simpleSidebar({
+	$( '.sidebar' )
+		.load( 'sidebar.html' )
+		.simpleSidebar({
 			settings: {
 				opener: '#open-sb',
 				wrapper: '.wrapper',
