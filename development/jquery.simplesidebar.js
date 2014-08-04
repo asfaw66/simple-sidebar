@@ -75,7 +75,10 @@
 				bottom: -200,
 				zIndex: config.sidebar.style.zIndex - 1
 			},
-			maskStyle = $.extend( {},  maskDef, MaskDef );
+			maskStyle = $.extend( {},  maskDef, MaskDef ),
+			sbChildre = $sidebar.children();
+			
+			console.log (sbChildre );
 		
 		//adding default style to $sidebar
 		$sidebar
@@ -183,7 +186,7 @@
 			
 			maskDiv.click( animateToLeft );
 			
-			$sidebar.on( 'click', $links, animateToRight );
+			$sidebar.on( 'click', $links, animateToLeft );
 		} else {
 			$sidebar.css({
 				position: 'fixed',
@@ -203,8 +206,6 @@
 			
 			$sidebar.on( 'click', $links, animateToRight );
 		}
-		
-		console.log( $links );
 		
 		//Adding responsive to $sidebar
 		$( window ).resize(function() {
