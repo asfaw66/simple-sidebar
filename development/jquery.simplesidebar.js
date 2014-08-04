@@ -75,10 +75,7 @@
 				bottom: -200,
 				zIndex: config.sidebar.style.zIndex - 1
 			},
-			maskStyle = $.extend( {},  maskDef, MaskDef ),
-			sbChildre = $sidebar.children();
-			
-			console.log (sbChildre );
+			maskStyle = $.extend( {},  maskDef, MaskDef );
 		
 		//adding default style to $sidebar
 		$sidebar
