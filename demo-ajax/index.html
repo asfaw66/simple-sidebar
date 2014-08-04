@@ -26,10 +26,20 @@
 <div class="wrapper">
 	<header class="main-header">
 		<h1>Simple Sidebar</h1>
-		<h3>Left</h3>
+		<h3>Ajax</h3>
 	</header>
 	
 	<main>
+	
+		<section>
+			<header>
+				<h2>WARNING</h2>
+			</header>
+			
+			<p>This demo-page is built to show that if sidebar has ajax elements (or dynamically added) it will works.</p>
+			<p>This feature is available only from the simple-sidebar <b>v1.0.3</b></p>
+			<p>Run <code>bower update</code> from your workspace if you already have this component installed. Otherwise see <a href="http://bower.io" target="_blank">Bower.io</a> to install Bower and then run <code>bower install simple-sidebar</code> in your workspace.</p>
+		</section>
 	
 		<section>
 			<header>
@@ -44,49 +54,10 @@
 	
 		<section>
 			<header>
-				<h2>Example of Usage</h2>
-				<h3>minimum required</h3>
+				<h2>Set-Up</h2>
 			</header>
-
-<pre class="code">
-  &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js&quot;&gt;&lt;/script&gt;
-  &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js&quot;&gt;&lt;/script&gt;
-  &lt;script src=&quot;bower_components/simple-sidebar/dist/jquery.simplesidebar.min.js&quot;&gt;&lt;/script&gt;
-  &lt;/head&gt;
-
-&lt;body&gt;
-  
-  &lt;div class=&quot;wrapper&quot;&gt;
-    &lt;!--content--&gt;
-  &lt;/div&gt;
-  
-  &lt;section class=&quot;sidebar&quot;&gt;
-    &lt;!--content--&gt;
-  &lt;/section&gt;
-  
-  &lt;section class=&quot;navbar&quot;&gt;
-    &lt;div id=&quot;open-sb&quot; class=&quot;menu-icon menu-button menu-left&quot;&gt;
-  &lt;/section&gt;
-  
-  &lt;script&gt;
-  $( &quot;.sidebar&quot; ).simpleSidebar({
-      settings: {
-        opener: &quot;#open-sb&quot;,
-        wrapper: &quot;.wrapper&quot;,
-        animation: {
-          easing: &quot;easeOutQuint&quot;
-        }
-      },
-      sidebar: {
-        align: &quot;left&quot;,
-        width: 200,
-        closingLinks: 'a',
-      }
-    });
-  &lt;/script&gt;
-
-&lt;/body&gt;
-</pre>
+			
+			<p>Since this demo uses the left-sidebar, please, see <a href="http://dcdeiv.github.io/simple-sidebar/demo-left/index.html/"> for more info!</p>			
 		</section>
 		
 	</main>
@@ -96,27 +67,7 @@
 	</div>
 	
 	<section class="sidebar">
-		<nav>
-			<h6>Simple Left Sidebar</h6>
-			<ul>
-				<li><a href="../index.html">Home</a></li>
-				<li><a href="../demo-left/index.html">Demo Left Sidebar</a></li>
-				<li><a href="../demo-right/index.html">Demo Right Sidebar</a></li>
-				<li><a href="../index.html#github">GitHub</a></li>
-				<li><a href="../index.html#bower">Bower</a></li>
-				<li><a href="../index.html#set-up">Set-Up</a></li>
-				<li><a href="../index.html#options">Options</a></li>
-			</ul>
-			
-			<hr>
-			
-			<h6>DcDev</h6>
-			<ul>
-				<li><a href="http://dcdev.altervista.org/">DcDev Homepage</a></li><a href="http://dcdev.altervista.org/">
-				</a><li><a href="http://dcdev.altervista.org/"></a><a href="http://dcdev.altervista.org/plugins/">Other Plugins</a></li>
-				<li><a href="http://www.github.com/dcdeiv">GitHub</a></li>
-			</ul>
-		</nav>
+		
 	</section>
 </div>
 
@@ -129,20 +80,22 @@ $( document ).ready(function() {
 		cache: false
 	});
 
-	$( '.sidebar' ).simpleSidebar({
-		settings: {
-			opener: '#open-sb',
-			wrapper: '.wrapper',
-			animation: {
-				duration: 500,
-				easing: 'easeOutQuint'
+	$( '.sidebar' )
+		.load( 'sidebar.html' )
+		.simpleSidebar({
+			settings: {
+				opener: '#open-sb',
+				wrapper: '.wrapper',
+				animation: {
+					duration: 500,
+					easing: 'easeOutQuint'
+				}
+			},
+			sidebar: {
+				align: 'left',
+				width: 200,
+				closingLinks: 'a',
 			}
-		},
-		sidebar: {
-			align: 'left',
-			width: 200,
-			closingLinks: 'a',
-		}
-	});
+		});
 });
 </script>
