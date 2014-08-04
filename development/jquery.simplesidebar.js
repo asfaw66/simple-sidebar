@@ -200,7 +200,8 @@
 			
 			maskDiv.click( animateToRight );
 			
-			$sidebar.on( 'click', $links, function() {
+			console.log( $links );
+			$sidebar.on( click, $links, function() {
 				console.log(this);
 			});
 		}
