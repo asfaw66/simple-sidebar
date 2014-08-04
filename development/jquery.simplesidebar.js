@@ -44,7 +44,7 @@
 			defAlign  = config.sidebar.align,
 			sbMaxW    = config.sidebar.width,
 			gap       = config.sidebar.gap,
-			$links    = $sidebar.find( config.sidebar.closingLinks ),
+			$links    = config.sidebar.closingLinks,
 			defStyle  = config.sidebar.style,
 			maskDef   = config.mask.style,
 			winMaxW   = sbMaxW + gap,
@@ -198,8 +198,11 @@
 			
 			$opener.click( animateToLeft );
 			
-			maskDiv.add( $links )
-				.click( animateToRight );
+			maskDiv.click( animateToRight );
+			
+			$sidebar.on( 'click', $links, function() {
+				console.log(this);
+			});
 		}
 		
 		//Adding responsive to $sidebar
