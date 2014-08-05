@@ -75,13 +75,18 @@
 				bottom: -200,
 				zIndex: config.sidebar.style.zIndex - 1
 			},
-			maskStyle = $.extend( {},  maskDef, MaskDef );
+			maskStyle = $.extend( {},  maskDef, MaskDef ),
+			inner     = $sidebar.children();
+			
+			console.log( inner );
 		
 		//adding default style to $sidebar
 		$sidebar
 			.css( defStyle )
 			//wrapping inner content to let it overflow
-			.wrapInner( '<div data-' + dataName + '="sub-wrapper"></div>' );
+			.on( 'wrapAll', inner,  function() {
+				'<div data-' + dataName + '="sub-wrapper"></div>'
+			});
 			
 		var subWrapper = $sidebar.children().filter(function() {
 			return $( this ).data( dataName ) === 'sub-wrapper' ;
