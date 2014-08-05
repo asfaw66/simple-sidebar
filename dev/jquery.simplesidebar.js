@@ -21,6 +21,8 @@
 					width: 350, //pixels
 					gap: 64, //pixels
 					closingLinks: 'a',
+					wrapInner: true,
+					children: undefined,
 					style: {
 						zIndex: 3000
 					}
@@ -45,6 +47,7 @@
 			sbMaxW    = config.sidebar.width,
 			gap       = config.sidebar.gap,
 			$links    = config.sidebar.closingLinks,
+			children  = config.sidebar.children,
 			defStyle  = config.sidebar.style,
 			maskDef   = config.mask.style,
 			winMaxW   = sbMaxW + gap,
@@ -75,28 +78,27 @@
 				bottom: -200,
 				zIndex: config.sidebar.style.zIndex - 1
 			},
-			maskStyle = $.extend( {},  maskDef, MaskDef ),
-			inner     = $sidebar.children();
-			
-			console.log( inner );
+			maskStyle = $.extend( {},  maskDef, MaskDef );
 		
 		//adding default style to $sidebar
-		$sidebar
-			.css( defStyle )
-			//wrapping inner content to let it overflow
-			.on( 'wrapAll', inner,  function() {
-				'<div data-' + dataName + '="sub-wrapper"></div>'
+		$sidebar.css( defStyle )
+		
+		//wrapping inner content to let it overflow
+		if ( config.sidebar.wrapInner === true ) {
+			$( document ).on( 'load', children, function() {
+				$( this ).wrapAll( '<div data-' + dataName + '="sub-wrapper"></div>' );
 			});
 			
-		var subWrapper = $sidebar.children().filter(function() {
-			return $( this ).data( dataName ) === 'sub-wrapper' ;
-		});
+			var subWrapper = $sidebar.children().filter(function() {
+				return $( this ).data( dataName ) === 'sub-wrapper' ;
+			});
 		
-		subWrapper.css({
-			width: '100%',
-			height: '100%',
-			overflow: 'auto'
-		});
+			subWrapper.css({
+				width: '100%',
+				height: '100%',
+				overflow: 'auto'
+			});
+		}
 			
 		//Appending to 'body' the mask-div and adding its style
 		$( 'body' ).append( '<div data-' + dataName + '="mask"></div>' );
