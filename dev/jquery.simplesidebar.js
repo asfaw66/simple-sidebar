@@ -129,12 +129,7 @@
 		}
 		
 		//testing config.sidebar.align
-		if( defAlign === undefined || defAlign === 'left' ) {
-			animationStart = {
-				marginLeft: '+=' + sbw,
-				marginRight: '-=' + sbw
-			};
-			
+		if( defAlign === undefined || defAlign === 'left' ) {	
 			$sidebar.css({
 				position: 'fixed',
 				top: 0,
@@ -144,11 +139,6 @@
 				marginLeft: -sbw
 			});
 		} else {
-			animationStart = {
-				marginRight: '+=' + sbw,
-				marginLeft: '-=' + sbw
-			};
-			
 			$sidebar.css({
 				position: 'fixed',
 				top: 0,
@@ -160,6 +150,20 @@
 		}
 		
 		$opener.click(function() {
+			var nsbw = $sidebar.width();
+			
+			if( defAlign === undefined || defAlign === 'left' ) {
+				animationStart = {
+					marginLeft: '+=' + nsbw,
+					marginRight: '-=' + nsbw
+				};
+			} else {
+				animationStart = {
+					marginRight: '+=' + nsbw,
+					marginLeft: '-=' + nsbw
+				};
+			}
+			
 			$elements.each(function() {
 				$( this ).animate( animationStart, {
 					duration: duration,
