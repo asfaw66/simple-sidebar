@@ -221,7 +221,7 @@
 			}
 		});
 		
-		$sidebar.on( 'click', $links, {
+		$sidebar.on( 'click', $links, function() {
 			var nsbw = $sidebar.width();
 			
 			if( defAlign === undefined || defAlign === 'left' ) {
@@ -240,7 +240,7 @@
 				$( this ).animate( animationReset, {
 					duration: duration,
 					easing: easing,
-					complete: overflowTrue
+					complete: overflowFalse
 				});
 			});
 			
