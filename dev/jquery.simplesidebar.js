@@ -242,6 +242,8 @@
 					easing: easing,
 					complete: overflowFalse
 				});
+				
+				maskDiv.fadeOut();
 			});
 			
 		});
