@@ -155,7 +155,7 @@
 				right: 0,
 				bottom: 0,
 				width: sbw,
-				marginLeft: -sbw
+				marginRight: -sbw
 			});
 		}
 		
