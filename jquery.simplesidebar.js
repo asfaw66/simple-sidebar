@@ -15,7 +15,7 @@
 						duration: 500, //milliseconds (0.5s = 500ms)
 						easing: 'swing'
 					},
-                    onClose: undefined
+				onClose: undefined
 				},
 				sidebar: {
 					align: undefined,
@@ -42,7 +42,7 @@
 			dataName  = config.settings.data,
 			duration  = config.settings.animation.duration,
 			easing    = config.settings.animation.easing,
-            onClose   = config.settings.onClose,
+			onClose   = config.settings.onClose,
 			defAlign  = config.sidebar.align,
 			sbMaxW    = config.sidebar.width,
 			gap       = config.sidebar.gap,
