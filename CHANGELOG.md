@@ -1,6 +1,11 @@
 CHANGELOG
 ============
 
+##[v1.1.1](https://github.com/dcdeiv/simple-sidebar/releases/tag/v1.1.1)
+* Merged [#4](https://github.com/dcdeiv/simple-sidebar/pull/4)
+ * ADDED onClose callback
+ * FIXED multiple scrollbars bug
+
 ##[v1.1.0](https://github.com/dcdeiv/simple-sidebar/releases/tag/v1.1.0)
 * FIXED:
  * maskDiv double-click bug. 
