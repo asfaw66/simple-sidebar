@@ -14,7 +14,8 @@
 					animation: {
 						duration: 500, //milliseconds (0.5s = 500ms)
 						easing: 'swing'
-					}
+					},
+                    onClose: undefined
 				},
 				sidebar: {
 					align: undefined,
@@ -41,6 +42,7 @@
 			dataName  = config.settings.data,
 			duration  = config.settings.animation.duration,
 			easing    = config.settings.animation.easing,
+            onClose   = config.settings.onClose,
 			defAlign  = config.sidebar.align,
 			sbMaxW    = config.sidebar.width,
 			gap       = config.sidebar.gap,
@@ -87,12 +89,10 @@
 			},
 			//adding overflow [callback(A/B)]
 			overflowFalse = function() {
-				$( 'body, html' ).css({
-					overflow: 'auto'
-				});
+                $( 'body, html').removeAttr( 'style' );
 				
 				clicks = 1;
-			};
+            };
 		
 		//adding default style to $sidebar
 		$sidebar
@@ -206,8 +206,7 @@
 				$elements.each(function() {
 					$( this ).animate( animationReset, {
 						duration: duration,
-						easing: easing,
-						complete: overflowFalse
+						easing: easing
 					});
 				});
 				
@@ -225,7 +224,7 @@
 			}
 		});
 		
-		$sidebar.on( 'click', $links, function() {
+		$sidebar.on( 'click', $links, function(event) {
 			var nsbw = $sidebar.width();
 			
 			if( defAlign === undefined || defAlign === 'left' ) {
@@ -241,15 +240,18 @@
 			}
 			
 			$elements.each(function() {
-				$( this ).animate( animationReset, {
-					duration: duration,
-					easing: easing,
-					complete: overflowFalse
-				});
+                $( this ).animate( animationReset, {
+                    duration: duration,
+                    easing: easing
+                });
 				
 				maskDiv.fadeOut();
+                overflowFalse();
 			});
-			
+            if(onClose !== undefined) {
+                onClose(event);
+            }
+
 		});
 		
 		//Adding responsive to $sidebar
