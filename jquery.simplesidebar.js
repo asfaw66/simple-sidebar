@@ -1,4 +1,4 @@
-//Simple Sidebar v1.1.1 by DcDeiv https://github.com/dcdeiv
+//Simple Sidebar v1.1.2 by DcDeiv https://github.com/dcdeiv
 // GPLv2 http://www.gnu.org/licenses/gpl-2.0-standalone.html
 (function( $ ) {
 	$.fn.simpleSidebar = function( options ) {
@@ -14,8 +14,7 @@
 					animation: {
 						duration: 500, //milliseconds (0.5s = 500ms)
 						easing: 'swing'
-					},
-				onClose: undefined
+					}
 				},
 				sidebar: {
 					align: undefined,
@@ -42,7 +41,6 @@
 			dataName  = config.settings.data,
 			duration  = config.settings.animation.duration,
 			easing    = config.settings.animation.easing,
-			onClose   = config.settings.onClose,
 			defAlign  = config.sidebar.align,
 			sbMaxW    = config.sidebar.width,
 			gap       = config.sidebar.gap,
@@ -89,10 +87,12 @@
 			},
 			//adding overflow [callback(A/B)]
 			overflowFalse = function() {
-                $( 'body, html').removeAttr( 'style' );
+				$( 'body, html' ).css({
+					overflow: 'auto'
+				});
 				
 				clicks = 1;
-            };
+			};
 		
 		//adding default style to $sidebar
 		$sidebar
@@ -206,7 +206,8 @@
 				$elements.each(function() {
 					$( this ).animate( animationReset, {
 						duration: duration,
-						easing: easing
+						easing: easing,
+						complete: overflowFalse
 					});
 				});
 				
@@ -224,7 +225,7 @@
 			}
 		});
 		
-		$sidebar.on( 'click', $links, function(event) {
+		$sidebar.on( 'click', $links, function() {
 			var nsbw = $sidebar.width();
 			
 			if( defAlign === undefined || defAlign === 'left' ) {
@@ -240,18 +241,15 @@
 			}
 			
 			$elements.each(function() {
-                $( this ).animate( animationReset, {
-                    duration: duration,
-                    easing: easing
-                });
+				$( this ).animate( animationReset, {
+					duration: duration,
+					easing: easing,
+					complete: overflowFalse
+				});
 				
 				maskDiv.fadeOut();
-                overflowFalse();
 			});
-            if(onClose !== undefined) {
-                onClose(event);
-            }
-
+			
 		});
 		
 		//Adding responsive to $sidebar

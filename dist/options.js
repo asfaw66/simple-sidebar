@@ -1,6 +1,5 @@
 /*
-** Simple Sidebar v1.1.0 by DcDeiv https://github.com/dcdeiv
-** Api v1.0.0
+** Simple Sidebar v1.1.2 by DcDeiv https://github.com/dcdeiv
 **
 ** GPLv2 http://www.gnu.org/licenses/gpl-2.0-standalone.html
 **
@@ -42,8 +41,6 @@ $( 'sidebar-selector' ).simpleSidebar({
 			//EASING of the animation. If you include the "jQuery-UI" library in your document you can specify an easing (see https://jqueryui.com/resources/demos/effect/easing.html) Ex: 'linear', 'swing', 'easeInQuad', 'easeOutQuad', 'easeInOutQuad', 'easeInCubic', 'easeOutCubic', 'easeInOutCubic', 'easeInQuart', 'easeOutQuart', 'easeInOutQuart'.
 			easing: 'swing'
 		}
-		//This option still need appropriate documentation
-		onClose: undefined
 	},
 	//*REQUIRED* all SIDEBAR settings
 	sidebar: {
