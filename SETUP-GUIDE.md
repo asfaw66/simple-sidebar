@@ -57,13 +57,13 @@ This is an example of options that YOU have to change in order to customize the 
         wrapper: '#main-wrapper'
       },
       sidebar: {
-        align: 'left'
+        align: 'left',
         width: 250,
         closingLinks: 'a',
         style: {
           zIndex: 100
         }
-      },
+      }
     });
 
 ####To Sum Up
