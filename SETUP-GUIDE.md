@@ -68,10 +68,15 @@ This is an example of options that YOU have to change in order to customize the 
 
 ####To Sum Up
 **settings.opener** will call the `#menu-icon` html element;
+
 **settings.wrapper** will call the `#main-wrapper` html element in order to move all elements inside;
+
 **sidebar.align** will align the sidebar to the left or to the right;
+
 **sidebar.width** will set the sidebar width;
-**sidebar.closingLinks** will close the sidebar as you click on the element inside the sidebar. In this case, when you click on a link (`a`) the sidebar will close.
+
+**sidebar.closingLinks** will close the sidebar as you click on the element inside the sidebar. In this case, when you click on a link (`a`) the sidebar will close;
+
 **sidebar.style.zIndex** this must be set at an index more than the xIndex you use in your CSS.
 
 ####Now the Plugin should work perfectly!
