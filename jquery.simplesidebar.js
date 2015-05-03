@@ -1,4 +1,5 @@
-//Simple Sidebar v1.2.0 by DcDeiv https://github.com/dcdeiv
+//JSONslider v.1.2.0
+//http://www.github.com/dcdeiv/simple-sidebar
 // GPLv2 http://www.gnu.org/licenses/gpl-2.0-standalone.html
 (function($) {
     $.fn.simpleSidebar = function(options) {
