@@ -1,6 +1,14 @@
 CHANGELOG
 ============
 
+##[v1.2.0](https://github.com/dcdeiv/simple-sidebar/releases/tagv1.1.2)
+* CHANGED:
+ * sidebar.style --> sidebar.css
+ * mask.style --> sidebar.css
+* ADDED:
+ * subWrapper.css
+ * subwrapper.css.position: 'relative'
+
 ##[v1.1.2](https://github.com/dcdeiv/simple-sidebar/releases/tagv1.1.2)
 * Issue [#5](https://github.com/dcdeiv/simple-sidebar/issues/5)
  * FIXED - scrollbar bug;

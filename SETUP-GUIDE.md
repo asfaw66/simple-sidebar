@@ -60,7 +60,7 @@ This is an example of options that YOU have to change in order to customize the 
         align: 'left',
         width: 250,
         closingLinks: 'a',
-        style: {
+        css: {
           zIndex: 100
         }
       }
@@ -77,6 +77,6 @@ This is an example of options that YOU have to change in order to customize the 
 
 **sidebar.closingLinks** will close the sidebar as you click on the element inside the sidebar. In this case, when you click on a link (`a`) the sidebar will close;
 
-**sidebar.style.zIndex** this must be set at an index more than the xIndex you use in your CSS.
+**sidebar.css.zIndex** this must be set at an index more than the xIndex you use in your CSS.
 
 ####Now the Plugin should work perfectly!
