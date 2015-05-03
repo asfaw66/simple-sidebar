@@ -19,6 +19,9 @@ With this simple plug-in you can choose to use the right-sidebar or the left-sid
 ##CHANGELOG
 I strongly recommend to everyone to read the changelog [here](CHANGELOG.md) before updating the plug-in.
 
+##SET UP
+Read the guide [here](SETUP-GUIDE.md);
+
 ##EXAMPLE OF USAGE:
 **These options (except mask and mask.style) are all required**
 
