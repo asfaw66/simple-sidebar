@@ -1,5 +1,5 @@
 /*
-** Simple Sidebar v1.1.2 by DcDeiv https://github.com/dcdeiv
+** Simple Sidebar v1.2.0 by DcDeiv https://github.com/dcdeiv
 **
 ** GPLv2 http://www.gnu.org/licenses/gpl-2.0-standalone.html
 **
@@ -55,7 +55,7 @@ $( 'sidebar-selector' ).simpleSidebar({
 		//*WARNING* do not select parent and child. Ex: 'li, a' when "<li><a href=""></a></li>". So just select the child element ('a'). POSSIBLE EXAMPLES: 'a', 'li', 'a, .fauxlinks, #social, .button'.
 		closingLinks: 'a',
 		//*REQUIRED* This feature assures the plug-in that some values will override CSS.
-		style: {
+		css: {
 			//*REQUIRED* zINDEX or 'z-index' is required to position the sidebar above ALL content and to position the "mask div" one level below the sidebar.
 			zIndex: 3000
 			//
@@ -66,12 +66,19 @@ $( 'sidebar-selector' ).simpleSidebar({
 	//MASK holds all settings of the mask-div. The mask-div is a required feature that lays over the document content (except the $sidebar) and fires the closing animation function.
 	mask: {
 		//STYLE holds all CSS rules. Use this feature to stylize the mask.
-		style: {
+		css: {
 			//Default options.
 			backgroundColor: 'black', //if you do not want any color use 'transparent'.
 			opacity: 0.5, //if you do not want any opacity use 0.
 			filter: 'Alpha(opacity=50)' //IE8 and earlier - If you do not want any opacity use 0.
 			//You can add more options.
+		}
+	},
+	subWrapper: { //It should not be necessary to custom this section, however here it is for your pleasure.
+		css: {
+			position: 'relative',
+			height: '100%',
+			overflow: 'auto'
 		}
 	}
 });
@@ -93,12 +100,12 @@ $( '#sidebar' ).simpleSidebar({
 		align: 'left'
 		width: 250,
 		closingLinks: 'a',
-		style: {
+		css: {
 			zIndex: 100
 		}
 	},
 	mask: {
-		style: {
+		css: {
 			backgroundColor: 'grey',
 			opacity: 0.9,
 			filter: 'Alpha(opacity=90)'
