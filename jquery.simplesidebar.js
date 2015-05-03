@@ -73,7 +73,7 @@
             .add($absolEl)
             .add($sidebar)
             .add($wrapper)
-            .not($ignore),
+            .not($ignore),sideposi
             w = $(window).width(),
             MaskDef = {
                 position: 'fixed',
@@ -81,7 +81,7 @@
                 right: -200,
                 left: -200,
                 bottom: -200,
-                zIndex: config.sidebar.style.zIndex - 1
+                zIndex: config.sidebar.css.zIndex - 1
             },
             maskStyle = $.extend({}, maskDef, MaskDef),
             clicks = 0,
