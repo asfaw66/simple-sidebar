@@ -1,4 +1,4 @@
-//Simple Sidebar v.1.2.1
+//Simple Sidebar v1.2.1
 //http://www.github.com/dcdeiv/simple-sidebar
 // GPLv2 http://www.gnu.org/licenses/gpl-2.0-standalone.html
 (function($) {
