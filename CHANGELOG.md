@@ -1,7 +1,7 @@
 CHANGELOG
 ============
 
-##[v1.2.1](https://github.com/dcdeiv/simple-sidebar/releases/tag/v1.2.1)
+##[v1.2.2](https://github.com/dcdeiv/simple-sidebar/releases/tag/v1.2.2)
 * FIXED:
  * CHANGELOG.md links to versions;
  * Headers.
