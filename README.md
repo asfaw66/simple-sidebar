@@ -4,6 +4,8 @@ A simple jQuery sidebar plugin
 
 With this simple plug-in you can choose to use the right-sidebar or the left-sidebar and switch from one to the other in just one type! [see options](#options)
 
+## New version: [simplesidebar-v2](http://www.github.com/dcdeiv/simplesidebar-v2)!
+
 ###Support:
 <a href="https://flattr.com/submit/auto?user_id=dcdeiv&url=http%3A%2F%2Fwww.github.com%2Fdcdeiv%2Fsimple-sidebar" target="_blank"><img src="http://button.flattr.com/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a>
 
