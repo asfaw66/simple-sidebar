@@ -1,7 +1,7 @@
 CHANGELOG
 ============
 
-##[v1.2.0](https://github.com/dcdeiv/simple-sidebar/releases/tagv1.1.2)
+##[v1.2.0](https://github.com/dcdeiv/simple-sidebar/releases/tag/v1.2.0)
 * CHANGED:
  * sidebar.style --> sidebar.css
  * mask.style --> sidebar.css
@@ -9,12 +9,12 @@ CHANGELOG
  * subWrapper.css
  * subwrapper.css.position: 'relative'
 
-##[v1.1.2](https://github.com/dcdeiv/simple-sidebar/releases/tagv1.1.2)
+##[v1.1.2](https://github.com/dcdeiv/simple-sidebar/releases/tagv/1.1.2)
 * Issue [#5](https://github.com/dcdeiv/simple-sidebar/issues/5)
  * FIXED - scrollbar bug;
  * DELETED - onClose callback.
 
-##[v1.1.1](https://github.com/dcdeiv/simple-sidebar/releases/tag/v1.1.1)
+##[v1.1.1](https://github.com/dcdeiv/simple-sidebar/releases/tag/v/1.1.1)
 * Merged [#4](https://github.com/dcdeiv/simple-sidebar/pull/4)
  * ADDED onClose callback;
  * FIXED multiple scrollbars bug.
