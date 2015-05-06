@@ -1,6 +1,11 @@
 CHANGELOG
 ============
 
+##[v1.2.1](https://github.com/dcdeiv/simple-sidebar/releases/tag/v1.2.1)
+* FIXED:
+ * CHANGELOG.md links to versions;
+ * Headers.
+
 ##[v1.2.0](https://github.com/dcdeiv/simple-sidebar/releases/tag/v1.2.0)
 * CHANGED:
  * sidebar.style --> sidebar.css
