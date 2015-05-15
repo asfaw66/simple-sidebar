@@ -8,12 +8,7 @@ With this simple plug-in you can choose to use the right-sidebar or the left-sid
 
 ## A *much more simpler* fork: [simpler-sidebar](http://www.github.com/dcdeiv/simpler-sidebar)!
 
-## DEMO:
-* [DEMO](http://dcdeiv.github.io/simple-sidebar);
-* [Right-Sidebar DEMO](http://dcdeiv.github.io/simple-sidebar/demo-right/index.html);
-* [Left-Sidebar DEMO](http://dcdeiv.github.io/simple-sidebar/demo-left/index.html);
-* [AJAX](http://dcdeiv.github.io/simple-sidebar/demo-ajax/index.html);
-* [Material-Designed](http://materialdesigned.tumblr.com/)
+## [Simple-Sidebar Demo Page](http://dcdeiv.github.io/simple-sidebar)
 
 ## DOWNLOAD
 * **Git**: `git clone https://github.com/dcdeiv/simple-sidebar`;
