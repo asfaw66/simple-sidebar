@@ -1,309 +1,276 @@
-//Simple Sidebar v1.2.2
+//Simple Sidebar v2.0.0
 //http://www.github.com/dcdeiv/simple-sidebar
 // GPLv2 http://www.gnu.org/licenses/gpl-2.0-standalone.html
 (function($) {
     $.fn.simpleSidebar = function(options) {
-        //declaring all global variables
-        var sbw, animationStart, animationReset,
-            //allowing user customisation
-            defaults = {
-                settings: {
-                    opener: undefined,
-                    wrapper: undefined, //HTML tag is not safe. Please, use a container/wrapper div
-                    ignore: undefined,
-                    data: 'ssbplugin',
-                    animation: {
-                        duration: 500, //milliseconds (0.5s = 500ms)
-                        easing: 'swing'
-                    }
+        var opts = $.extend(true, $.fn.simpleSidebar.settings, options);
+
+        return this.each(function() {
+            var align, ssbCSS, ssbStyle, maskCSS, maskStyle, sbw,
+                attr = opts.attr,
+                $sidebar = $(this),
+                $btn = $(opts.opener),
+                $wrapper = $(opts.wrapper),
+                $ignore = $(opts.ignore),
+                $add = $(opts.add),
+                $links = $(opts.sidebar.closingLinks),
+
+                duration = opts.animation.duration,
+                easing = opts.animation.easing,
+
+                sbMaxW = opts.sidebar.width,
+                gap = opts.sidebar.gap,
+                winMaxW = sbMaxW + gap,
+
+                w = $(window).width(),
+
+                animationStart = {},
+                animationReset = {},
+
+                overflowFalse = function() {
+                    $('body, html').css({
+                        overflow: 'hidden'
+                    });
                 },
-                sidebar: {
-                    align: undefined,
-                    width: 350, //pixels
-                    gap: 64, //pixels
-                    closingLinks: 'a',
-                    css: {
-                        zIndex: 3000
-                    }
-                },
-                mask: {
-                    css: {
-                        backgroundColor: 'black',
-                        opacity: 0.5,
-                        filter: 'Alpha(opacity=50)' //IE8 and earlier
-                    }
-                },
-                subWrapper: {
-                    css: {
-                        position: 'relative',
-                        height: '100%',
+                overflowTrue = function() {
+                    $('body, html').css({
                         overflow: 'auto'
-                    }
-                }
-            },
-            config = $.extend(true, defaults, options),
-            $sidebar = this,
-            $opener = $(config.settings.opener),
-            $wrapper = $(config.settings.wrapper),
-            $ignore = $(config.settings.ignore),
-            dataName = config.settings.data,
-            duration = config.settings.animation.duration,
-            easing = config.settings.animation.easing,
-            defAlign = config.sidebar.align,
-            sbMaxW = config.sidebar.width,
-            gap = config.sidebar.gap,
-            $links = config.sidebar.closingLinks,
-            defStyle = config.sidebar.css,
-            maskDef = config.mask.css,
-            subWcss = config.subWrapper.css,
-            winMaxW = sbMaxW + gap,
-            //selecting all fixed elements except the sidebar and the ignore elements
-            $fixedEl = $('*')
-            .not($ignore)
-            .not($sidebar)
-            .filter(function() {
-                return $(this).css('position') == 'fixed';
-            }),
-            $absolEl = $('*')
-            .not($ignore)
-            .filter(function() {
-                return $(this).css('position') == 'absolute';
-            }),
-            //selecting all elements.
-            $elements = $fixedEl
-            .add($absolEl)
-            .add($sidebar)
-            .add($wrapper)
-            .not($ignore),sideposi
-            w = $(window).width(),
-            MaskDef = {
-                position: 'fixed',
-                top: -200,
-                right: -200,
-                left: -200,
-                bottom: -200,
-                zIndex: config.sidebar.css.zIndex - 1
-            },
-            maskStyle = $.extend({}, maskDef, MaskDef),
-            clicks = 0,
-            //hiding overflow [callback(A/B)]
-            overflowTrue = function() {
-                $('body, html').css({
-                    overflow: 'hidden'
-                });
+                    });
+                },
 
-                clicks = 0;
-            },
-            //adding overflow [callback(A/B)]
-            overflowFalse = function() {
-                $('body, html').css({
-                    overflow: 'auto'
-                });
+                $subWrapper = $('<div>')
+                .attr('data-' + attr, 'subwrapper')
+                .css(opts.subWrapper.css),
 
-                clicks = 1;
-            };
+                $mask = $('<div>')
+                .attr('data-' + attr, 'mask'),
 
-        //adding default style to $sidebar
-        $sidebar
-            .css(defStyle)
-            //wrapping inner content to let it overflow
-            .wrapInner('<div data-' + dataName + '="sub-wrapper"></div>');
+                //defining elements to move
+                $siblings = $wrapper.siblings().not('script noscript'),
+                $elements = $wrapper.not($ignore)
+                .not($mask)
+                .add($siblings)
+                .add($sidebar)
+                .add($add);
 
-        var subWrapper = $sidebar.children().filter(function() {
-            return $(this).data(dataName) === 'sub-wrapper';
-        });
-
-        subWrapper.css(subWcss);
-
-        //Appending to 'body' the mask-div and adding its style
-        $('body').append('<div data-' + dataName + '="mask"></div>');
-
-        var maskDiv = $('body').children().filter(function() {
-            return $(this).data(dataName) === 'mask';
-        });
-
-        maskDiv
-            .css(maskStyle)
-            .hide();
-
-        //assigning value to sbw
-        if (w < winMaxW) {
-            sbw = w - gap;
-        } else {
-            sbw = sbMaxW;
-        }
-
-        //testing config.sidebar.align
-        if (defAlign === undefined || defAlign === 'left') {
-            $sidebar.css({
-                position: 'fixed',
-                top: 0,
-                bottom: 0,
-                left: 0,
-                width: sbw,
-                marginLeft: -sbw
-            });
-        } else {
-            $sidebar.css({
+            //Mask plugin style
+            maskCSS = {
                 position: 'fixed',
                 top: 0,
                 right: 0,
                 bottom: 0,
-                width: sbw,
-                marginRight: -sbw
-            });
-        }
+                left: 0,
+                zIndex: opts.sidebar.css.zIndex - 1,
+                display: 'none'
+            };
+            maskStyle = $.extend(true, maskCSS, opts.mask.css);
 
-        $opener.click(function() {
-            var nsbw = $sidebar.width();
-
-            if (defAlign === undefined || defAlign === 'left') {
-                animationStart = {
-                    marginLeft: '+=' + nsbw,
-                    marginRight: '-=' + nsbw
-                };
-            } else {
-                animationStart = {
-                    marginRight: '+=' + nsbw,
-                    marginLeft: '-=' + nsbw
-                };
+            //Appending Mask if mask.display is true
+            if (true === opts.mask.display) {
+                $mask.appendTo('body')
+                    .css(maskStyle);
             }
 
-            $elements.each(function() {
-                $(this).animate(animationStart, {
-                    duration: duration,
-                    easing: easing,
-                    complete: overflowTrue
-                });
-            });
+            //Defining initial Sidebar width
+            if (w < winMaxW) {
+                sbw = w - gap;
+            } else {
+                sbw = sbMaxW;
+            }
 
-            maskDiv.fadeIn();
-        });
-
-        maskDiv.click(function() {
-            clicks++;
-            var nsbw = $sidebar.width();
-            var countClicks = function(e) {
-                return (e % 2 === 0) ? true : false;
+            //Sidebar plugin style
+            ssbCSS = {
+                position: 'fixed',
+                top: 0,
+                bottom: 0,
+                width: sbw
             };
 
-            if (defAlign === undefined || defAlign === 'left') {
-                animationStart = {
-                    marginLeft: '+=' + nsbw,
-                    marginRight: '-=' + nsbw
-                };
-                animationReset = {
-                    marginRight: '+=' + nsbw,
-                    marginLeft: '-=' + nsbw
-                };
-            } else {
-                animationStart = {
-                    marginRight: '+=' + nsbw,
-                    marginLeft: '-=' + nsbw
-                };
-                animationReset = {
-                    marginLeft: '+=' + nsbw,
-                    marginRight: '-=' + nsbw
-                };
+            //Checking sidebar align
+            if (opts.sidebar.align === undefined || opts.sidebar.align === 'right') {
+                align = 'right';
+            } else if (opts.sidebar.align === 'left') {
+                align = 'left';
             }
 
-            if (false === countClicks(clicks)) {
-                $elements.each(function() {
-                    $(this).animate(animationReset, {
+            //pushing align to ssbCSS
+            ssbCSS[align] = -sbw;
+
+            //Overriding user style
+            ssbStyle = $.extend(true, ssbCSS, opts.sidebar.css);
+
+            //Sidebar initial status
+            $sidebar.css(ssbStyle)
+                .attr('data-' + attr, 'disabled');
+
+            //Wrapping sidebar inner content if wrapInner.display is TRUE
+            if (true === opts.subWrapper.display) {
+                $sidebar.wrapInner($subWrapper);
+            }
+
+            //Animating the sidebar
+            $btn.click(function() {
+                //Checking if sidebar is active or disabled
+                var isWhat = $sidebar.attr('data-' + attr),
+                    csbw = $sidebar.width();
+
+                //Defining what margins must be animated
+                if ('right' === align) {
+                    animationStart = {
+                        marginRight: '+=' + csbw,
+                        marginLeft: '-=' + csbw
+                    };
+                    animationReset = {
+                        marginRight: '-=' + csbw,
+                        marginLeft: '+=' + csbw
+                    };
+                } else if ('left' === align) {
+                    animationStart = {
+                        marginRight: '-=' + csbw,
+                        marginLeft: '+=' + csbw
+                    };
+                    animationReset = {
+                        marginRight: '+=' + csbw,
+                        marginLeft: '-=' + csbw
+                    };
+                }
+
+                if ('disabled' === isWhat) {
+                    $elements.animate(animationStart, {
                         duration: duration,
                         easing: easing,
                         complete: overflowFalse
                     });
-                });
 
-                maskDiv.fadeOut();
-            } else if (true === countClicks(clicks)) {
-                $elements.each(function() {
-                    $(this).animate(animationStart, {
+                    $sidebar.attr('data-' + attr, 'active');
+
+                    $mask.fadeIn(duration);
+
+                } else if ('active' === isWhat) {
+                    $elements.animate(animationReset, {
                         duration: duration,
                         easing: easing,
                         complete: overflowTrue
                     });
-                });
 
-                maskDiv.fadeIn();
-            }
-        });
+                    $sidebar.attr('data-' + attr, 'disabled');
 
-        $sidebar.on('click', $links, function() {
-            var nsbw = $sidebar.width();
-
-            if (defAlign === undefined || defAlign === 'left') {
-                animationReset = {
-                    marginRight: '+=' + nsbw,
-                    marginLeft: '-=' + nsbw
-                };
-            } else {
-                animationReset = {
-                    marginLeft: '+=' + nsbw,
-                    marginRight: '-=' + nsbw
-                };
-            }
-
-            $elements.each(function() {
-                $(this).animate(animationReset, {
-                    duration: duration,
-                    easing: easing,
-                    complete: overflowFalse
-                });
-
-                maskDiv.fadeOut();
+                    $mask.fadeOut(duration);
+                }
             });
 
-        });
+            //Closing Sidebar
+            $links.add($mask).each(function() {
+                $(this).click(function() {
+                    var isWhat = $sidebar.attr('data-' + attr),
+                        csbw = $sidebar.width();
 
-        //Adding responsive to $sidebar
-        $(window).resize(function() {
-            var rsbw, sbMar,
-                w = $(this).width();
+                    //Redefining animationReset
+                    if ('right' === align) {
+                        animationReset = {
+                            marginRight: '-=' + csbw,
+                            marginLeft: '+=' + csbw
+                        };
+                    } else if ('left' === align) {
+                        animationReset = {
+                            marginRight: '+=' + csbw,
+                            marginLeft: '-=' + csbw
+                        };
+                    }
 
-            if (w < winMaxW) {
-                rsbw = w - gap;
-            } else {
-                rsbw = sbMaxW;
-            }
+                    if (isWhat === 'active') {
 
-            $sidebar.css({
-                width: rsbw
+                        $elements.animate(animationReset, {
+                            duration: duration,
+                            easing: easing,
+                            complete: overflowTrue
+                        });
+
+                        $sidebar.attr('data-' + attr, 'disabled');
+
+                        $mask.fadeOut(duration);
+                    }
+                });
             });
 
-            //fixing $element position according to $sidebar new width (rsbw)
-            if (defAlign === undefined || defAlign === 'left') {
-                sbMar = parseInt($sidebar.css('margin-left'));
+            //Adjusting width and resetting sidebar on window resize
+            $(window).resize(function() {
+                var rsbw,
+                    isWhat = $sidebar.attr('data-' + attr),
+                    nw = $(window).width();
 
-                if (0 > sbMar) {
-                    $sidebar.css({
-                        marginLeft: -rsbw
-                    });
+                if (nw < winMaxW) {
+                    rsbw = nw - gap;
                 } else {
-                    $elements.not($sidebar)
-                        .css({
-                            marginLeft: +rsbw,
-                            marginRight: -rsbw
-                        });
+                    rsbw = sbMaxW;
                 }
-            } else {
-                sbMar = parseInt($sidebar.css('margin-right'));
 
-                if (0 > sbMar) {
-                    $sidebar.css({
-                        marginRight: -rsbw
-                    });
-                } else {
-                    $elements.not($sidebar)
-                        .css({
-                            marginLeft: -rsbw,
-                            marginRight: +rsbw
-                        });
+                //Redefining animationReset
+                if ('right' === align) {
+                    animationReset = {
+                        marginRight: '-=' + rsbw,
+                        marginLeft: '+=' + rsbw
+                    };
+                } else if ('left' === align) {
+                    animationReset = {
+                        marginRight: '+=' + rsbw,
+                        marginLeft: '-=' + rsbw
+                    };
                 }
-            }
+
+                if (isWhat === 'active') {
+
+                    $elements.animate(animationReset, {
+                        duration: duration,
+                        easing: easing,
+                        complete: overflowTrue
+                    });
+
+                    $sidebar.attr('data-' + attr, 'disabled');
+
+                    $mask.fadeOut(duration);
+                }
+
+
+            });
         });
+    };
 
-        return this;
+    $.fn.simpleSidebar.settings = {
+        opener: undefined,
+        wrapper: undefined,
+        ignore: undefined,
+        add: undefined,
+        attr: 'ssbplugin',
+        animation: {
+            duration: 500,
+            easing: 'swing'
+        },
+        sidebar: {
+            align: undefined,
+            width: 350,
+            gap: 64,
+            closingLinks: 'a',
+            css: {
+                zIndex: 3000
+            }
+        },
+        subWrapper: {
+            display: true,
+            css: {
+                position: 'relative',
+                height: '100%',
+                overflowY: 'auto',
+                overflowX: 'hidden'
+            }
+        },
+        mask: {
+            display: true,
+            css: {
+                backgroundColor: 'black',
+                opacity: 0.5,
+                filter: 'Alpha(opacity=50)'
+            }
+        }
     };
 })(jQuery);
