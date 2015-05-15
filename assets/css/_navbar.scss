@@ -1,0 +1,66 @@
+//Navbar
+.main-navbar {
+    position: relative;
+    height: $navbarHeight;
+    font-size: $nbTextSize;
+    font-weight: $nbTextWeight;
+    
+    #{$links} {
+        font-size: inherit;
+    }
+}
+
+.navbar-fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.logo {    
+    a {
+        display: block;
+    }
+}
+
+.logo-navbar {
+    line-height: 0;
+    padding-top: ($navbarHeight - $nbLogoHeight) / 2;
+    
+    img {
+        height: $nbLogoHeight;
+    }
+}
+
+.logo-text {
+    font-family: $nbLogoTextFont;
+    font-size: $nbLogoTextSize;
+}
+
+.navbar-content {
+    line-height: $navbarHeight;
+    
+    nav {
+        ul {
+            padding: 0 !important;
+            margin: 0 !important;
+            li {
+                padding: 0 !important;
+                margin: 0 !important;
+                padding-left: 14pt !important;
+                
+                display: inline-block;
+                
+                a {
+                    padding: 0 !important;
+                    margin: 0 !important;
+                }
+            }
+        }
+    }
+}
+
+#toggle-sidebar {
+    cursor: pointer;
+    font-size: $nbLogoTextSize;
+}
