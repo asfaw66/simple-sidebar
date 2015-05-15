@@ -116,7 +116,7 @@ This way can be buggy, especially when you try to override `sidebar`, the plugin
  * **display**:  `true` or `false` false will remove this option;
  * **css**: here you can store all css attributes to give the mask div. However I suggest to do it in your css file except for these below. You can call this div by its data attribute ex: `[data-ssbplugin="mask"]`;
    * **backgroundColor**: the color of the mask. By default is `'black'`;
-   * **opacity*: by default is 0.5;
+   * **opacity**: by default is 0.5;
    * **filter**: IE opacity 0.5 = 50 and so on: `'Alpha(opacity=50)'`.
 
 ## Enjoy!
