@@ -6,9 +6,9 @@ With this simple plug-in you can choose to use the right-sidebar or the left-sid
 
 <a href="https://flattr.com/submit/auto?user_id=dcdeiv&url=http%3A%2F%2Fwww.github.com%2Fdcdeiv%2Fsimple-sidebar" target="_blank"><img src="http://button.flattr.com/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a>
 
-## A *much more simpler* fork: [simpler-sidebar](http://www.github.com/dcdeiv/simpler-sidebar)!
+## [Simple-Sidebar Home Page](http://dcdeiv.github.io/simple-sidebar)
 
-## [Simple-Sidebar Demo Page](http://dcdeiv.github.io/simple-sidebar)
+#### A *much more simpler* fork: [simpler-sidebar](http://www.github.com/dcdeiv/simpler-sidebar)!
 
 ## DOWNLOAD
 * **Git**: `git clone https://github.com/dcdeiv/simple-sidebar`;
