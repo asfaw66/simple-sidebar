@@ -248,7 +248,7 @@
         },
         sidebar: {
             align: undefined,
-            width: 350,
+            width: 300,
             gap: 64,
             closingLinks: 'a',
             css: {
