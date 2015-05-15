@@ -107,16 +107,16 @@ This way can be buggy, especially when you try to override `sidebar`, the plugin
  * **zIndex**: by default is is 3000 but you have to change it to the higher z-index number in your css plus 1;
 * **subWrapper**
  * **display**: `true` or `false` false will remove this option;
- * **css**: here tou can store all css attributes to give the subWrapper. However I suggest to do it in your stylesheet except for these below. You can call this by its data attribute ex: `[data-ssbplugin="subwrapper"]`
-   * **position**: 'relative',
-   * **height**: '100%',
-   * **overflowY**: 'auto',
-   * **overflowX**: 'hidden'
-* **mask**
+ * **css**: here tou can store all css attributes to give the subWrapper. However I suggest to do it in your stylesheet except for these below. You can call this by its data attribute ex: `[data-ssbplugin="subwrapper"]`;
+   * **position**: 'relative';
+   * **height**: '100%';
+   * **overflowY**: 'auto';
+   * **overflowX**: 'hidden';
+* **mask**:
  * **display**:  `true` or `false` false will remove this option;
- * **css** here you can store all css attributes to give the mask div. However I suggest to do it in your css file except for these below. You can call this div by its data attribute ex: `[data-ssbplugin="mask"]`;
-   * **backgroundColor** the color of the mask. By default is `'black'`;
-   * **opacity* by default is 0.5;
-   * **filter** IE opacity 0.5 = 50 and so on: `'Alpha(opacity=50)'`.
+ * **css**: here you can store all css attributes to give the mask div. However I suggest to do it in your css file except for these below. You can call this div by its data attribute ex: `[data-ssbplugin="mask"]`;
+   * **backgroundColor**: the color of the mask. By default is `'black'`;
+   * **opacity*: by default is 0.5;
+   * **filter**: IE opacity 0.5 = 50 and so on: `'Alpha(opacity=50)'`.
 
 ## Enjoy!
