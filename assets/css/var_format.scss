@@ -7,7 +7,7 @@ $primaryFont: $Roboto;
 $textWeight: 300;
 $textSize: 14pt;
 
-$pTextBold : $textWeight + 200;
+$textBold : $textWeight + 300;
 
 //
 // - Link
@@ -39,7 +39,7 @@ $nbLogoHeight: 32px;
 //
 //- Sidebar
 $sidebarWidth: 300px;
-$ssb-dataName: 'simplersidebar';
+$ssb-dataName: 'ssbplugin';
 $ssb-wrapper: '[data-' + $ssb-dataName + '="sub-wrapper"]';
 
 //

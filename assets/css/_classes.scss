@@ -1,5 +1,20 @@
 //Classes
 
+.main {
+	position: relative;
+}
+
+.glyphicon {
+	top: unset !important;
+}
+
+.icon-32 {
+	font-size: 24px;
+	margin: 0 5pt;
+	display: block;
+	cursor: pointer;
+}
+
 .reset-list {
 	list-style-type: none;
 	padding: 0;
@@ -8,9 +23,13 @@
 
 .list-inline {
 	li {
-		display: inline;
-		margin: 0 5pt;
+		display: inline-block;
+		padding: 0 2.5pt;
 		margin-left: 0;
+		
+		* {
+			display: block;
+		}
 	}
 }
 

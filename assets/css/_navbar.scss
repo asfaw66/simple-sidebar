@@ -17,26 +17,6 @@
     left: 0;
 }
 
-.logo {    
-    a {
-        display: block;
-    }
-}
-
-.logo-navbar {
-    line-height: 0;
-    padding-top: ($navbarHeight - $nbLogoHeight) / 2;
-    
-    img {
-        height: $nbLogoHeight;
-    }
-}
-
-.logo-text {
-    font-family: $nbLogoTextFont;
-    font-size: $nbLogoTextSize;
-}
-
 .navbar-content {
     line-height: $navbarHeight;
     

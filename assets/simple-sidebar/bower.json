@@ -5,7 +5,7 @@
   "authors": [
     "dcdeiv <davide.dicriscito@gmail.com>"
   ],
-  "description": "A simple jQuery sidebar plug-in",
+  "description": "A simple jQuery sidebar plugin",
   "main": "jquery.simplesidebar.min.js",
   "keywords": [
     "simple",

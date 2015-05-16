@@ -1,272 +1,276 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-	<meta name="description" content="A Simple jQuery Sidebar Plug-In">
-	<meta name="author" content="Davide DC" >
-	
-	<title>Simple Sidebar</title>
-	
-	<link href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700|Roboto:400,100,300,500,700" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/reboot.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/media.css">
-	
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script><style type="text/css"></style>
-	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
-	<script src="components/simple-sidebar/jquery.simplesidebar.js"></script>
-	<!--[if lf IE 9]>
-	<script src="components/html5shiv/dist/html5shiv.min.js"></script>
-	<![endif]-->
+    <meta charset="utf-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
+    <meta name="theme-color" content="#197bbd">
+    
+    <meta name="keywords" content="simple-sidebar, simple sidebar, simple, sidebar, jquery, javascript, plugin, jquery plugin, dcdeiv, davidedc, sidebar left, sidebar right">
+    <meta name="description" content="A simple sidebar written in jQuery. Simpler-Sidebar is a fork of Simple-Sidebar.">
+    <meta name="language" content="en">
+    <meta name="author" content="Davide Di Criscito, davide.dicriscito@gmail.com">
+    <meta name="owner" content="Davide Di Criscito">
+    <meta name="pagename" content="Simple Sidebar">
+    <meta name="coverage" content="Global">
+    <meta name="rating" content="General">
+    <meta name="subtitle" content="A simple sidebar written in jQuery.">
+    <meta name='target' content='all'>
+    <meta name='HandheldFriendly' content='True'>
+    <meta name="url" content="http://dcdeiv.github.io/simple-sidebar">
+    <meta name="identifier-URL" content="http://dcdeiv.github.io/simple-sidebar">
+
+    <link rel='index' title='DeWitt Clinton' href='http://blog.unto.net/'>
+    <link rel='publisher' href='https://plus.google.com/+DavideDC/'>
+    <link rel='image_src' href='http://graph.facebook.com/dcdeiv/picture?type=large' type='image/jpeg'>
+    
+    <title>Simple Sidebar</title>
+    
+    <link rel="stylesheet" type="text/css" href="assets/css/standalones/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/standalones/glyphicons.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/standalones/roboto.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/themes/blue.min.css">
+    
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <![endif]-->
+    
 </head>
 
 <body>
-<div class="wrapper">
-	<header class="main-header">
-		<h1>Simple Sidebar</h1>
-		<h5>v1.1.0</h5>
-		<h6>A simple jQuery sidebar plug-in</h6>
-	</header>
-	
-	<main>
-		<section id="form" class="alignself-center aligncontent-center">
-			<form>
-				<input value="Download" type="button" onclick="window.location.href='https://github.com/dcdeiv/simple-sidebar/archive/v1.1.0.zip'">
-				<input value="Github" type="button" onclick="window.location.href='https://github.com/dcdeiv/simple-sidebar/'">
-			</form>
-			<form>
-				<input value="Demo-Left" type="button" onclick="window.location.href='http://dcdeiv.github.io/simple-sidebar/demo-left/index.html'">
-				<input value="Demo-AJAX" type="button" onclick="window.location.href='http://dcdeiv.github.io/simple-sidebar/demo-ajax/index.html'">
-				<input value="Demo-Right" type="button" onclick="window.location.href='http://dcdeiv.github.io/simple-sidebar/demo-right/index.html'">
-			</form>
-		</section>
-		
-		<section>
-			<header>
-				<h2>Left or Right?</h2>
-				<h4>You can always decide later!</h4>
-			</header>
-			<p>With Simple-Sidebar it does not matter if it's right or left. This plug-in gives you the chance to choose what you feel like any time.</p>
-			<p>You can switch from the left one, to the right one just one type away.</p>
-			<h5>Choose it and type it in the function <a href="#options">options</a>.</h5>
-			
-<pre class="code">
-$( &quot;$sidebar&quot; ).simpleSidebar({
-  sidebar: {
-    align: 'left' //'right'
-  }
-});
-</pre>
 
-			<aside>
-				<p>
-				<strong>Too lazy</strong> to choose? Actually you should know that if you don't choose anything, the plug-in will choose for you the left one.</p>
-				<p>More info comes in the <a href="#set-up">Set-Up Guide</a>.</p>
-			</aside>
-		</section>
+    <div id="main" class="main container main-fixed-top">
+		<header class="main-header">
+		    <h1>Simple Sidebar</h1>
+		    <h3>A simple jQuery sidebar plugin.</h3>
+		    
+		    <div>
+		        <div id="flattr-button" class="support-btn">
+		            <script id='fbcu3fg'>(function(i){var f,s=document.getElementById(i);f=document.createElement('iframe');f.src='//api.flattr.com/button/view/?uid=dcdeiv&button=compact&url='+encodeURIComponent(document.URL);f.title='Flattr';f.height=20;f.width=110;f.style.borderWidth=0;s.parentNode.insertBefore(f,s);})('fbcu3fg');</script>
+		        </div>
+		        <div id="donate-button" class="support-btn">
+		            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="7UUHHQTPNEAJ4">
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
+                    </form>
+		        </div>
+		    </div>
+		</header>
 		
-		<section id="github">
-			<header>
-				<h3>GitHub</h3>
-			</header>
-			<pre><code>git clone https://github.com/dcdeiv/simple-sidebar</code></pre>
-			<p>Help me improve the code!</p>
-			<p>Open an issue, report a bug, push requests, fork and star my repos on <a href="https://www.github.com/dcdeiv/simple-sidebar/">Github</a>.</p>
-		</section>
-		
-		<section id="bower">
-			<header>
-				<h3>Bower</h3>
-			</header>
-			<p>This package is available at <a href="http://bower.io/" target="_blank">Bower</a>.
-			
-			</p><h5>Install</h5>
-<pre><code>bower install simple-sidebar</code></pre>
-		</section>
-		
-		<hr>
-		
-		<section id="set-up">
-			<header>
-				<h3>Set-Up</h3>
-			</header>
-			
-			<p></p><h6>1—Include</h6>
-			Include the <code>jquery.simplesidebar.min.js</code> file in your page along with the <code>jQuery</code> and (but not necessarily) <code>jQuery-ui</code> libraries.<p></p>
-			
-			<p></p><h6>2—HTML</h6>
-			Set-up the html-tags, attributes and classes. Give a unique ID or a class to the sidebar and another one to the button/img/div/icon. (whatever you like).<p></p>
-			<p><strong>example:</strong><br>
-</p><pre class="code">&lt;div class="toolbar"&gt;
-  &lt;div id="open-sb" class="menu-button menu-left"&gt;&lt;/div&gt;
+		<section id="download">
+		    <h2>Download</h2>
+		    
+		    <table>
+		        <tr>
+		            <td><img src="assets/pictures/github48@2x.png" height="32px" width="32px" /></td>
+		            <td><code>git clone https://github.com/dcdeiv/simple-sidebar</code></td>
+		        </tr>
+		        <tr>
+		            <td><img src="assets/pictures/npm128.png" height="32px" width="32px" /></td>
+		            <td><code>npm install simple-sidebar</code></td>
+		        </tr>
+		        <tr>
+		            <td><img src="assets/pictures/bower48@2x.png" height="32px" width="32px" /></td>
+		            <td><code>bower install simple-sidebar</code></td>
+		        </tr>
+		    </table>
+	    </section>
+	    
+	    <section id="setup">
+	        <h2>Set Up</h2>
+	        
+	        <p>In order to let the plugin work, you have to set up this template.</p>
+	        <p>It does not matter what classes or id you will choose.</p>
+
+<pre>
+//position-relative
+&lt;div id="wrapper"&gt;
+    //all your content must go here.
+    //Every POSITION-FIXED ELEMENT must be positioned outside of this wrapper.
+    //Every POSITION-ABSOLUTE ELEMENT must be positioned inside a POSITION-RELATIVE div.
+&lt;/div>
+
+//position-fixed to top
+&lt;div id="navbar"&gt;
+    &lt;span id="button" class="icon icon-whatever"&gt;&lt;/span&gt;
 &lt;/div&gt;
 
-&lt;div class="sidebar"&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
+//position-fixed to left or right
+&lt;div id="sidebar" class="sidebar sidebar-whatever">
+    //content of your sidebar
+    &lt;a class="close-sidebar" href="#"&gt;Link&lt;/a&gt;
+    &lt;a class="close-sidebar" href="#"&gt;Link&lt;/a&gt;
+    &lt;a class="close-sidebar" href="#"&gt;Link&lt;/a&gt;
+    &lt;a class="close-sidebar" href="#"&gt;Link&lt;/a&gt;
+&lt;/div>
 </pre>
-			<p></p>
-			
-			<p></p><h6>3—Run the Function</h6>
-			The function itself does nothing. You have to add some very useful options to let run the function properly. Here below there is an example of a basic function. For more options see the <a href="#options">options section</a>.
-			<p></p>
-			<p><strong>example</strong><br>
-</p><pre class="code">$( '#sidebar' ).simpleSidebar({
-    settings: {
-        opener: &quot;.button&quot;,
-        wrapper: &quot;#wrapper&quot;,
-    },
-    sidebar: {
-        align: &quot;left&quot;,
-        width: 250,
-        closingLinks: &quot;a&quot;,
-        style: {
-            zIndex: 100
+            <p>Include the minified version of this plugin and run the function with at least these options:</p>
+
+<pre>
+&lt;script src="path/to/simple-sidebar/jquery.simplesidebar.min.js"&lt;/script&gt;
+&lt;script&gt;
+    $('#sidebar').simpleSidebar({
+        opener: '#button',
+        wrapper: '#wrapper',
+        sidebar: {
+            align: 'right' //or 'left' - This option can be ignored, the sidebar will authomatically align to right.
+            width: 300 //You can ingnore this option, the sidebar will authomatically size itselt to 300px.
+            closingLinks: '.close-sidebar' // If you ignore this option, the plugin will lool for all links and can be buggy. Choose a class for every object inside the sidebar that once clicked will close the sidebar.
+            css: {
+                //Here you can add more css rules but you should use your own stylesheet.
+                zIndex: 3000 //Choose the amount of zIndex you want. It must be the higher zIndex number.
+            }
         }
-    },
-    mask: {
-        style: {
-            backgroundColor: &quot;grey&quot;,
-            opacity: 0.9,
-            filter: 'Alpha(opacity=90)'
-        }
-    }
-});
+    });
+&lt;/script&gt;
 </pre>
-			<p></p>
-		</section>
-		
-		<hr>
-		
-		<section id="options">
-			<header>
-				<h3>Options</h3>
-			</header>
-<pre class="code">//Select the $sidebar. Ex: '.sidebar'
-$( 'sidebar-selector' ).simpleSidebar({
-    //Global plug-in settings
-    //*REQUIRED*
-    settings: {
-        //*REQUIRED* OPENER is the selector that fire the animation. It can be an icon a button, an input, an image, a div or a span. Whatever you want. Ex: '.menu-button', '#button'.
-        opener: undefined, //STRING
-        //*REQUIRED* WRAPPER is the selector for the wrapper/container div/section that holds all content. It is required to animate correctly the document. Fixed elements ("position: fixed") can be included or excluded. It does not matter if you put inside the $sidebar and the navigation-bar nor if you put them outside. Ex: '.wrapper', '#container' etc.
-        wrapper: undefined, //STRING
-        //IGNORE is the selector for all elements that must be ignored. This feature comes in help especially when you have to install this plug-in in a CMS or blog. TUMBLR Ex: '#ga_target, #tumblr_controls'.
-        ignore: undefined, //STRING
-        //DATA is the data-attribute for the new elements that the plug-in creates.
-        data: 'ssbplugin',
-        //ANIMATION properties.
-        animation: {
-            //DURATION of the animation
-            duration: 500,
-            //EASING of the animation. If you include the "jQuery-UI" library in your document you can specify an easing (see https://jqueryui.com/resources/demos/effect/easing.html) Ex: 'linear', 'swing', 'easeInQuad', 'easeOutQuad', 'easeInOutQuad', 'easeInCubic', 'easeOutCubic', 'easeInOutCubic', 'easeInQuart', 'easeOutQuart', 'easeInOutQuart'.
-            easing: 'swing'
-        }
-    },
-    //*REQUIRED* all SIDEBAR settings
-    sidebar: {
-        //*REQUIRED* the ALIGN of the $sidebar. Ex: undefined, 'left', 'right'.
-        //*WARNING* type in lowercase. If undefined the align is automatically assigned to 'left'.
-        align: undefined, //STRING
-        //*REQUIRED* the WIDTH and MAXWIDTH of the $sidebar. This value will override CSS.
-        width: 350, //NUMBER
-        //the GAP between the end of the sidebar (margin-right for the left-sidebar. margin-left for the right-sidebar) and the end of the document (document margin-right for the left-sidebar. document margin-left for the right-sidebar) when the screen is smaller that the $sidebar width.
-        gap: 64, //NUMBER
-        //CLOSINGLINKS is the selector that will fire the $sidebar closing animation.
-        //*WARNING* do not select parent and child. Ex: 'li, a' when "<li><a href=""></a></li>". So just select the child element ('a'). POSSIBLE EXAMPLES: 'a', 'li', 'a, .fauxlinks, #social, .button'.
-        closingLinks: 'a',
-        //*REQUIRED* This feature assures the plug-in that some values will override CSS.
-        style: {
-            //*REQUIRED* zINDEX or 'z-index' is required to position the sidebar above ALL content and to position the "mask div" one level below the sidebar.
-            zIndex: 3000
-            //
-            //*WARNING* You can add more style here or in a separate file but everything here will override styles in separate CSS files.
-            //*WARNING* Do no care about "position: fixed, top:0, left:0, bottom:0, right:0" because the plug-in will care about it. Positioning rules will be overridden automatically by the plug-in.
-        }
-    },
-    //MASK holds all settings of the mask-div. The mask-div is a required feature that lays over the document content (except the $sidebar) and fires the closing animation function.
-    mask: {
-        //STYLE holds all CSS rules. Use this feature to stylize the mask.
-        style: {
-            //Default options.
-            backgroundColor: 'black', //if you do not want any color use 'transparent'.
-            opacity: 0.5, //if you do not want any opacity use 0.
-            filter: 'Alpha(opacity=50)' //IE8 and earlier - If you do not want any opacity use 0.
-            //You can add more options.
-        }
-    }
-});
-</pre>
-		</section>
-		
-		<section>
-<div class="g-person" data-href="//plus.google.com/u/0/110262094781774074648" data-showcoverphoto="false" data-rel="author"></div>
-		</section>
-	</main>
-	
-	<div class="toolbar">
-		<div id="open-sb" class="menu-button menu-left"></div>
-		<a href="#github">
-			<img width="32" height="32" src="pictures/github48@2x.png" alt="GitHub"></a>
-		<a href="#bower">
-			<img width="32" height="32" src="pictures/bower48@2x.png" alt="Bower"></a>
+	    </section>
+	    
+	    <section id="options">
+	        <h2>Options</h2>
+	        <ol>
+                <li><b>opener</b>: is the selector for the button/icon that will trigger the animation;</li>
+                <li><b>wrapper</b>:</li>
+                <li><b>ignore</b></li>
+                <li><b>add</b></li>
+                <li><b>attr</b>: is the <code>data-*</code> attribute to make the plugin works. If <code>ssbplugin</code> is somehow causing you issues, you can change it;</li>
+                <li><b>top</b>: is the <code>position-top</code> of the entire plugin. You can choose whatever number you want (better if you choose it according to the navbar's height) or let it to be 0;</li>
+                <li><b>animation</b>:
+                    <ul>
+                        <li><b>duration</b>: the duration of the animation in milliseconds;</li>
+                        <li><b>easing</b>: the type of animation. For more animations include the <code>jQuery-UI</code> library and check out [this page](https://jqueryui.com/easing/). I strongly suggest not to play with easing because they haven't been tested all yet. I suggest to use simple easing like <code>easeOutQuint</code>;</li>
+                    </ul>
+                </li>
+                
+                <li><b>sidebar</b>:
+                    <ul>
+                        <li><b>align</b>: default is <code>undefined</code> which means that is aligned to the *right*, if you want to align it to the left, wright <code>left</code>;</li>
+                        <li><b>width</b>: the max width of the sidebar, this option is default to 350, please change it as you please;</li>
+                        <li><b>gap</b>: the gap is the space between the left margin of the sidebar and the left side of the window. It is useful when you position the plugin <code>top: 0</code>, so that the user can click that space to close the sidebar;</li>
+                        <li><b>closingLinks</b>: are all links or elements that close the sidebar. I suggest to choose a class and give it to all links and other elements such as icons, banner, images, etc, that are links. By default it is <code>a</code> so every link in the sidebar will close the sidebar;</li>
+                        <li><b>css</b>: here you can store all css, anyway I suggest not to add more css attributes to the one below;</li>
+                            <ul>
+                                <li><b>zIndex</b>: by default is is 3000 but you have to change it to the higher z-index number in your css plus 1;</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li><b>subWrapper</b>;
+                    <ul>
+                        <li><b>display</b>: <code>true</code> or <code>false</code> false will remove this option;</li>
+                        <li><b>css</b>: here tou can store all css attributes to give the subWrapper. However I suggest to do it in your stylesheet except for these below. You can call this by its data attribute ex: <code[data-ssbplugin="subwrapper"]</code>;
+                            <ul>
+                               <li><b>position</b>: 'relative';</li>
+                               <li><b>height</b>: '100%';</li>
+                               <li><b>overflowY</b>: 'auto';</li>
+                               <li><b>overflowX</b>: 'hidden';</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><b>mask</b>:
+                    <ul>
+                        <li><b>display</b>:  <code>true</code> or <code>false</code> false will remove this option;</li>
+                        <li><b>css</b>: here you can store all css attributes to give the mask div. However I suggest to do it in your css file except for these below. You can call this div by its data attribute ex: <code>[data-ssbplugin="mask"]</code>;</li>
+                            <ul>
+                                <li><b>backgroundColor</b>: the color of the mask. By default is <code>'black'</code>;</li>
+                                <li><b>opacity</b>: by default is 0.5;</li>
+                                <li><b>filter</b>: IE opacity 0.5 = 50 and so on: <code>'Alpha(opacity=50)'</code>.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+	    </section>
 	</div>
-</div>
+	
+	<!--NAVBAR-->
+    <div id="main-navbar" class="main-navbar navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-content left">
+                <span id="toggle-sidebar" class="icon glyphicon glyphicon-menu-hamburger"></span>
+            </div>
+        
+            <div class="navbar-icons right">
+                <ul class="list-inline">
+                    <li>
+                        <span class="right icon icon-32 glyphicon glyphicon-download-alt"></span>
+                    </li>
+                    
+                    <li>
+                        <a href="#bower"><img src="assets/pictures/bower48@2x.png" height="32px" width="32px" /></a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://www.npmjs.com/package/simple-sidebar" target="_blank"><img src="assets/pictures/npm128.png" height="32px" width="32px" /></a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://github.com/dcdeiv/simple-sidebar" target="_blank"><img src="assets/pictures/github48@2x.png" height="32px" width="32px" /></a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://davidedc.altervista.org">
+                            <img class="rounded" src="http://graph.facebook.com/dcdeiv/picture?type=large" alt="dcdeiv" width="32px" height="32px">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--NAVBAR-->
+	
+	<div id="sidebar" class="theme-accent sidebar sidebar-left">
+        <div class="sidebar-wrapper">
+            <header class="sidebar-header">
+                <div class="logo logo-picture logo-sidebar">
+                    <a href="http://davidedc.altervista.org">
+                        <img class="rounded" src="http://graph.facebook.com/dcdeiv/picture?type=large" alt="dcdeiv" width="64px" height="64px">
+                    </a>
+                </div>
+                <h3>Simpler Sidebar</h3>
+            </header>
+            
+            <div class="nav nav-sidebar">
+			    <nav>
+				    <ul>
+					    <li><a class="close-sb" href="index.html">Home</a></li>
+					    <li><a class="close-sb" href="http://github.com/dcdeiv/simpler-sidebar" target="_blank">Github</a></li>
+				    </ul>
+			    </nav>
+			
+			    <nav>
+	                <ul>
+	                    <li class="nav-title">Demos</li>
+	                    <li><a href="right">Right</a></li>
+	                    <li><a href="right-top">Right-Top</a></li>
+	                    <li><a href="left">Left</a></li>
+	                    <li><a href="left-top">Left-Top</a></li>
+	                </ul>
+	            </nav>
+            </div>
+		</div>
+    </div>
+    <!--SIDEBAR-->
 
-<section class="sidebar" style="position: fixed; top: 0px; left: 0px; bottom: 0px; max-width: 200px; z-index: 3000; width: 200px; margin-left: -200px;"><div data-sbplugin="sub-wrapper" style="width: 100%; height: 100%; overflow: auto;">
-	<nav>
-		<h6>Simple Sidebar</h6>
-		<ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="demo-left/index.html">Demo Left Sidebar</a></li>
-			<li><a href="demo-right/index.html">Demo Right Sidebar</a></li>
-			<li><a href="demo-ajax/index.html">Demo AJAX</a></li>
-			<li><a href="#github">GitHub</a></li>
-			<li><a href="#bower">Bower</a></li>
-			<li><a href="#set-up">Set-Up</a></li>
-			<li><a href="#options">Options</a></li>
-		</ul>
-		
-		<hr>
-		
-		<h6>DcDev</h6>
-		<ul>
-			<li><a href="http://dcdev.altervista.org/">DcDev Homepage</a></li><a href="http://dcdev.altervista.org/">
-			</a><li><a href="http://dcdev.altervista.org/"></a><a href="http://dcdev.altervista.org/plugins/">Other Plugins</a></li>
-			<li><a href="http://www.github.com/dcdeiv">GitHub</a></li>
-		</ul>
-	</nav>
-</div></section>
-
-<a href="https://github.com/dcdeiv/simple-sidebar">
-	<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
-
+<!-- plugins -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="assets/simple-sidebar/jquery.simplesidebar.min.js"></script>
 <script>
 $( document ).ready(function() {
-	$.ajaxSetup({
-		cache: false
-	});
-
-	$( '.sidebar' ).simpleSidebar({
-		settings: {
-			opener: '#open-sb',
-			wrapper: '.wrapper',
-			animation: {
-				duration: 500,
-				easing: 'easeOutQuint'
-			}
-		},
-		sidebar: {
-			align: 'left',
-			width: 200,
-			closingLinks: 'a',
-		},
-	});
+    
+    $.fn.simpleSidebar.settings.opener = "#toggle-sidebar";
+    $.fn.simpleSidebar.settings.wrapper = "#main";
+    $.fn.simpleSidebar.settings.animation.easing = "easeOutQuint";
+    $.fn.simpleSidebar.settings.sidebar.align = "left";
+    $.fn.simpleSidebar.settings.sidebar.closingLinks = ".close-sb";
+    $.fn.simpleSidebar.settings.sidebar.subWrapper = false;
+        
+    $( '#sidebar' ).simpleSidebar();
 });
 </script>
+</body>
