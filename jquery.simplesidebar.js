@@ -1,4 +1,4 @@
-//Simple Sidebar v2.0.3
+//Simple Sidebar v2.0.4
 //http://www.github.com/dcdeiv/simple-sidebar
 // GPLv2 http://www.gnu.org/licenses/gpl-2.0-standalone.html
 (function($) {
@@ -190,7 +190,7 @@
                     $mask.fadeOut(duration);
                 }
             });
-            
+
             $sidebar.on('click', $links, function() {
                 var isWhat = $sidebar.attr('data-' + attr),
                     csbw = $sidebar.width();
@@ -233,8 +233,10 @@
                 } else {
                     rsbw = sbMaxW;
                 }
-                
-                reset = { width: rsbw };
+
+                reset = {
+                    width: rsbw
+                };
 
                 //Redefining animationReset
                 if ('right' === align) {
@@ -242,30 +244,30 @@
                         right: '-=' + rsbw,
                         left: '+=' + rsbw
                     };
-                    
-                    reset.right = - rsbw;
+
+                    reset.right = -rsbw;
                     reset.left = '';
-                    
+
                 } else if ('left' === align) {
                     animationReset = {
                         right: '+=' + rsbw,
                         left: '-=' + rsbw
                     };
-                    
-                    reset.left = - rsbw;
+
+                    reset.left = -rsbw;
                     reset.right = '';
                 }
 
                 if (isWhat === 'active') {
 
-                    $elements.not( $sidebar )
+                    $elements.not($sidebar)
                         .animate(animationReset, {
                             duration: duration,
                             easing: easing,
                             complete: overflowTrue
                         });
-                    
-                    $sidebar.css( reset )
+
+                    $sidebar.css(reset)
                         .attr('data-' + attr, 'disabled');
 
                     $mask.fadeOut(duration);
@@ -277,17 +279,12 @@
     };
 
     $.fn.simpleSidebar.settings = {
-        opener: undefined,
-        wrapper: undefined,
-        ignore: undefined,
-        add: undefined,
         attr: 'ssbplugin',
         animation: {
             duration: 500,
             easing: 'swing'
         },
         sidebar: {
-            align: undefined,
             width: 300,
             gap: 64,
             closingLinks: 'a',
