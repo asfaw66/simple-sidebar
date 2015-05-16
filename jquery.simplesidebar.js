@@ -1,4 +1,4 @@
-//Simple Sidebar v2.0.0
+//Simple Sidebar v2.0.3
 //http://www.github.com/dcdeiv/simple-sidebar
 // GPLv2 http://www.gnu.org/licenses/gpl-2.0-standalone.html
 (function($) {
@@ -117,21 +117,21 @@
                 //Defining what margins must be animated
                 if ('right' === align) {
                     animationStart = {
-                        marginRight: '+=' + csbw,
-                        marginLeft: '-=' + csbw
+                        right: '+=' + csbw,
+                        left: '-=' + csbw
                     };
                     animationReset = {
-                        marginRight: '-=' + csbw,
-                        marginLeft: '+=' + csbw
+                        right: '-=' + csbw,
+                        left: '+=' + csbw
                     };
                 } else if ('left' === align) {
                     animationStart = {
-                        marginRight: '-=' + csbw,
-                        marginLeft: '+=' + csbw
+                        right: '-=' + csbw,
+                        left: '+=' + csbw
                     };
                     animationReset = {
-                        marginRight: '+=' + csbw,
-                        marginLeft: '-=' + csbw
+                        right: '+=' + csbw,
+                        left: '-=' + csbw
                     };
                 }
 
@@ -160,61 +160,20 @@
             });
 
             //Closing Sidebar
-            $links.add($mask).each(function() {
-                $(this).click(function() {
-                    var isWhat = $sidebar.attr('data-' + attr),
-                        csbw = $sidebar.width();
-
-                    //Redefining animationReset
-                    if ('right' === align) {
-                        animationReset = {
-                            marginRight: '-=' + csbw,
-                            marginLeft: '+=' + csbw
-                        };
-                    } else if ('left' === align) {
-                        animationReset = {
-                            marginRight: '+=' + csbw,
-                            marginLeft: '-=' + csbw
-                        };
-                    }
-
-                    if (isWhat === 'active') {
-
-                        $elements.animate(animationReset, {
-                            duration: duration,
-                            easing: easing,
-                            complete: overflowTrue
-                        });
-
-                        $sidebar.attr('data-' + attr, 'disabled');
-
-                        $mask.fadeOut(duration);
-                    }
-                });
-            });
-
-            //Adjusting width and resetting sidebar on window resize
-            $(window).resize(function() {
-                var rsbw,
-                    isWhat = $sidebar.attr('data-' + attr),
-                    nw = $(window).width();
-
-                if (nw < winMaxW) {
-                    rsbw = nw - gap;
-                } else {
-                    rsbw = sbMaxW;
-                }
+            $mask.click(function() {
+                var isWhat = $sidebar.attr('data-' + attr),
+                    csbw = $sidebar.width();
 
                 //Redefining animationReset
                 if ('right' === align) {
                     animationReset = {
-                        marginRight: '-=' + rsbw,
-                        marginLeft: '+=' + rsbw
+                        right: '-=' + csbw,
+                        left: '+=' + csbw
                     };
                 } else if ('left' === align) {
                     animationReset = {
-                        marginRight: '+=' + rsbw,
-                        marginLeft: '-=' + rsbw
+                        right: '+=' + csbw,
+                        left: '-=' + csbw
                     };
                 }
 
@@ -227,6 +186,87 @@
                     });
 
                     $sidebar.attr('data-' + attr, 'disabled');
+
+                    $mask.fadeOut(duration);
+                }
+            });
+            
+            $sidebar.on('click', $links, function() {
+                var isWhat = $sidebar.attr('data-' + attr),
+                    csbw = $sidebar.width();
+
+                //Redefining animationReset
+                if ('right' === align) {
+                    animationReset = {
+                        right: '-=' + csbw,
+                        left: '+=' + csbw
+                    };
+                } else if ('left' === align) {
+                    animationReset = {
+                        right: '+=' + csbw,
+                        left: '-=' + csbw
+                    };
+                }
+
+                if (isWhat === 'active') {
+
+                    $elements.animate(animationReset, {
+                        duration: duration,
+                        easing: easing,
+                        complete: overflowTrue
+                    });
+
+                    $sidebar.attr('data-' + attr, 'disabled');
+
+                    $mask.fadeOut(duration);
+                }
+            });
+
+            //Adjusting width and resetting sidebar on window resize
+            $(window).resize(function() {
+                var rsbw, reset,
+                    isWhat = $sidebar.attr('data-' + attr),
+                    nw = $(window).width();
+
+                if (nw < winMaxW) {
+                    rsbw = nw - gap;
+                } else {
+                    rsbw = sbMaxW;
+                }
+                
+                reset = { width: rsbw };
+
+                //Redefining animationReset
+                if ('right' === align) {
+                    animationReset = {
+                        right: '-=' + rsbw,
+                        left: '+=' + rsbw
+                    };
+                    
+                    reset.right = - rsbw;
+                    reset.left = '';
+                    
+                } else if ('left' === align) {
+                    animationReset = {
+                        right: '+=' + rsbw,
+                        left: '-=' + rsbw
+                    };
+                    
+                    reset.left = - rsbw;
+                    reset.right = '';
+                }
+
+                if (isWhat === 'active') {
+
+                    $elements.not( $sidebar )
+                        .animate(animationReset, {
+                            duration: duration,
+                            easing: easing,
+                            complete: overflowTrue
+                        });
+                    
+                    $sidebar.css( reset )
+                        .attr('data-' + attr, 'disabled');
 
                     $mask.fadeOut(duration);
                 }
@@ -271,6 +311,6 @@
                 opacity: 0.5,
                 filter: 'Alpha(opacity=50)'
             }
-        }
+        },
     };
 })(jQuery);

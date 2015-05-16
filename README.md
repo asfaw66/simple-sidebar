@@ -19,7 +19,7 @@ With this simple plug-in you can choose to use the right-sidebar or the left-sid
 In order to let the plugin work, you have to set up this template.
 It does not matter what classes or id you will choose.
 
-	//position-relative
+	//position-relative if this wrapper has no position relative, the plugin won't work correctly
 	<div id="wrapper">
 		//all your content must go here.
 		//Every POSITION-FIXED ELEMENT must be positioned outside of this wrapper.
@@ -84,12 +84,12 @@ This way can be buggy, especially when you try to override `sidebar`, the plugin
 		};
 	
 ### Option List:
-* **opener**: is the selector for the button/icon that will trigger the animation, see [Set-Up](#set-up);
-* **wrapper**:
-* **ignore**
-* **add**
-* **attr**: is the `data-*` attribute to make the plugin works. If `ssbplugin` is somehow causing you issues, you can change it;
-* **top**: is the `position-top` of the entire plugin. You can choose whatever number you want (better if you choose it according to the navbar's height) or let it to be 0;
+* **opener**: selector for the button/icon that will trigger the animation, see [Set-Up](#set-up);
+* **wrapper**: selector for the content of your entire website except all elements that are positioned fixed (for example the navbar and the sidebar), position absolute elements inside this wrapper must be wrapped inside a div with position:relative attribute;
+* **ignore**: selector for all elements that must be ignored;
+* **add**: selector for all elements that must be added if the plugin is ignoring them accidentaly;
+* **attr**: the `data-*` attribute to make the plugin works. If `ssbplugin` is somehow causing you issues, you can change it;
+* **top**: the `position-top` of the entire plugin. You can choose whatever number you want (better if you choose it according to the navbar's height) or let it to be 0;
 * **animation**
  * **animation.duration**: the duration of the animation in milliseconds;
  * **animation.easing**: the type of animation. For more animations include the `jQuery-UI` library and check out [this page](https://jqueryui.com/easing/). I strongly suggest not to play with easing because they haven't been tested all yet. I suggest to use simple easing like `easeOutQuint`;

@@ -1,6 +1,6 @@
 {
   "name": "simple-sidebar",
-  "version": "2.0.0",
+  "version": "2.0.4",
   "description": "A simple jQuery sidebar plugin",
   "main": "jquery.simplesidebar.min.js",
   "scripts": {
@@ -13,11 +13,11 @@
   "keywords": [
     "simple",
     "sidebar",
-    "simple",
-    "sidebar",
     "javascript",
     "jquery",
-    "plugin"
+    "js",
+    "plugin",
+    "responsive"
   ],
   "author": "Davide Di Criscito <davide.dicriscito@gmail.com> (http://github.com/dcdeiv)",
   "license": "GPLv2",
