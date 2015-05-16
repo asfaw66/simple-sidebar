@@ -78,6 +78,26 @@
 		        </tr>
 		    </table>
 	    </section>
+	    
+	    <section id="options-ajax">
+	        <h2>Example of Left Options</h2>
+	        
+<pre>	        
+$( document ).ready(function() {
+    
+    $.fn.simpleSidebar.settings.opener = "#toggle-sidebar";
+    $.fn.simpleSidebar.settings.wrapper = "#main";
+    $.fn.simpleSidebar.settings.animation.easing = "easeOutQuint";
+    $.fn.simpleSidebar.settings.sidebar.align = "left";
+    $.fn.simpleSidebar.settings.sidebar.closingLinks = ".close-sb";
+    $.fn.simpleSidebar.settings.sidebar.subWrapper = false;
+        
+    $( '#sidebar' ).simpleSidebar();
+});
+</pre>
+            
+            <h3>See full list of <em>options</em> <a href="http://github.com/dcdeiv/simple-sidebar" target="_blank">here</a>.</h3>
+	    </section>
 	</div>
 	
 	<!--NAVBAR-->
