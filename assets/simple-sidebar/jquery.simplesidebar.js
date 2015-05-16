@@ -51,21 +51,7 @@
                 .not($mask)
                 .add($siblings)
                 .add($sidebar)
-                .add($add),
-                
-                            
-                //Checking Wrapper positioning
-                position = $wrapper.css('position');
-                
-                //Allowing the option to add a the position to the wrapper through js
-                if ( undefined !== opts.wrapperPosition ) {
-                    $wrapper.css( 'position', opts.wrapperPosition );
-                }
-                
-                //Warning message to give a position to $wrapper
-                if ( undefined === opts.wrapperPosition && ('relative' !== position || 'absolute' !== position && undefined === opts.wrapper ) ) {
-                    console.log( 'WARNING: your $wrapper "' + opts.wrapper + '" has an invalid CSS "position" property. \n\n The plugin won\'t work correctly. \n\n Please, provide your $wrapper "' + opts.wrapper + '" "position: relative" or "position: absolute" in your stylesheet by copying this code:\n\n"' + opts.wrapper + ' { position: relative }"\n\n or add this option: \n\n"$.fn.simpleSidebar.settings.wrapperPosition = \'relative\'"\n\n Read the guide here https://github.com/dcdeiv/simple-sidebar \n\n Thank you.' );
-                }
+                .add($add);
 
             //Mask plugin style
             maskCSS = {
@@ -204,7 +190,7 @@
                     $mask.fadeOut(duration);
                 }
             });
-            
+
             $sidebar.on('click', $links, function() {
                 var isWhat = $sidebar.attr('data-' + attr),
                     csbw = $sidebar.width();
@@ -238,7 +224,7 @@
 
             //Adjusting width and resetting sidebar on window resize
             $(window).resize(function() {
-                var rsbw, reset, resetPos,
+                var rsbw, reset,
                     isWhat = $sidebar.attr('data-' + attr),
                     nw = $(window).width();
 
@@ -247,8 +233,10 @@
                 } else {
                     rsbw = sbMaxW;
                 }
-                
-                reset = { width: rsbw };
+
+                reset = {
+                    width: rsbw
+                };
 
                 //Redefining animationReset
                 if ('right' === align) {
@@ -256,30 +244,30 @@
                         right: '-=' + rsbw,
                         left: '+=' + rsbw
                     };
-                    
-                    reset.right = - rsbw;
+
+                    reset.right = -rsbw;
                     reset.left = '';
-                    
+
                 } else if ('left' === align) {
                     animationReset = {
                         right: '+=' + rsbw,
                         left: '-=' + rsbw
                     };
-                    
-                    reset.left = - rsbw;
+
+                    reset.left = -rsbw;
                     reset.right = '';
                 }
 
                 if (isWhat === 'active') {
 
-                    $elements.not( $sidebar )
+                    $elements.not($sidebar)
                         .animate(animationReset, {
                             duration: duration,
                             easing: easing,
                             complete: overflowTrue
                         });
-                    
-                    $sidebar.css( reset )
+
+                    $sidebar.css(reset)
                         .attr('data-' + attr, 'disabled');
 
                     $mask.fadeOut(duration);
@@ -291,17 +279,12 @@
     };
 
     $.fn.simpleSidebar.settings = {
-        opener: undefined,
-        wrapper: undefined,
-        ignore: undefined,
-        add: undefined,
         attr: 'ssbplugin',
         animation: {
             duration: 500,
             easing: 'swing'
         },
         sidebar: {
-            align: undefined,
             width: 300,
             gap: 64,
             closingLinks: 'a',
