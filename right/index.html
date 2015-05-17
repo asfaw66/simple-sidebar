@@ -38,48 +38,19 @@
 </head>
 
 <body>
-
+    <!-- content -->
     <div id="main" class="main container main-fixed-top">
 		<header class="main-header">
 		    <h1>Simple Sidebar</h1>
 		    <h2>Demo Right</h2>
 		    <h3>A simple jQuery sidebar plugin.</h3>
 		    
-		    <div>
-		        <div id="flattr-button" class="support-btn">
-		            <script id='fbcu3fg'>(function(i){var f,s=document.getElementById(i);f=document.createElement('iframe');f.src='//api.flattr.com/button/view/?uid=dcdeiv&button=compact&url='+encodeURIComponent(document.URL);f.title='Flattr';f.height=20;f.width=110;f.style.borderWidth=0;s.parentNode.insertBefore(f,s);})('fbcu3fg');</script>
-		        </div>
-		        <div id="donate-button" class="support-btn">
-		            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                    <input type="hidden" name="cmd" value="_s-xclick">
-                    <input type="hidden" name="hosted_button_id" value="7UUHHQTPNEAJ4">
-                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                    <img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
-                    </form>
-		        </div>
-		    </div>
+		    <div id="support"></div>
 		</header>
 		
-		<section id="download">
-		    <h2>Download</h2>
-		    
-		    <table>
-		        <tr>
-		            <td><img src="../assets/pictures/github48@2x.png" height="32px" width="32px" /></td>
-		            <td><code>git clone https://github.com/dcdeiv/simple-sidebar</code></td>
-		        </tr>
-		        <tr>
-		            <td><img src="../assets/pictures/npm128.png" height="32px" width="32px" /></td>
-		            <td><code>npm install simple-sidebar</code></td>
-		        </tr>
-		        <tr>
-		            <td><img src="../assets/pictures/bower48@2x.png" height="32px" width="32px" /></td>
-		            <td><code>bower install simple-sidebar</code></td>
-		        </tr>
-		    </table>
-	    </section>
+		<section id="download"></section>
 	    
-	    <section id="options-ajax">
+	    <section id="options-right">
 	        <h2>Example of Right Options</h2>
 	        
 <pre>	        
@@ -99,92 +70,48 @@ $( document ).ready(function() {
             <h3>See full list of <em>options</em> <a href="http://github.com/dcdeiv/simple-sidebar" target="_blank">here</a>.</h3>
 	    </section>
 	</div>
+	<!-- end content -->
 	
-	<!--NAVBAR-->
-    <div id="main-navbar" class="main-navbar navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-content right">
-                <span id="toggle-sidebar" class="icon glyphicon glyphicon-menu-hamburger"></span>
-            </div>
-        
-            <div class="navbar-icons left">
-                <ul class="list-inline">
-                    <li>
-                        <a href="http://davidedc.altervista.org">
-                            <img class="rounded" src="http://graph.facebook.com/dcdeiv/picture?type=large" alt="dcdeiv" width="32px" height="32px">
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="http://github.com/dcdeiv/simple-sidebar" target="_blank"><img src="../assets/pictures/github48@2x.png" height="32px" width="32px" /></a>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.npmjs.com/package/simple-sidebar" target="_blank"><img src="../assets/pictures/npm128.png" height="32px" width="32px" /></a>
-                    </li>
-                    
-                    <li>
-                        <a href="#bower"><img src="../assets/pictures/bower48@2x.png" height="32px" width="32px" /></a>
-                    </li>
-                    
-                    <li>
-                        <span class="right icon icon-32 glyphicon glyphicon-download-alt"></span>
-                    </li>
-                    
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!--NAVBAR-->
-	
-	<div id="sidebar" class="theme-accent sidebar sidebar-right">
-        <div class="sidebar-wrapper">
-            <header class="sidebar-header">
-                <div class="logo logo-picture logo-sidebar">
-                    <a href="http://davidedc.altervista.org">
-                        <img class="rounded" src="http://graph.facebook.com/dcdeiv/picture?type=large" alt="dcdeiv" width="64px" height="64px">
-                    </a>
-                </div>
-                <h3>Simpler Sidebar</h3>
-            </header>
-            
-            <div class="nav nav-sidebar">
-			    <nav>
-				    <ul>
-					    <li><a class="close-sb" href="index.html">Home</a></li>
-					    <li><a class="close-sb" href="http://github.com/dcdeiv/simpler-sidebar" target="_blank">Github</a></li>
-				    </ul>
-			    </nav>
-			
-			    <nav>
-	                <ul>
-	                    <li class="nav-title">Demos</li>
-	                    <li><a href="right">Right</a></li>
-	                    <li><a href="right-top">Right-Top</a></li>
-	                    <li><a href="left">Left</a></li>
-	                    <li><a href="left-top">Left-Top</a></li>
-	                </ul>
-	            </nav>
-            </div>
-		</div>
-    </div>
-    <!--SIDEBAR-->
+	<!-- navbar -->
+    <div id="main-navbar" class="main-navbar navbar-fixed-top"></div>
+    
+	<!--sidebar -->
+	<div id="sidebar" class="theme-accent sidebar sidebar-right"></div>
 
 <!-- plugins -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script src="../assets/simple-sidebar/jquery.simplesidebar.min.js"></script>
+<script src="../assets/js/latest-release.js"></script>
 <script>
 $( document ).ready(function() {
+    $.ajaxSetup({
+		cache: false
+	});
+	
+	$( '#support' ).load( 'http://dcdeiv.github.io/simple-sidebar/support.html' );
+	$( '#download' ).load( 'http://dcdeiv.github.io/simple-sidebar/download.html' );
     
-    $.fn.simpleSidebar.settings.opener = "#toggle-sidebar";
-    $.fn.simpleSidebar.settings.wrapper = "#main";
-    $.fn.simpleSidebar.settings.animation.easing = "easeOutQuint";
-    $.fn.simpleSidebar.settings.sidebar.align = "right";
-    $.fn.simpleSidebar.settings.sidebar.closingLinks = ".close-sb";
-    $.fn.simpleSidebar.settings.sidebar.subWrapper = false;
+    $( '#main-navbar' ).load( 'http://dcdeiv.github.io/simple-sidebar/navbar.html', function() {       
+        $( '#latest-release' ).URLrelease( 'simple-sidebar' );
         
-    $( '#sidebar' ).simpleSidebar();
+        $( '#sidebar' ).load( 'http://dcdeiv.github.io/simple-sidebar/sidebar.html' )
+            .simpleSidebar({
+                opener: '#toggle-sidebar',
+                wrapper: '#main',
+                animation: {
+                    easing: "easeOutQuint"
+                },
+                sidebar: {
+                    align: 'right',
+                    closingLinks: '.close-sb',
+                },
+                subwrapper: {
+                    display: false
+                }
+            });
+    });
 });
 </script>
 </body>
+</html>
