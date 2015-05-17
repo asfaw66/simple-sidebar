@@ -1,4 +1,4 @@
-//Simple Sidebar v2.0.4
+//Simple Sidebar v2.0.6
 //http://www.github.com/dcdeiv/simple-sidebar
 // GPLv2 http://www.gnu.org/licenses/gpl-2.0-standalone.html
 (function($) {
@@ -6,8 +6,7 @@
         var opts = $.extend(true, $.fn.simpleSidebar.settings, options);
 
         return this.each(function() {
-            var align, ssbCSS, ssbStyle, maskCSS, maskStyle, sbw,
-                attr = opts.attr,
+            var pAlign, sAlign, ssbCSS, ssbStyle, maskCSS, maskStyle, sbw, attr = opts.attr,
                 $sidebar = $(this),
                 $btn = $(opts.opener),
                 $wrapper = $(opts.wrapper),
@@ -15,27 +14,35 @@
                 $add = $(opts.add),
                 $links = $(opts.sidebar.closingLinks),
 
-                duration = opts.animation.duration,
-                easing = opts.animation.easing,
-
                 sbMaxW = opts.sidebar.width,
                 gap = opts.sidebar.gap,
                 winMaxW = sbMaxW + gap,
 
                 w = $(window).width(),
 
+                duration = opts.animation.duration,
+
                 animationStart = {},
                 animationReset = {},
+                sidebarStart = {},
+                sidebarReset = {},
 
-                overflowFalse = function() {
-                    $('body, html').css({
-                        overflow: 'hidden'
-                    });
+                hiddenFlow = function() {
+                    $('body, html').css('overflow', 'hidden');
                 },
-                overflowTrue = function() {
-                    $('body, html').css({
-                        overflow: 'auto'
-                    });
+                autoFlow = function() {
+                    $('body, html').css('overflow', 'auto');
+                },
+
+                activate = {
+                    duration: duration,
+                    easing: opts.animation.easing,
+                    complete: hiddenFlow
+                },
+                deactivate = {
+                    duration: duration,
+                    easing: opts.animation.easing,
+                    complete: autoFlow
                 },
 
                 $subWrapper = $('<div>')
@@ -47,11 +54,20 @@
 
                 //defining elements to move
                 $siblings = $wrapper.siblings().not('script noscript'),
-                $elements = $wrapper.not($ignore)
+                $elements = $wrapper.add($siblings)
+                .not($ignore)
+                .not($sidebar)
                 .not($mask)
-                .add($siblings)
-                .add($sidebar)
                 .add($add);
+
+            //Checking sidebar align
+            if (opts.sidebar.align === undefined || opts.sidebar.align === 'right') {
+                pAlign = 'right';
+                sAlign = 'left';
+            } else if (opts.sidebar.align === 'left') {
+                pAlign = 'left';
+                sAlign = 'right';
+            }
 
             //Mask plugin style
             maskCSS = {
@@ -86,15 +102,11 @@
                 width: sbw
             };
 
-            //Checking sidebar align
-            if (opts.sidebar.align === undefined || opts.sidebar.align === 'right') {
-                align = 'right';
-            } else if (opts.sidebar.align === 'left') {
-                align = 'left';
-            }
+            //Opening sidebar
+            sidebarStart[pAlign] = 0;
 
             //pushing align to ssbCSS
-            ssbCSS[align] = -sbw;
+            ssbCSS[pAlign] = -sbw;
 
             //Overriding user style
             ssbStyle = $.extend(true, ssbCSS, opts.sidebar.css);
@@ -114,46 +126,26 @@
                 var isWhat = $sidebar.attr('data-' + attr),
                     csbw = $sidebar.width();
 
-                //Defining what margins must be animated
-                if ('right' === align) {
-                    animationStart = {
-                        right: '+=' + csbw,
-                        left: '-=' + csbw
-                    };
-                    animationReset = {
-                        right: '-=' + csbw,
-                        left: '+=' + csbw
-                    };
-                } else if ('left' === align) {
-                    animationStart = {
-                        right: '-=' + csbw,
-                        left: '+=' + csbw
-                    };
-                    animationReset = {
-                        right: '+=' + csbw,
-                        left: '-=' + csbw
-                    };
-                }
+                //Defining animations 
+                animationStart[pAlign] = '+=' + csbw;
+                animationStart[sAlign] = '-=' + csbw;
+                animationReset[pAlign] = '-=' + csbw;
+                animationReset[sAlign] = '+=' + csbw;
+                sidebarReset[pAlign] = -csbw;
 
                 if ('disabled' === isWhat) {
-                    $elements.animate(animationStart, {
-                        duration: duration,
-                        easing: easing,
-                        complete: overflowFalse
-                    });
+                    $elements.animate(animationStart, activate);
 
-                    $sidebar.attr('data-' + attr, 'active');
+                    $sidebar.animate(sidebarStart, activate)
+                        .attr('data-' + attr, 'active');
 
                     $mask.fadeIn(duration);
 
                 } else if ('active' === isWhat) {
-                    $elements.animate(animationReset, {
-                        duration: duration,
-                        easing: easing,
-                        complete: overflowTrue
-                    });
+                    $elements.animate(animationReset, deactivate);
 
-                    $sidebar.attr('data-' + attr, 'disabled');
+                    $sidebar.animate(sidebarReset, deactivate)
+                        .attr('data-' + attr, 'disabled');
 
                     $mask.fadeOut(duration);
                 }
@@ -165,58 +157,39 @@
                     csbw = $sidebar.width();
 
                 //Redefining animationReset
-                if ('right' === align) {
-                    animationReset = {
-                        right: '-=' + csbw,
-                        left: '+=' + csbw
-                    };
-                } else if ('left' === align) {
-                    animationReset = {
-                        right: '+=' + csbw,
-                        left: '-=' + csbw
-                    };
-                }
+                animationReset[pAlign] = '-=' + csbw;
+                animationReset[sAlign] = '+=' + csbw;
+                sidebarReset[pAlign] = -csbw;
 
                 if (isWhat === 'active') {
 
-                    $elements.animate(animationReset, {
-                        duration: duration,
-                        easing: easing,
-                        complete: overflowTrue
-                    });
+                    $elements.not($sidebar)
+                        .animate(animationReset, deactivate);
 
-                    $sidebar.attr('data-' + attr, 'disabled');
+                    $sidebar.animate(sidebarReset, deactivate)
+                        .attr('data-' + attr, 'disabled');
 
                     $mask.fadeOut(duration);
                 }
             });
 
+            //closing sidebar when a link is clicked
             $sidebar.on('click', $links, function() {
                 var isWhat = $sidebar.attr('data-' + attr),
                     csbw = $sidebar.width();
 
                 //Redefining animationReset
-                if ('right' === align) {
-                    animationReset = {
-                        right: '-=' + csbw,
-                        left: '+=' + csbw
-                    };
-                } else if ('left' === align) {
-                    animationReset = {
-                        right: '+=' + csbw,
-                        left: '-=' + csbw
-                    };
-                }
+                animationReset[pAlign] = '-=' + csbw;
+                animationReset[sAlign] = '+=' + csbw;
+                sidebarReset[pAlign] = -csbw;
 
                 if (isWhat === 'active') {
 
-                    $elements.animate(animationReset, {
-                        duration: duration,
-                        easing: easing,
-                        complete: overflowTrue
-                    });
+                    $elements.not($sidebar)
+                        .animate(animationReset, deactivate);
 
-                    $sidebar.attr('data-' + attr, 'disabled');
+                    $sidebar.animate(sidebarReset, deactivate)
+                        .attr('data-' + attr, 'disabled');
 
                     $mask.fadeOut(duration);
                 }
@@ -224,8 +197,7 @@
 
             //Adjusting width and resetting sidebar on window resize
             $(window).resize(function() {
-                var rsbw, reset,
-                    isWhat = $sidebar.attr('data-' + attr),
+                var rsbw, reset, isWhat = $sidebar.attr('data-' + attr),
                     nw = $(window).width();
 
                 if (nw < winMaxW) {
@@ -238,34 +210,16 @@
                     width: rsbw
                 };
 
-                //Redefining animationReset
-                if ('right' === align) {
-                    animationReset = {
-                        right: '-=' + rsbw,
-                        left: '+=' + rsbw
-                    };
-
-                    reset.right = -rsbw;
-                    reset.left = '';
-
-                } else if ('left' === align) {
-                    animationReset = {
-                        right: '+=' + rsbw,
-                        left: '-=' + rsbw
-                    };
-
-                    reset.left = -rsbw;
-                    reset.right = '';
-                }
+                //Redefining animations ad CSS
+                animationReset[pAlign] = '-=' + rsbw;
+                animationReset[sAlign] = '+=' + rsbw;
+                reset[pAlign] = -rsbw;
+                reset[sAlign] = '';
 
                 if (isWhat === 'active') {
 
                     $elements.not($sidebar)
-                        .animate(animationReset, {
-                            duration: duration,
-                            easing: easing,
-                            complete: overflowTrue
-                        });
+                        .animate(animationReset, deactivate);
 
                     $sidebar.css(reset)
                         .attr('data-' + attr, 'disabled');
