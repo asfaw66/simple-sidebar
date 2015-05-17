@@ -1,4 +1,4 @@
-//Simple Sidebar v2.0.6
+//Simple Sidebar v2.0.5
 //http://www.github.com/dcdeiv/simple-sidebar
 // GPLv2 http://www.gnu.org/licenses/gpl-2.0-standalone.html
 (function($) {
@@ -197,8 +197,10 @@
 
             //Adjusting width and resetting sidebar on window resize
             $(window).resize(function() {
-                var rsbw, reset, isWhat = $sidebar.attr('data-' + attr),
-                    nw = $(window).width();
+                var rsbw,
+                    isWhat = $sidebar.attr('data-' + attr),
+                    nw = $(window).width(),
+                    reset = {};
 
                 if (nw < winMaxW) {
                     rsbw = nw - gap;
@@ -206,28 +208,23 @@
                     rsbw = sbMaxW;
                 }
 
-                reset = {
-                    width: rsbw
-                };
-
                 //Redefining animations ad CSS
                 animationReset[pAlign] = '-=' + rsbw;
                 animationReset[sAlign] = '+=' + rsbw;
                 reset[pAlign] = -rsbw;
                 reset[sAlign] = '';
+                reset.width = rsbw;
+
+                $sidebar.css(reset)
+                    .attr('data-' + attr, 'disabled');
 
                 if (isWhat === 'active') {
 
                     $elements.not($sidebar)
                         .animate(animationReset, deactivate);
 
-                    $sidebar.css(reset)
-                        .attr('data-' + attr, 'disabled');
-
                     $mask.fadeOut(duration);
                 }
-
-
             });
         });
     };
