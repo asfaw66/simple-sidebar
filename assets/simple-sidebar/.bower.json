@@ -1,6 +1,6 @@
 {
   "name": "simple-sidebar",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "homepage": "https://github.com/dcdeiv/simple-sidebar",
   "authors": [
     "dcdeiv <davide.dicriscito@gmail.com>"
@@ -25,14 +25,13 @@
     "tests",
     "bower"
   ],
-  "_release": "2.0.4",
+  "_release": "2.0.5",
   "_resolution": {
     "type": "version",
-    "tag": "v2.0.4",
-    "commit": "76673d4a8296243fc3c4ac1257b30933fae759f0"
+    "tag": "v2.0.5",
+    "commit": "cec70a2d6e5626f58affee1c7616bae4b576e8fd"
   },
   "_source": "git://github.com/dcdeiv/simple-sidebar.git",
   "_target": "~2.0.4",
-  "_originalSource": "simple-sidebar",
-  "_direct": true
+  "_originalSource": "simple-sidebar"
 }

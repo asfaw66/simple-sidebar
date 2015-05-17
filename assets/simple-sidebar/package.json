@@ -1,6 +1,6 @@
 {
   "name": "simple-sidebar",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "A simple jQuery sidebar plugin",
   "main": "jquery.simplesidebar.min.js",
   "scripts": {
