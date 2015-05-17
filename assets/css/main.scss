@@ -32,17 +32,3 @@
 		display: none;
 	}
 }
-
-#download {
-    table {
-		tr {
-			td {
-				padding-bottom: 12pt;
-				
-				&:first-child {
-					padding-right: 5pt;
-				}
-			}
-		}
-	}
-}
