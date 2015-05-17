@@ -8,6 +8,10 @@
     #{$links} {
         font-size: inherit;
     }
+    
+    .glyphicon {
+        top: 5px;
+    }
 }
 
 .navbar-fixed-top {
@@ -18,29 +22,41 @@
 }
 
 .navbar-content {
-    line-height: $navbarHeight;
-    
-    nav {
-        ul {
+    margin-top: 6px;
+}
+
+.navbar-icons {
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        
+        li {
+            font-size: $iconSize;
+            top: 0;
+            display: inline-block;
+            margin: 0 2.5pt;
             padding: 0 !important;
-            margin: 0 !important;
-            li {
-                padding: 0 !important;
-                margin: 0 !important;
-                padding-left: 14pt !important;
-                
-                display: inline-block;
-                
-                a {
-                    padding: 0 !important;
-                    margin: 0 !important;
-                }
+            
+            &:last-child, &:first-child {
+                margin: 0;
             }
+            
+            &:first-child {
+                margin-right: 2.5pt;
+            }
+            
+            &:last-child {
+                margin-left: 2.5pt;
+            }
+
         }
     }
 }
 
 #toggle-sidebar {
+    font-size: $menuBtn;
+    margin-top: 4pt;
+    display: inline-block;
     cursor: pointer;
-    font-size: $nbLogoTextSize;
 }

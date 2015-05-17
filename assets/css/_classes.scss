@@ -4,15 +4,12 @@
 	position: relative;
 }
 
-.glyphicon {
-	top: unset !important;
+.icon {
+	cursor: pointer;
 }
 
 .icon-32 {
-	font-size: 24px;
-	margin: 0 5pt;
-	display: block;
-	cursor: pointer;
+	font-size: 32px;
 }
 
 .reset-list {
