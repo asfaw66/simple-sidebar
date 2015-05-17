@@ -74,7 +74,10 @@ $( document ).ready(function() {
 	
 	<!-- navbar -->
     <div id="main-navbar" class="main-navbar navbar-fixed-top">
-        <span id="toggle-sidebar" class="icon glyphicon glyphicon-menu-hamburger right"></span>
+        <div class="navbar-content container">
+            <span id="toggle-sidebar" class="icon glyphicon glyphicon-menu-hamburger right"></span>
+            <div id="navbar-content-ajax"></div>
+        </div>
     </div>
     
 	<!--sidebar -->
@@ -94,7 +97,7 @@ $( document ).ready(function() {
 	$( '#support' ).load( 'http://dcdeiv.github.io/simple-sidebar/support.html' );
 	$( '#download' ).load( 'http://dcdeiv.github.io/simple-sidebar/download.html' );
     
-    $( '#main-navbar' ).load( 'http://dcdeiv.github.io/simple-sidebar/navbar.html #nav-icon-list', function() {       
+    $( '#navbar-content-ajax' ).load( 'http://dcdeiv.github.io/simple-sidebar/navbar.html #nav-icon-list', function() {       
         $( '#latest-release' ).URLrelease( 'simple-sidebar' );
         
         $( '#sidebar' ).load( 'http://dcdeiv.github.io/simple-sidebar/sidebar.html' )
