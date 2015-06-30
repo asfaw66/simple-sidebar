@@ -1,0 +1,52 @@
+//Classes
+.icon {
+  font-size: 32px;
+	width: 32px;
+	height: 32px;
+	display: block;
+	position: relative;
+	
+	img {
+		width: 24px;
+		height: 24px;
+		position: absolute;
+		top: 4px;
+		left: 4px;
+	}
+}
+
+//Container
+.container {
+    margin: 0 auto;
+}
+@media all and (max-width: 320px) {
+	.container {
+		margin: 0 .5em;
+	}
+}
+@media all and (max-width: 480px) {
+	.container {
+		margin: 0 1em;
+	}
+}
+@media all and (min-width: 480px) {
+	.container {
+		margin: 0 1.5em;
+	}
+}
+@media all and (min-width: 768px) {
+	.container {
+		margin: 0 2.5em;
+	}
+}
+@media all and (min-width: 992px) {
+	.container {
+		margin: 0 auto;
+		max-width: 80%;
+	}
+}
+@media all and (min-width: 1280px) {
+	.container {
+		max-width: 950px;
+	}
+}

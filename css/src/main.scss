@@ -1,0 +1,15 @@
+//MAIN SCSS FILE
+@import 'mixins';
+@import 'var_format';
+
+@import 'format';
+@import 'inputs';
+
+/*
+** template
+*/
+@import 'template/classes';
+@import 'template/template';
+@import 'template/navbar';
+@import 'template/sidebar';
+@import 'template/footer';

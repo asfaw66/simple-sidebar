@@ -1,0 +1,26 @@
+/*SIDEBAR*/
+.sidebar-wrapper {
+	position: relative;
+	height: 100%;
+	padding: 1em;
+	text-align: right;
+}
+
+.sidebar-header {
+	margin-bottom: 2em;
+}
+
+.nav-sidebar {
+	nav {
+		margin-bottom: 1em;
+		ul {
+			li {
+				display: block;
+				
+				a {
+					display: block;
+				}
+			}
+		}
+	}
+}
