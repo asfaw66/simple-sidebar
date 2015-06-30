@@ -1,1 +1,1 @@
-![Simple-Sidebar Logo](logo/logo.svg)
+![Simple-Sidebar Logo](assets/logo/logo-wide.svg)
