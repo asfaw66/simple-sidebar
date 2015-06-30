@@ -1,0 +1,27 @@
+{
+  "name": "simple-sidebar",
+  "version": "2.0.5",
+  "description": "A simple jQuery sidebar plugin",
+  "main": "jquery.simplesidebar.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dcdeiv/simple-sidebar.git"
+  },
+  "keywords": [
+    "simple",
+    "sidebar",
+    "javascript",
+    "jquery",
+    "js",
+    "plugin",
+    "responsive"
+  ],
+  "author": "Davide Di Criscito <davide.dicriscito@gmail.com> (http://github.com/dcdeiv)",
+  "license": "GPLv2",
+  "bugs": {
+    "url": "https://github.com/dcdeiv/simple-sidebar/issues"
+  }
+}
