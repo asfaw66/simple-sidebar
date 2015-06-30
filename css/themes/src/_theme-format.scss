@@ -80,7 +80,7 @@ input[type=text], input[type=email], input[type=date], input[type=datetime], inp
 .main-navbar {
     background-color: $navbarColor;
     color: $navbarText;
-    
+
     #toggle-sidebar {
         color: white;
         font-size: 32px;
@@ -117,6 +117,10 @@ input[type=text], input[type=email], input[type=date], input[type=datetime], inp
         &:active {
             color: $aLinkActive;
         }
+    }
 
+    code, pre {
+        background-color: $primaryColor;
+        color: $primaryText;
     }
 }
