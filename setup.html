@@ -1,0 +1,46 @@
+<h2>Set Up</h2>
+
+<p>In order to let the plugin work, you have to set up this template. It does not matter what classes or id you will choose.</p>
+
+<pre>
+//position-relative
+&lt;div id="wrapper"&gt;
+//all your content must go here.
+//Every POSITION-FIXED ELEMENT must be positioned outside of this wrapper.
+//Every POSITION-ABSOLUTE ELEMENT must be positioned inside a POSITION-RELATIVE div.
+&lt;/div>
+
+//position-fixed to top
+&lt;div id="navbar"&gt;
+&lt;span id="button" class="icon icon-whatever"&gt;&lt;/span&gt;
+&lt;/div&gt;
+
+//position-fixed to left or right
+&lt;div id="sidebar" class="sidebar sidebar-whatever">
+//content of your sidebar
+&lt;a class="close-sidebar" href="#"&gt;Link&lt;/a&gt;
+&lt;a class="close-sidebar" href="#"&gt;Link&lt;/a&gt;
+&lt;a class="close-sidebar" href="#"&gt;Link&lt;/a&gt;
+&lt;a class="close-sidebar" href="#"&gt;Link&lt;/a&gt;
+&lt;/div>
+</pre>
+<p>Include the minified version of this plugin and run the function with at least these options:</p>
+
+<pre>
+&lt;script src="path/to/simple-sidebar/jquery.simplesidebar.min.js"&lt;/script&gt;
+&lt;script&gt;
+$('#sidebar').simpleSidebar({
+    opener: '#button',
+    wrapper: '#wrapper',
+    sidebar: {
+        align: 'right' //or 'left' - This option can be ignored, the sidebar will authomatically align to right.
+        width: 300 //You can ingnore this option, the sidebar will authomatically size itselt to 300px.
+        closingLinks: '.close-sidebar' // If you ignore this option, the plugin will look for all links and can be buggy. Choose a class for every object inside the sidebar that once clicked will close the sidebar.
+        css: {
+        //Here you can add more css rules but you should use your own stylesheet.
+        zIndex: 3000 //Choose the amount of zIndex you want. It must be the higher zIndex number.
+        }
+    }
+});
+&lt;/script&gt;
+</pre>

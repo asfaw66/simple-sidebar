@@ -57,112 +57,9 @@
 
             <div id="download" class="section"></div>
 
-            <div id="setup" class="section">
-    	        <h2>Set Up</h2>
+            <div id="setup" class="section"></div>
 
-    	        <p>In order to let the plugin work, you have to set up this template. It does not matter what classes or id you will choose.</p>
-
-<pre>
-//position-relative
-&lt;div id="wrapper"&gt;
-    //all your content must go here.
-    //Every POSITION-FIXED ELEMENT must be positioned outside of this wrapper.
-    //Every POSITION-ABSOLUTE ELEMENT must be positioned inside a POSITION-RELATIVE div.
-&lt;/div>
-
-//position-fixed to top
-&lt;div id="navbar"&gt;
-    &lt;span id="button" class="icon icon-whatever"&gt;&lt;/span&gt;
-&lt;/div&gt;
-
-//position-fixed to left or right
-&lt;div id="sidebar" class="sidebar sidebar-whatever">
-    //content of your sidebar
-    &lt;a class="close-sidebar" href="#"&gt;Link&lt;/a&gt;
-    &lt;a class="close-sidebar" href="#"&gt;Link&lt;/a&gt;
-    &lt;a class="close-sidebar" href="#"&gt;Link&lt;/a&gt;
-    &lt;a class="close-sidebar" href="#"&gt;Link&lt;/a&gt;
-&lt;/div>
-</pre>
-                <p>Include the minified version of this plugin and run the function with at least these options:</p>
-
-<pre>
-&lt;script src="path/to/simple-sidebar/jquery.simplesidebar.min.js"&lt;/script&gt;
-&lt;script&gt;
-    $('#sidebar').simpleSidebar({
-        opener: '#button',
-        wrapper: '#wrapper',
-        sidebar: {
-            align: 'right' //or 'left' - This option can be ignored, the sidebar will authomatically align to right.
-            width: 300 //You can ingnore this option, the sidebar will authomatically size itselt to 300px.
-            closingLinks: '.close-sidebar' // If you ignore this option, the plugin will lool for all links and can be buggy. Choose a class for every object inside the sidebar that once clicked will close the sidebar.
-            css: {
-                //Here you can add more css rules but you should use your own stylesheet.
-                zIndex: 3000 //Choose the amount of zIndex you want. It must be the higher zIndex number.
-            }
-        }
-    });
-&lt;/script&gt;
-</pre>
-    	    </div>
-
-    	    <div id="options" class="section">
-    	        <h2>Options</h2>
-    	        <ol>
-                    <li><b>opener</b>: the selector for the button/icon that will trigger the animation;</li>
-                    <li><b>wrapper</b>: selector for the content of your entire website except all elements that are positioned fixed (for example the navbar and the sidebar), position absolute elements inside this wrapper must be wrapped inside a div with position:relative attribute;</li>
-                    <li><b>ignore</b>: selector for all elements that must be ignored;</li>
-                    <li><b>add</b>: selector for all elements that must be added if the plugin is ignoring them accidentaly;</li>
-                    <li><b>attr</b>: the <code>data-*</code> attribute to make the plugin works. If <code>ssbplugin</code> is somehow causing you issues, you can change it;</li>
-                    <li><b>top</b>: the <code>position-top</code> of the entire plugin. You can choose whatever number you want (better if you choose it according to the navbar's height) or let it to be 0;</li>
-                    <li><b>animation</b>:
-                        <ul>
-                            <li><b>duration</b>: the duration of the animation in milliseconds;</li>
-                            <li><b>easing</b>: the type of animation. For more animations include the <code>jQuery-UI</code> library and check out [this page](https://jqueryui.com/easing/). I strongly suggest not to play with easing because they haven't been tested all yet. I suggest to use simple easing like <code>easeOutQuint</code>;</li>
-                        </ul>
-                    </li>
-
-                    <li><b>sidebar</b>:
-                        <ul>
-                            <li><b>align</b>: default is <code>undefined</code> which means that is aligned to the <i>right</i>, if you want to align it to the left, wright <code>left</code>;</li>
-                            <li><b>width</b>: the max width of the sidebar, this option is default to 350, please change it as you please;</li>
-                            <li><b>gap</b>: the gap is the space between the left margin of the sidebar and the left side of the window. It is useful when you position the plugin <code>top: 0</code>, so that the user can click that space to close the sidebar;</li>
-                            <li><b>closingLinks</b>: are all links or elements that close the sidebar. I suggest to choose a class and give it to all links and other elements such as icons, banner, images, etc, that are links. By default it is <code>a</code> so every link in the sidebar will close the sidebar;</li>
-                            <li><b>css</b>: here you can store all css, anyway I suggest not to add more css attributes to the one below;</li>
-                                <ul>
-                                    <li><b>zIndex</b>: by default is is 3000 but you have to change it to the higher z-index number in your css plus 1;</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li><b>subWrapper</b>;
-                        <ul>
-                            <li><b>display</b>: <code>true</code> or <code>false</code> false will remove this option;</li>
-                            <li><b>css</b>: here tou can store all css attributes to give the subWrapper. However I suggest to do it in your stylesheet except for these below. You can call this by its data attribute ex: <code[data-ssbplugin="subwrapper"]</code>;
-                                <ul>
-                                   <li><b>position</b>: 'relative';</li>
-                                   <li><b>height</b>: '100%';</li>
-                                   <li><b>overflowY</b>: 'auto';</li>
-                                   <li><b>overflowX</b>: 'hidden';</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><b>mask</b>:
-                        <ul>
-                            <li><b>display</b>:  <code>true</code> or <code>false</code> false will remove this option;</li>
-                            <li><b>css</b>: here you can store all css attributes to give the mask div. However I suggest to do it in your css file except for these below. You can call this div by its data attribute ex: <code>[data-ssbplugin="mask"]</code>;</li>
-                                <ul>
-                                    <li><b>backgroundColor</b>: the color of the mask. By default is <code>'black'</code>;</li>
-                                    <li><b>opacity</b>: by default is 0.5;</li>
-                                    <li><b>filter</b>: IE opacity 0.5 = 50 and so on: <code>'Alpha(opacity=50)'</code>.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ol>
-    	    </div>
+    	    <div id="options" class="section"></div>
         </div>
 
         <div id="footer" class="footer theme-accent"></div>
@@ -190,6 +87,8 @@ $( document ).ready(function() {
 
 	$( '#support-section' ).load( 'http://dcdeiv.github.io/simple-sidebar/support.html' );
 	$( '#download' ).load( 'http://dcdeiv.github.io/simple-sidebar/download.html' );
+    $( '#setup' ).load( 'http://dcdeiv.github.io/simple-sidebar/setup.html' );
+    $( '#options' ).load( 'http://dcdeiv.github.io/simple-sidebar/options.html' );
 
     $( '#main-navbar' ).load( 'http://dcdeiv.github.io/simple-sidebar/navbar.html', function() {
         $( '#download-pkg' ).URLrelease( 'simple-sidebar' );
