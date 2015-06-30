@@ -3,8 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
-    <meta name="theme-color" content="#9c27b0">
-    
+
+    <meta name="theme-color" content="#3f51b5">
+    <link rel="icon" sizes="192x192" type="image/png" href="assets/logo/192.png">
+    <link rel="shortcut icon" type="image/ico" href="assets/logo/favicon.ico">
+
     <meta name="keywords" content="simple-sidebar, simple sidebar, simple, sidebar, jquery, javascript, plugin, jquery plugin, dcdeiv, davidedc, sidebar left, sidebar right">
     <meta name="description" content="A simple sidebar written in jQuery.">
     <meta name="language" content="en">
@@ -19,100 +22,106 @@
     <meta name="url" content="http://dcdeiv.github.io/simple-sidebar">
     <meta name="identifier-URL" content="http://dcdeiv.github.io/simple-sidebar">
 
-    <link rel='index' title='DeWitt Clinton' href='http://blog.unto.net/'>
-    <link rel='publisher' href='https://plus.google.com/+DavideDC/'>
-    <link rel='image_src' href='http://graph.facebook.com/dcdeiv/picture?type=large' type='image/jpeg'>
-    
     <title>Simple Sidebar - Demo Right</title>
-    
-    <link rel="stylesheet" type="text/css" href="../assets/css/standalones/normalize.min.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/standalones/glyphicons.min.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/standalones/roboto.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/main.min.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/themes/purple.min.css">
-    
+
+    <link rel="stylesheet" type="text/css" href="../lib/normalize.css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../css/roboto.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/themes/indigo.css">
+
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <![endif]-->
-    
-<style>
-    #navbar-content-ajax {
-        float: left;
-        direction: rtl;
-    }
-</style>
-    
+
 </head>
 
 <body>
-    <!-- content -->
-    <div id="main" class="main container main-fixed-top">
-		<header class="main-header">
-		    <h1>Simple Sidebar</h1>
-		    <h2>Demo Right</h2>
-		    <h3>A simple jQuery sidebar plugin.</h3>
-		    
-		    <div id="support"></div>
-		</header>
-		
-		<section id="download"></section>
-	    
-	    <section id="options-right">
-	        <h2>Example of Right Options</h2>
-	        
-<pre>	        
+
+    <div id="main" class="main main-fixed-top">
+        <div class="section-header">
+            <div class="container">
+                <header>
+                    <h1>Simple-Sidebar</h1>
+                    <h3>demo right</h3>
+                </header>
+
+                <div class="support">
+                    <div id="flattr-button" class="support-btn">
+                        <script id='fbcu3fg'>(function(i){var f,s=document.getElementById(i);f=document.createElement('iframe');f.src='//api.flattr.com/button/view/?uid=dcdeiv&button=compact&url='+encodeURIComponent(document.URL);f.title='Flattr';f.height=20;f.width=110;f.style.borderWidth=0;s.parentNode.insertBefore(f,s);})('fbcu3fg');</script>
+                    </div>
+                    <div id="donate-button" class="support-btn">
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                            <input type="hidden" name="cmd" value="_s-xclick">
+                            <input type="hidden" name="hosted_button_id" value="7UUHHQTPNEAJ4">
+                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                            <img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="section alert">
+                <h3>Check out <b><a href="http://dcdeiv.github.io/simpler-sidebar">Simpler-Sidebar</a></b>, a much simpler fork of Simple-Sidebar.</h3>
+            </div>
+
+            <div id="download" class="section"></div>
+
+            <div id="options-right">
+    	        <h2>Example of Right Options</h2>
+
+<pre>
 $( document ).ready(function() {
-    
+
     $.fn.simpleSidebar.settings.opener = "#toggle-sidebar";
     $.fn.simpleSidebar.settings.wrapper = "#main";
     $.fn.simpleSidebar.settings.animation.easing = "easeOutQuint";
     $.fn.simpleSidebar.settings.sidebar.align = "right";
     $.fn.simpleSidebar.settings.sidebar.closingLinks = ".close-sb";
     $.fn.simpleSidebar.settings.sidebar.subWrapper = false;
-        
+
     $( '#sidebar' ).simpleSidebar();
 });
 </pre>
-            
-            <h3>See full list of <em>options</em> <a href="http://github.com/dcdeiv/simple-sidebar" target="_blank">here</a>.</h3>
-	    </section>
-	</div>
-	<!-- end content -->
-	
-	<!-- navbar -->
-    <div id="main-navbar" class="main-navbar navbar-fixed-top">
-        <div class="navbar-content container">
-            <span id="toggle-sidebar" class="icon glyphicon glyphicon-menu-hamburger right"></span>
-            <div id="navbar-content-ajax"></div>
-        </div>
-    </div>
-    
-	<!--sidebar -->
-	<div id="sidebar" class="theme-accent sidebar sidebar-right"></div>
 
-<!-- analitics -->
-<script src="../assets/js/googleanalitics.js"></script>
+                <h3>See full list of <em>options</em> <a href="http://github.com/dcdeiv/simple-sidebar" target="_blank">here</a>.</h3>
+    	    </div>
+        </div>
+        <!--end of content-->
+
+        <div id="footer" class="footer theme-accent"></div>
+    </div>
+
+    <!--navbar-->
+    <div id="main-navbar" class="main-navbar navbar-fixed-top"></div>
+    <!--end navbar-->
+
+    <!--sidebar-->
+    <div id="sidebar" class="sidebar sidebar-left"></div>
+    <!--end sidebar-->
 
 <!-- plugins -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-<script src="../assets/simple-sidebar/jquery.simplesidebar.min.js"></script>
-<script src="../assets/js/latest-release.js"></script>
+<script src="../js/built.js"></script>
+<script src="../lib/simple-sidebar/jquery.simplesidebar.min.js"></script>
 <script>
 $( document ).ready(function() {
     $.ajaxSetup({
 		cache: false
 	});
-	
-	$( '#support' ).load( 'http://dcdeiv.github.io/simple-sidebar/support.html' );
+
+	//$( '#support' ).load( 'http://dcdeiv.github.io/simple-sidebar/support.html' );
 	$( '#download' ).load( 'http://dcdeiv.github.io/simple-sidebar/download.html' );
-    
-    $( '#navbar-content-ajax' ).load( 'http://dcdeiv.github.io/simple-sidebar/navbar.html #nav-icon-list', function() {       
-        $( '#latest-release' ).URLrelease( 'simple-sidebar' );
-        
+
+    $( '#main-navbar' ).load( 'http://dcdeiv.github.io/simple-sidebar/navbar.html', function() {
+        $( '#download-pkg' ).URLrelease( 'simple-sidebar' );
+
         $( '#sidebar' ).load( 'http://dcdeiv.github.io/simple-sidebar/sidebar.html' )
             .simpleSidebar({
-                opener: '#toggle-sidebar',
+                opener: '.toggle-sidebar',
                 wrapper: '#main',
                 animation: {
                     easing: "easeOutQuint"
@@ -126,6 +135,8 @@ $( document ).ready(function() {
                 }
             });
     });
+
+    $( '#footer' ).load( 'http://dcdeiv.github.io/simple-sidebar/footer.html' );
 });
 </script>
 </body>
