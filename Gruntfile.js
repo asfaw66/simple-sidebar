@@ -9,7 +9,6 @@ module.exports = function(grunt) {
                     style: 'compressed'
                 },
                 files: {
-                    'css/glyphicons.css': 'css/src/glyphicons.scss',
                     'css/main.css': 'css/src/main.scss',
 
                     //themes
