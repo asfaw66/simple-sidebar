@@ -3,7 +3,6 @@
 	position: relative;
 	height: 100%;
 	padding: 1em;
-	text-align: right;
 }
 
 .sidebar-header {
@@ -23,4 +22,12 @@
 			}
 		}
 	}
+}
+
+.sidebar-left {
+		text-align: left;
+}
+
+.sidebar-right {
+	text-align: right;
 }
