@@ -24,6 +24,22 @@
     padding-top: 16px;
 }
 
+.navbar-flipped {    
+    .toggle-sidebar {
+        float: left;
+    }
+    
+    .navbar-nav {
+        float: right;
+        direction: rtl;
+    }
+    
+    .logo {
+        margin-right: 0;
+        margin-left: 1em;
+    }
+}
+
 .toggle-sidebar {
     width: 32px;
     height: 32px;
