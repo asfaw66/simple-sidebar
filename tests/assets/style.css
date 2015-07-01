@@ -106,3 +106,19 @@ li a {
 [data-ssbplugin="subwrapper"] {
     padding: 1em;
 }
+
+.dynamic-right .main-navbar-content {
+    float: right;
+}
+
+.dynamic-left .main-navbar-content {
+    float: left;
+}
+
+.main-sidebar-wrapper {
+    position: relative;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1em;
+}
