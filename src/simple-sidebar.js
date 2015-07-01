@@ -80,8 +80,8 @@
                     }
                 },
 
-                $subWrapper = $('<div>').attr('data-' + attr, 'subwrapper')
-                    .css(opts.subWrapper.css),
+                $sbWrapper = $('<div>').attr('data-' + attr, 'sbWrapper')
+                    .css(opts.sbWrapper.css),
 
                 $mask = $('<div>').attr('data-' + attr, 'mask'),
 
@@ -151,8 +151,8 @@
                 .attr('data-' + attr, 'disabled');
 
             //Wrapping sidebar inner content if wrapInner.display is TRUE
-            if (true === opts.subwrapper.display) {
-                $sidebar.wrapInner($subWrapper);
+            if (true === opts.sbWrapper.display) {
+                $sidebar.wrapInner($sbWrapper);
             }
 
             //Animating the sidebar
@@ -230,7 +230,7 @@
                 zIndex: 3000
             }
         },
-        subWrapper: {
+        sbWrapper: {
             display: true,
             css: {
                 position: 'relative',

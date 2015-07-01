@@ -1,4 +1,4 @@
-/*! simple-sidebar v2.0.5 (https://dcdeiv.github.io/simple-sidebar)
+/*! simple-sidebar v2.1.3 (https://dcdeiv.github.io/simple-sidebar)
 ** Davide Di Criscito <davide.dicriscito@gmail.com> (http://github.com/dcdeiv)
 ** (c) 2014-2015 Licensed under GPLv2
 */
@@ -84,8 +84,8 @@
                     }
                 },
 
-                $subWrapper = $('<div>').attr('data-' + attr, 'subwrapper')
-                    .css(opts.subWrapper.css),
+                $sbWrapper = $('<div>').attr('data-' + attr, 'sbWrapper')
+                    .css(opts.sbWrapper.css),
 
                 $mask = $('<div>').attr('data-' + attr, 'mask'),
 
@@ -155,8 +155,8 @@
                 .attr('data-' + attr, 'disabled');
 
             //Wrapping sidebar inner content if wrapInner.display is TRUE
-            if (true === opts.subwrapper.display) {
-                $sidebar.wrapInner($subWrapper);
+            if (true === opts.sbWrapper.display) {
+                $sidebar.wrapInner($sbWrapper);
             }
 
             //Animating the sidebar
@@ -234,7 +234,7 @@
                 zIndex: 3000
             }
         },
-        subWrapper: {
+        sbWrapper: {
             display: true,
             css: {
                 position: 'relative',
