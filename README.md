@@ -6,6 +6,8 @@ A simple jQuery sidebar.
 * [Simple-Sidebar Home Page](http://dcdeiv.github.io/simple-sidebar)
 * A *much more simpler* fork: [simpler-sidebar](http://www.github.com/dcdeiv/simpler-sidebar)!
 
+[![NPM](https://nodei.co/npm/simple-sidebar.png)](https://nodei.co/npm/simple-sidebar/)
+
 ## Getting Started
 Download the [production version][min] of the [development version][max].
 
@@ -32,14 +34,16 @@ In order to let simple-sidebar work, you have to set up this template. Classes a
 <div id="navbar">
 	<!--
 	#navbar is positioned fixed.
-	It does not matter what element is this, give it a selector.
+
+	It does not matter what element #toggle-sidebar is, give it a selector (in this example #toggle-sidebar).
 	-->
 	<span id="toggle-sidebar" class="button icon"></span>
 </div>
 
 <div id="sidebar">
 	<!--
-	Simple-Sidebar will handle #sidebar's positioning.
+	Simple-Sidebar will handle #sidebar's position.
+
 	Links below are just an example. Give each clickable element, for example links, a class to trigger the closing animation.
 	-->
 	<a class="close-sidebar" href="#">Link</a>
@@ -49,7 +53,7 @@ In order to let simple-sidebar work, you have to set up this template. Classes a
 </div>
 ```
 
-At the bottom of the web page, just before the `</body>` tag, include the **jQuery** library, if you are interested in better *easing*, include the **jQuery-UI** library too. Eventually include Simple-Sidebar.
+At the bottom of the web page, just before the `</body>` tag, include the **jQuery** library. If you are interested in better *easing*, include the **jQuery-UI** library too. Eventually include Simple-Sidebar.
 
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -66,9 +70,9 @@ Call the Simple-Sidebar plug-in function and fill it with the options you need. 
 			opener: '#button',
 	        wrapper: '#wrapper',
 	        sidebar: {
-	            align: 'right' //or 'left' - This option can be ignored, the sidebar will authomatically align to right.
-	            width: 300 //You can ignore this option, the sidebar will authomatically size itself to 300px.
-	            closingLinks: '.close-sidebar' // If you ignore this option, the plugin will look for all links and this can be buggy. Choose a class for every object inside the sidebar that once clicked will close the sidebar.
+	            align: 'left', //or 'right' - This option can be ignored, the sidebar will authomatically align to right.
+	            width: 300, //You can ignore this option, the sidebar will automatically size itself to 300px.
+	            closingLinks: '.close-sidebar' // If you ignore this option, the plug-in will look for all links and this can be buggy. Choose a class for every object inside the sidebar that once clicked will close the sidebar.
 	            css: {
 	                //Here you can add more css rules but you should use your own stylesheet.
 	                zIndex: 3000 //Choose the amount of zIndex you want. It must be the higher zIndex number.
@@ -84,14 +88,14 @@ This is a full list of options.
 You can override the single option by using the plug-in API or directly in the function.
 
 ### How to use the public access to plug-in options:
-The base API is `$.fn.simpleSidebar.settings` see [option list](#option-list) to the full list of apis available.
+The base API is `$.fn.simpleSidebar.settings`. Check [Options List](#Options-List) out to see the full list of APIs available.
 
 ```javascript
-$.fn.simpleSidebar.settings.opener = '#button';
+$.fn.simpleSidebar.settings.opener = '#toggle-sidebar';
 $.fn.simpleSidebar.settings.wrapper = '#wrapper';
-$.fn.simpleSidebar.settings.sidebar.align = 'right';
+$.fn.simpleSidebar.settings.sidebar.align = 'left';
 $.fn.simpleSidebar.settings.sidebar.width = '300';
-$.fn.simpleSidebar.settings.sidebar.closingLinks = '.clode-sidebar';
+$.fn.simpleSidebar.settings.sidebar.closingLinks = '.close-sidebar';
 $.fn.simpleSidebar.settings.sidebar.css.zIndex = '3000';
 
 $( '#sidebar' ).simpleSidebar();
@@ -105,32 +109,32 @@ $.fn.simpleSidebar.settings.mask.css = {
 };
 ```
 
-### Option List:
+### Options List:
 * **opener**: selector for the button/icon that will trigger the animation.
 * **wrapper**: selector for the content of your entire website except all elements that are positioned fixed (for example `#navbar` and `#sidebar`), position absolute elements inside this wrapper must be wrapped inside a div with `position:relative` attribute.
 * **ignore**: selector for all elements that must be ignored.
 * **add**: selector for all elements that must be added if the plug-in is ignoring them accidentally.
-* **attr**: the `data-*` attribute to make the plug-in works. If `ssbplugin` is somehow causing you issues, you can change it.
-* **animation**
+* **attr**: the `data-*` attribute to make the plug-in works. If `simplesidebar` is somehow causing you issues, you can change it.
+* **animation**:
   * **duration**: the duration of the animation in milliseconds.
   * **easing**: the type of animation. For more animations include the *jQuery-UI* library and check out [this page](https://jqueryui.com/easing/). I strongly suggest not to play with easing because they haven't been tested all yet. I suggest to use simple easing like `easeOutQuint`.
-* **sidebar**
+* **sidebar**:
   * **align**: default is `undefined` which means that is aligned to *right*. If you want to align it to left, write `left`.
   * **width**: the max width of the sidebar, this option is default to 300, please change it as you please.
   * **gap**: the gap is the space between the left margin of the sidebar and the left side of the window (and viceversa). It is useful so that the user can click that space to close the sidebar.
-  * **closingLinks**: are all links or elements that close the sidebar. I suggest to choose a class and give it to all links and other elements such as icons, banner, images, etc, that are links or that are supposed to be clicked. By default it is `a` so every link in the sidebar will close the sidebar.
+  * **closingLinks**: links or elements that close the sidebar. I suggest to choose a class and give it to all links and other elements such as icons, banner, images, etc, that are links or that are supposed to be clicked. By default it is `a` so every link in the sidebar will close the sidebar. It can be more then one.
   * **css** here you can store all css, anyway I suggest not to add more css attributes to the one below.
     * **zIndex**: by default is is 3000 but you have to change it to the higher z-index number in your css plus 1.
-* **sbWrapper**
- * **display**: `true` or `false`. `false` will remove this option.
- * **css**: here you can store all css attributes to give the sbWrapper. However I suggest to do it in your stylesheet except for these below. You can call this by its data attribute ex: `[data-ssbplugin="sbwrapper"]`.
-   * **position**: 'relative'.
-   * **height**: '100%'.
-   * **overflowY**: 'auto'.
-   * **overflowX**: 'hidden'.
+* **sbWrapper**:
+  * **display**: `true` or `false`. `false` will remove this option.
+  * **css**: here you can store all css attributes to give the sbWrapper. However I suggest to do it in your stylesheet except for these below. You can call this by its data attribute ex: `[data-ssbplugin="sbwrapper"]`.
+    * **position**: 'relative'.
+    * **height**: '100%'.
+    * **overflowY**: 'auto'.
+    * **overflowX**: 'hidden'.
 * **mask**:
   * **display**: `true` or `false`. `false` will remove this option.
-  * **css**: here you can store all css attributes to give the mask div. However I suggest to do it in your css file except for these below. You can call this div by its data attribute ex: `[data-ssbplugin="mask"]`.
+  * **css**: here you can store all css attributes to give the mask div. However I suggest to do it in your css file except for these below. You can call this div by its data attribute for example: `[data-simplesidebar="mask"]`.
     * **backgroundColor**: the color of the mask. By default is `'black'`.
     * **opacity**: by default is 0.5.
     * **filter**: IE opacity 0.5 = 50 and so on: `'Alpha(opacity=50)'`.
@@ -138,7 +142,7 @@ $.fn.simpleSidebar.settings.mask.css = {
 ## Release History
 
 * **v2.1.4** (2015-07-01) -
-  * Add Grunt. Simple-Sidebar files are moved to `/dist` and are renamed to *jquery.simple-sidebar.js* and *jquery.simple-sidebar.min.js*.
+  * Add Grunt. Simple-Sidebar files are moved to `dist/` and renamed to *jquery.simple-sidebar.js* and *jquery.simple-sidebar.min.js*.
   * Add `/test` folder to better handle actual browser tests.
   * Add jQuery v1~ as dependency of NPM and Bower.
   * Fix #10, and animations functions.
