@@ -217,7 +217,7 @@
 
     //options
     $.fn.simpleSidebar.settings = {
-        attr: 'ssbplugin',
+        attr: 'simplesidebar',
         animation: {
             duration: 500,
             easing: 'swing'
