@@ -40,8 +40,8 @@ li a {
 
 .main-content {
     position: relative;
-    top: 42px;
-    padding: 0 1em;
+    margin-top: 42px;
+    padding: 1em;
 }
 
 .section {
@@ -103,7 +103,7 @@ li a {
     text-align: left;
 }
 
-[data-ssbplugin="subwrapper"] {
+[data-ssbplugin="sbWrapper"] {
     padding: 1em;
 }
 
