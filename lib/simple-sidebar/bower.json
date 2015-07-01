@@ -1,12 +1,12 @@
 {
   "name": "simple-sidebar",
-  "version": "2.0.5",
+  "version": "2.1.4",
   "homepage": "https://github.com/dcdeiv/simple-sidebar",
   "authors": [
     "dcdeiv <davide.dicriscito@gmail.com>"
   ],
   "description": "A simple jQuery sidebar plugin",
-  "main": "jquery.simplesidebar.min.js",
+  "main": "dist/jquery.simple-sidebar.min.js",
   "keywords": [
     "simple",
     "sidebar",
@@ -19,10 +19,14 @@
   "license": "GPLv2",
   "ignore": [
     "**/.*",
-    "node_modules",
     "bower_components",
-    "test",
-    "tests",
-    "bower"
-  ]
+    "node_modules",
+    "CONTRIBUITING.md",
+    "Gruntfile.js",
+    "package.json",
+    "src"
+  ],
+  "dependencies": {
+    "jquery": "1"
+  }
 }

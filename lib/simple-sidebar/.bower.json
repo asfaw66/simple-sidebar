@@ -1,12 +1,12 @@
 {
   "name": "simple-sidebar",
-  "version": "2.0.5",
+  "version": "2.1.4",
   "homepage": "https://github.com/dcdeiv/simple-sidebar",
   "authors": [
     "dcdeiv <davide.dicriscito@gmail.com>"
   ],
   "description": "A simple jQuery sidebar plugin",
-  "main": "jquery.simplesidebar.min.js",
+  "main": "dist/jquery.simple-sidebar.min.js",
   "keywords": [
     "simple",
     "sidebar",
@@ -19,20 +19,24 @@
   "license": "GPLv2",
   "ignore": [
     "**/.*",
-    "node_modules",
     "bower_components",
-    "test",
-    "tests",
-    "bower"
+    "node_modules",
+    "CONTRIBUITING.md",
+    "Gruntfile.js",
+    "package.json",
+    "src"
   ],
-  "_release": "2.0.5",
+  "dependencies": {
+    "jquery": "1"
+  },
+  "_release": "2.1.4",
   "_resolution": {
     "type": "version",
-    "tag": "v2.0.5",
-    "commit": "cec70a2d6e5626f58affee1c7616bae4b576e8fd"
+    "tag": "v2.1.4",
+    "commit": "65ec9e58431c140c130a0a4ac2a3a3194acd0a86"
   },
   "_source": "git://github.com/dcdeiv/simple-sidebar.git",
-  "_target": "~2.0.5",
+  "_target": "~2.1.4",
   "_originalSource": "simple-sidebar",
   "_direct": true
 }
