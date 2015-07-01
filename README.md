@@ -137,7 +137,7 @@ $.fn.simpleSidebar.settings.mask.css = {
 
 ## Release History
 
-* **v2.1.3** (2015-07-01) -
+* **v2.1.4** (2015-07-01) -
   * Add Grunt. Simple-Sidebar files are moved to `/dist` and are renamed to *jquery.simple-sidebar.js* and *jquery.simple-sidebar.min.js*.
   * Add `/test` folder to better handle actual browser tests.
   * Add jQuery v1~ as dependency of NPM and Bower.
