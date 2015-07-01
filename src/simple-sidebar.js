@@ -80,7 +80,7 @@
                     }
                 },
 
-                $sbWrapper = $('<div>').attr('data-' + attr, 'sbWrapper')
+                $sbWrapper = $('<div>').attr('data-' + attr, 'sbwrapper')
                     .css(opts.sbWrapper.css),
 
                 $mask = $('<div>').attr('data-' + attr, 'mask'),
