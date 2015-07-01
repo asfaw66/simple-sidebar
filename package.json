@@ -1,6 +1,6 @@
 {
   "name": "simple-sidebar",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "description": "A simple jQuery sidebar",
   "main": "src/jquery.simplesidebar.min.js",
   "homepage": "https://dcdeiv.github.io/simple-sidebar",
