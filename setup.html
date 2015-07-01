@@ -1,46 +1,63 @@
 <h2>Set Up</h2>
 
-<p>In order to let the plugin work, you have to set up this template. It does not matter what classes or id you will choose.</p>
+<p>In order to let simple-sidebar work, you have to set up this template. Classes and Ids are at your discretion.</p>
 
 <pre>
-//position-relative
 &lt;div id="wrapper"&gt;
-//all your content must go here.
-//Every POSITION-FIXED ELEMENT must be positioned outside of this wrapper.
-//Every POSITION-ABSOLUTE ELEMENT must be positioned inside a POSITION-RELATIVE div.
-&lt;/div>
-
-//position-fixed to top
-&lt;div id="navbar"&gt;
-&lt;span id="button" class="icon icon-whatever"&gt;&lt;/span&gt;
+    &lt;!--
+    All your content must go here.
+    This wrapper must be relative posizioned, unless Simple-Sidebar won't work properely.
+	* Every POSITION-FIXED ELEMENT must be positioned outside of this wrapper.
+	* Every POSITION-ABSOLUTE ELEMENT must be positioned inside a POSITION-RELATIVE div.
+	--&gt;
 &lt;/div&gt;
 
-//position-fixed to left or right
-&lt;div id="sidebar" class="sidebar sidebar-whatever">
-//content of your sidebar
-&lt;a class="close-sidebar" href="#"&gt;Link&lt;/a&gt;
-&lt;a class="close-sidebar" href="#"&gt;Link&lt;/a&gt;
-&lt;a class="close-sidebar" href="#"&gt;Link&lt;/a&gt;
-&lt;a class="close-sidebar" href="#"&gt;Link&lt;/a&gt;
-&lt;/div>
+&lt;div id="navbar"&gt;
+	&lt;!--
+	#navbar is positioned fixed.
+	It does not matter what element is this, give it a selector.
+	--&gt;
+	&lt;span id="toggle-sidebar" class="button icon"&gt;&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div id="sidebar"&gt;
+	&lt;!--
+	Simple-Sidebar will handle #sidebar's positioning.
+	Links below are just an example. Give each clickable element, for example links, a class to trigger the closing animation.
+	--&gt;
+	&lt;a class="close-sidebar" href="#"&gt;Link&lt;/a&gt;
+	&lt;a class="close-sidebar" href="#"&gt;Link&lt;/a&gt;
+	&lt;a class="close-sidebar" href="#"&gt;Link&lt;/a&gt;
+	&lt;a class="close-sidebar" href="#"&gt;Link&lt;/a&gt;
+&lt;/div&gt;
 </pre>
-<p>Include the minified version of this plugin and run the function with at least these options:</p>
+
+<p>At the bottom of the web page, just before the <code>&lt;/body&gt;</code> tag, include the <b>jQuery</b> library, if you are interested in better <i>easing</i>, include the <b>jQuery-UI</b> library too. Eventually include Simple-Sidebar.</p>
 
 <pre>
-&lt;script src="path/to/simple-sidebar/jquery.simplesidebar.min.js"&lt;/script&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"&gt;&lt;/script&gt;
+    &lt;script src="simple-sidebar/dist/jquery.simple-sidebar.min.js"&gt;&lt;/script&gt;
+</pre>
+
+<p>Call the Simple-Sidebar plug-in function and fill it with the options you need. Here is an example of some required options.</p>
+
+<pre>
 &lt;script&gt;
-$('#sidebar').simpleSidebar({
-    opener: '#button',
-    wrapper: '#wrapper',
-    sidebar: {
-        align: 'right' //or 'left' - This option can be ignored, the sidebar will authomatically align to right.
-        width: 300 //You can ingnore this option, the sidebar will authomatically size itselt to 300px.
-        closingLinks: '.close-sidebar' // If you ignore this option, the plugin will look for all links and can be buggy. Choose a class for every object inside the sidebar that once clicked will close the sidebar.
-        css: {
-            //Here you can add more css rules but you should use your own stylesheet.
-            zIndex: 3000 //Choose the amount of zIndex you want. It must be the higher zIndex number.
-        }
-    }
-});
+	$(document).ready(function() {
+		$('#sidebar').simpleSidebar({
+			opener: '#button',
+	        wrapper: '#wrapper',
+	        sidebar: {
+	            align: 'right' //or 'left' - This option can be ignored, the sidebar will authomatically align to right.
+	            width: 300 //You can ignore this option, the sidebar will authomatically size itself to 300px.
+	            closingLinks: '.close-sidebar' // If you ignore this option, the plugin will look for all links and this can be buggy. Choose a class for every object inside the sidebar that once clicked will close the sidebar.
+	            css: {
+	                //Here you can add more css rules but you should use your own stylesheet.
+	                zIndex: 3000 //Choose the amount of zIndex you want. It must be the higher zIndex number.
+	            }
+        	}
+		});
+	});
 &lt;/script&gt;
 </pre>
