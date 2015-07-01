@@ -1,10 +1,11 @@
 {
   "name": "simple-sidebar",
   "version": "2.0.5",
-  "description": "A simple jQuery sidebar plugin",
-  "main": "jquery.simplesidebar.min.js",
+  "description": "A simple jQuery sidebar",
+  "main": "src/jquery.simplesidebar.min.js",
+  "homepage": "https://dcdeiv.github.io/simple-sidebar",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "grunt"
   },
   "repository": {
     "type": "git",
@@ -13,15 +14,22 @@
   "keywords": [
     "simple",
     "sidebar",
+    "simple-sidebar",
     "javascript",
     "jquery",
     "js",
-    "plugin",
-    "responsive"
+    "plugin"
   ],
   "author": "Davide Di Criscito <davide.dicriscito@gmail.com> (http://github.com/dcdeiv)",
   "license": "GPLv2",
   "bugs": {
     "url": "https://github.com/dcdeiv/simple-sidebar/issues"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-uglify": "~0.2.0"
   }
 }

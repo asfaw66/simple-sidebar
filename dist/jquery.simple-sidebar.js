@@ -1,12 +1,14 @@
-//Simple Sidebar v2.0.5
-//http://www.github.com/dcdeiv/simple-sidebar
-// GPLv2 http://www.gnu.org/licenses/gpl-2.0-standalone.html
+/*! simple-sidebar v2.0.5 (https://dcdeiv.github.io/simple-sidebar)
+** Davide Di Criscito <davide.dicriscito@gmail.com> (http://github.com/dcdeiv)
+** (c) 2014-2015 Licensed under GPLv2
+*/
 (function($) {
     $.fn.simpleSidebar = function(options) {
         var opts = $.extend(true, $.fn.simpleSidebar.settings, options);
 
         return this.each(function() {
-            var pAlign, sAlign, ssbCSS, ssbStyle, maskCSS, maskStyle, sbw, attr = opts.attr,
+            var pAlign, sAlign, ssbCSS, ssbStyle, maskCSS, maskStyle, sbw,
+                attr = opts.attr,
                 $sidebar = $(this),
                 $btn = $(opts.opener),
                 $wrapper = $(opts.wrapper),
@@ -55,10 +57,12 @@
                 //defining elements to move
                 $siblings = $wrapper.siblings().not('script noscript'),
                 $elements = $wrapper.add($siblings)
-                .not($ignore)
-                .not($sidebar)
-                .not($mask)
-                .add($add);
+                    .not($ignore)
+                    .not($sidebar)
+                    .not($mask)
+                    .not('script')
+                    .not('noscript')
+                    .add($add);
 
             //Checking sidebar align
             if (opts.sidebar.align === undefined || opts.sidebar.align === 'right') {
@@ -126,7 +130,7 @@
                 var isWhat = $sidebar.attr('data-' + attr),
                     csbw = $sidebar.width();
 
-                //Defining animations 
+                //Defining animations
                 animationStart[pAlign] = '+=' + csbw;
                 animationStart[sAlign] = '-=' + csbw;
                 animationReset[pAlign] = '-=' + csbw;
@@ -229,6 +233,7 @@
         });
     };
 
+    //options
     $.fn.simpleSidebar.settings = {
         attr: 'ssbplugin',
         animation: {
