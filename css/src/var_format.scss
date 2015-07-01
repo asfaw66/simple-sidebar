@@ -44,7 +44,7 @@ $iconSize: 32px;
 //- Sidebar
 $sidebarWidth: 300px;
 $ssb-dataName: 'ssbplugin';
-$ssb-wrapper: '[data-' + $ssb-dataName + '="sub-wrapper"]';
+$ssb-wrapper: '[data-' + $ssb-dataName + '="sbWrapper"]';
 
 //
 //- Mixins
