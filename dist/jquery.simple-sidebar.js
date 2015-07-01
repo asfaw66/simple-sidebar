@@ -47,6 +47,43 @@
                     complete: autoFlow
                 },
 
+                animateOpen = function() {
+                    $elements.animate(animationStart, activate);
+
+                    $sidebar.animate(sidebarStart, activate)
+                        .attr('data-' + attr, 'active');
+
+                    $mask.fadeIn(duration);
+                },
+                animateClose = function() {
+                    $elements.animate(animationReset, deactivate);
+
+                    $sidebar.animate(sidebarReset, deactivate)
+                        .attr('data-' + attr, 'disabled');
+
+                    $mask.fadeOut(duration);
+                },
+                closeSidebar = function() {
+                    var isWhat = $sidebar.attr('data-' + attr),
+                        csbw = $sidebar.width();
+
+                    //Redefining animationReset
+                    animationReset[pAlign] = '-=' + csbw;
+                    animationReset[sAlign] = '+=' + csbw;
+                    sidebarReset[pAlign] = -csbw;
+
+                    if (isWhat === 'active') {
+
+                        $elements.not($sidebar)
+                            .animate(animationReset, deactivate);
+
+                        $sidebar.animate(sidebarReset, deactivate)
+                            .attr('data-' + attr, 'disabled');
+
+                        $mask.fadeOut(duration);
+                    }
+                },
+
                 $subWrapper = $('<div>').attr('data-' + attr, 'subwrapper')
                     .css(opts.subWrapper.css),
 
@@ -136,66 +173,17 @@
                 sidebarReset[pAlign] = -csbw;
 
                 if ('disabled' === isWhat) {
-                    $elements.animate(animationStart, activate);
-
-                    $sidebar.animate(sidebarStart, activate)
-                        .attr('data-' + attr, 'active');
-
-                    $mask.fadeIn(duration);
-
+                    animateOpen();
                 } else if ('active' === isWhat) {
-                    $elements.animate(animationReset, deactivate);
-
-                    $sidebar.animate(sidebarReset, deactivate)
-                        .attr('data-' + attr, 'disabled');
-
-                    $mask.fadeOut(duration);
+                    animateClose();
                 }
             });
 
             //Closing Sidebar
-            $mask.click(function() {
-                var isWhat = $sidebar.attr('data-' + attr),
-                    csbw = $sidebar.width();
-
-                //Redefining animationReset
-                animationReset[pAlign] = '-=' + csbw;
-                animationReset[sAlign] = '+=' + csbw;
-                sidebarReset[pAlign] = -csbw;
-
-                if (isWhat === 'active') {
-
-                    $elements.not($sidebar)
-                        .animate(animationReset, deactivate);
-
-                    $sidebar.animate(sidebarReset, deactivate)
-                        .attr('data-' + attr, 'disabled');
-
-                    $mask.fadeOut(duration);
-                }
-            });
+            $mask.click(closeSidebar);
 
             //closing sidebar when a link is clicked
-            $sidebar.on('click', $links, function() {
-                var isWhat = $sidebar.attr('data-' + attr),
-                    csbw = $sidebar.width();
-
-                //Redefining animationReset
-                animationReset[pAlign] = '-=' + csbw;
-                animationReset[sAlign] = '+=' + csbw;
-                sidebarReset[pAlign] = -csbw;
-
-                if (isWhat === 'active') {
-
-                    $elements.not($sidebar)
-                        .animate(animationReset, deactivate);
-
-                    $sidebar.animate(sidebarReset, deactivate)
-                        .attr('data-' + attr, 'disabled');
-
-                    $mask.fadeOut(duration);
-                }
-            });
+            $sidebar.on('click', $links, closeSidebar);
 
             //Adjusting width and resetting sidebar on window resize
             $(window).resize(function() {
