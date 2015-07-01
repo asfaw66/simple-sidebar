@@ -142,21 +142,21 @@ $.fn.simpleSidebar.settings.mask.css = {
   * Add `/test` folder to better handle actual browser tests.
   * Add jQuery v1~ as dependency of NPM and Bower.
   * Fix #10, and animations functions.
-  * Changed *subWrapper* option to *sbWrapper*.
+  * Change *subWrapper* option to *sbWrapper*.
 * **v2.0.5** (2015-05-17) - FIXED: right align bug and resize bug.
 * **v2.0.4** (2015-05-16) -
-  * Animating LEFT and RIGHT instead of margins.
-  * Fixed closingLinks AJAX and onResize bug.
+  * Animate LEFT and RIGHT instead of margins.
+  * Fix closingLinks AJAX and onResize bug.
 * **v2.0.0** (2015-05-15) -
-  * Provided public access to options: `$.fn.simpleSidebar.settings`.
+  * Provide public access to options: `$.fn.simpleSidebar.settings`.
   * Users can now disable *subWrapper* and *mask* (see #6).
   * Now you can download simple-sidebar via npm: `npm install simple-sidebar`.
-  * Changed `data` to `attr`.
-  * Added `add`, `subWrapper.display`, `mask.display`.
-  * Fixed absolute elements inside `wrapper` that moved twice.
+  * Change `data` to `attr`.
+  * Add `add`, `subWrapper.display`, `mask.display`.
+  * Fix absolute elements inside `wrapper` that moved twice.
 * **v1.2.2** (2015-05-07) -
-  * Changed `sidebar.style` to `sidebar.css` and `mask.style` to `mask.css`.
-  * Added `subWrapper.css` and `subwrapper.css.position: 'relative'`.
-* **v1.1.2** (2015-03-21) - Fixed #5. Removed #4.
-* **v1.1.0** (2014-10-01) - Fixed maskDiv double-click.
-* **v1.0.3** (2014-08-04) - Fixed issue #3.
+  * Change `sidebar.style` to `sidebar.css` and `mask.style` to `mask.css`.
+  * Add `subWrapper.css` and `subwrapper.css.position: 'relative'`.
+* **v1.1.2** (2015-03-21) - Fix #5. Remove #4.
+* **v1.1.0** (2014-10-01) - Fix maskDiv double-click.
+* **v1.0.3** (2014-08-04) - Fix #3.
