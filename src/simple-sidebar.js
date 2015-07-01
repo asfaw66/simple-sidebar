@@ -1,18 +1,16 @@
-//Simple Sidebar v2.0.5
-//http://www.github.com/dcdeiv/simple-sidebar
-// GPLv2 http://www.gnu.org/licenses/gpl-2.0-standalone.html
 (function($) {
     $.fn.simpleSidebar = function(options) {
         var opts = $.extend(true, $.fn.simpleSidebar.settings, options);
 
         return this.each(function() {
-            var pAlign, sAlign, ssbCSS, ssbStyle, maskCSS, maskStyle, sbw, attr = opts.attr,
+            var pAlign, sAlign, ssbCSS, ssbStyle, maskCSS, maskStyle, sbw,
+                attr = opts.attr,
                 $sidebar = $(this),
                 $btn = $(opts.opener),
                 $wrapper = $(opts.wrapper),
                 $ignore = $(opts.ignore),
                 $add = $(opts.add),
-                $links = $(opts.sidebar.closingLinks),
+                $links = opts.sidebar.closingLinks,
 
                 sbMaxW = opts.sidebar.width,
                 gap = opts.sidebar.gap,
@@ -45,20 +43,57 @@
                     complete: autoFlow
                 },
 
-                $subWrapper = $('<div>')
-                .attr('data-' + attr, 'subwrapper')
-                .css(opts.subWrapper.css),
+                animateOpen = function() {
+                    $elements.animate(animationStart, activate);
 
-                $mask = $('<div>')
-                .attr('data-' + attr, 'mask'),
+                    $sidebar.animate(sidebarStart, activate)
+                        .attr('data-' + attr, 'active');
+
+                    $mask.fadeIn(duration);
+                },
+                animateClose = function() {
+                    $elements.animate(animationReset, deactivate);
+
+                    $sidebar.animate(sidebarReset, deactivate)
+                        .attr('data-' + attr, 'disabled');
+
+                    $mask.fadeOut(duration);
+                },
+                closeSidebar = function() {
+                    var isWhat = $sidebar.attr('data-' + attr),
+                        csbw = $sidebar.width();
+
+                    //Redefining animationReset
+                    animationReset[pAlign] = '-=' + csbw;
+                    animationReset[sAlign] = '+=' + csbw;
+                    sidebarReset[pAlign] = -csbw;
+
+                    if (isWhat === 'active') {
+
+                        $elements.not($sidebar)
+                            .animate(animationReset, deactivate);
+
+                        $sidebar.animate(sidebarReset, deactivate)
+                            .attr('data-' + attr, 'disabled');
+
+                        $mask.fadeOut(duration);
+                    }
+                },
+
+                $subWrapper = $('<div>').attr('data-' + attr, 'subwrapper')
+                    .css(opts.subWrapper.css),
+
+                $mask = $('<div>').attr('data-' + attr, 'mask'),
 
                 //defining elements to move
                 $siblings = $wrapper.siblings().not('script noscript'),
                 $elements = $wrapper.add($siblings)
-                .not($ignore)
-                .not($sidebar)
-                .not($mask)
-                .add($add);
+                    .not($ignore)
+                    .not($sidebar)
+                    .not($mask)
+                    .not('script')
+                    .not('noscript')
+                    .add($add);
 
             //Checking sidebar align
             if (opts.sidebar.align === undefined || opts.sidebar.align === 'right') {
@@ -116,7 +151,7 @@
                 .attr('data-' + attr, 'disabled');
 
             //Wrapping sidebar inner content if wrapInner.display is TRUE
-            if (true === opts.subWrapper.display) {
+            if (true === opts.subwrapper.display) {
                 $sidebar.wrapInner($subWrapper);
             }
 
@@ -126,7 +161,7 @@
                 var isWhat = $sidebar.attr('data-' + attr),
                     csbw = $sidebar.width();
 
-                //Defining animations 
+                //Defining animations
                 animationStart[pAlign] = '+=' + csbw;
                 animationStart[sAlign] = '-=' + csbw;
                 animationReset[pAlign] = '-=' + csbw;
@@ -134,66 +169,17 @@
                 sidebarReset[pAlign] = -csbw;
 
                 if ('disabled' === isWhat) {
-                    $elements.animate(animationStart, activate);
-
-                    $sidebar.animate(sidebarStart, activate)
-                        .attr('data-' + attr, 'active');
-
-                    $mask.fadeIn(duration);
-
+                    animateOpen();
                 } else if ('active' === isWhat) {
-                    $elements.animate(animationReset, deactivate);
-
-                    $sidebar.animate(sidebarReset, deactivate)
-                        .attr('data-' + attr, 'disabled');
-
-                    $mask.fadeOut(duration);
+                    animateClose();
                 }
             });
 
             //Closing Sidebar
-            $mask.click(function() {
-                var isWhat = $sidebar.attr('data-' + attr),
-                    csbw = $sidebar.width();
-
-                //Redefining animationReset
-                animationReset[pAlign] = '-=' + csbw;
-                animationReset[sAlign] = '+=' + csbw;
-                sidebarReset[pAlign] = -csbw;
-
-                if (isWhat === 'active') {
-
-                    $elements.not($sidebar)
-                        .animate(animationReset, deactivate);
-
-                    $sidebar.animate(sidebarReset, deactivate)
-                        .attr('data-' + attr, 'disabled');
-
-                    $mask.fadeOut(duration);
-                }
-            });
+            $mask.click(closeSidebar);
 
             //closing sidebar when a link is clicked
-            $sidebar.on('click', $links, function() {
-                var isWhat = $sidebar.attr('data-' + attr),
-                    csbw = $sidebar.width();
-
-                //Redefining animationReset
-                animationReset[pAlign] = '-=' + csbw;
-                animationReset[sAlign] = '+=' + csbw;
-                sidebarReset[pAlign] = -csbw;
-
-                if (isWhat === 'active') {
-
-                    $elements.not($sidebar)
-                        .animate(animationReset, deactivate);
-
-                    $sidebar.animate(sidebarReset, deactivate)
-                        .attr('data-' + attr, 'disabled');
-
-                    $mask.fadeOut(duration);
-                }
-            });
+            $sidebar.on('click', $links, closeSidebar);
 
             //Adjusting width and resetting sidebar on window resize
             $(window).resize(function() {
@@ -229,6 +215,7 @@
         });
     };
 
+    //options
     $.fn.simpleSidebar.settings = {
         attr: 'ssbplugin',
         animation: {
