@@ -23,7 +23,8 @@
     "node_modules",
     "CONTRIBUITING.md",
     "Gruntfile.js",
-    "package.json"
+    "package.json",
+    "src"
   ],
   "dependencies": {
     "jquery": "1"
