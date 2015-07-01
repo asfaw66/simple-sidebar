@@ -43,12 +43,10 @@
                     complete: autoFlow
                 },
 
-                $subWrapper = $('<div>')
-                .attr('data-' + attr, 'subwrapper')
-                .css(opts.subWrapper.css),
+                $subWrapper = $('<div>').attr('data-' + attr, 'subwrapper')
+                    .css(opts.subWrapper.css),
 
-                $mask = $('<div>')
-                .attr('data-' + attr, 'mask'),
+                $mask = $('<div>').attr('data-' + attr, 'mask'),
 
                 //defining elements to move
                 $siblings = $wrapper.siblings().not('script noscript'),
@@ -116,7 +114,7 @@
                 .attr('data-' + attr, 'disabled');
 
             //Wrapping sidebar inner content if wrapInner.display is TRUE
-            if (true === opts.subWrapper.display) {
+            if (true === opts.subwrapper.display) {
                 $sidebar.wrapInner($subWrapper);
             }
 
