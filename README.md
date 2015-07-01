@@ -109,13 +109,13 @@ $.fn.simpleSidebar.settings.mask.css = {
 * **opener**: selector for the button/icon that will trigger the animation.
 * **wrapper**: selector for the content of your entire website except all elements that are positioned fixed (for example `#navbar` and `#sidebar`), position absolute elements inside this wrapper must be wrapped inside a div with `position:relative` attribute.
 * **ignore**: selector for all elements that must be ignored.
-* **add**: selector for all elements that must be added if the plugin is ignoring them accidentally.
+* **add**: selector for all elements that must be added if the plug-in is ignoring them accidentally.
 * **attr**: the `data-*` attribute to make the plug-in works. If `ssbplugin` is somehow causing you issues, you can change it.
 * **animation**
   * **duration**: the duration of the animation in milliseconds.
   * **easing**: the type of animation. For more animations include the *jQuery-UI* library and check out [this page](https://jqueryui.com/easing/). I strongly suggest not to play with easing because they haven't been tested all yet. I suggest to use simple easing like `easeOutQuint`.
 * **sidebar**
-  * **align**: default is `undefined` which means that is aligned to *right*. If you want to align it to left, wright `left`.
+  * **align**: default is `undefined` which means that is aligned to *right*. If you want to align it to left, write `left`.
   * **width**: the max width of the sidebar, this option is default to 300, please change it as you please.
   * **gap**: the gap is the space between the left margin of the sidebar and the left side of the window (and viceversa). It is useful so that the user can click that space to close the sidebar.
   * **closingLinks**: are all links or elements that close the sidebar. I suggest to choose a class and give it to all links and other elements such as icons, banner, images, etc, that are links or that are supposed to be clicked. By default it is `a` so every link in the sidebar will close the sidebar.
@@ -129,7 +129,7 @@ $.fn.simpleSidebar.settings.mask.css = {
    * **overflowY**: 'auto'.
    * **overflowX**: 'hidden'.
 * **mask**:
-  * **display**: `true` or `false` false will remove this option.
+  * **display**: `true` or `false`. `false` will remove this option.
   * **css**: here you can store all css attributes to give the mask div. However I suggest to do it in your css file except for these below. You can call this div by its data attribute ex: `[data-ssbplugin="mask"]`.
     * **backgroundColor**: the color of the mask. By default is `'black'`.
     * **opacity**: by default is 0.5.
