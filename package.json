@@ -31,5 +31,8 @@
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-uglify": "~0.2.0"
+  },
+  "dependencies": {
+    "jquery": "^1.11.3"
   }
 }
