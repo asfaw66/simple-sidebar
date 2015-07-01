@@ -14,7 +14,7 @@
                 $wrapper = $(opts.wrapper),
                 $ignore = $(opts.ignore),
                 $add = $(opts.add),
-                $links = $(opts.sidebar.closingLinks),
+                $links = opts.sidebar.closingLinks,
 
                 sbMaxW = opts.sidebar.width,
                 gap = opts.sidebar.gap,
