@@ -1,4 +1,4 @@
-/*! simple-sidebar v2.1.3 (https://dcdeiv.github.io/simple-sidebar)
+/*! simple-sidebar v2.1.4 (https://dcdeiv.github.io/simple-sidebar)
 ** Davide Di Criscito <davide.dicriscito@gmail.com> (http://github.com/dcdeiv)
 ** (c) 2014-2015 Licensed under GPLv2
 */
