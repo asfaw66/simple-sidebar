@@ -127,7 +127,7 @@ $.fn.simpleSidebar.settings.mask.css = {
     * **zIndex**: by default is is 3000 but you have to change it to the higher z-index number in your css plus 1.
 * **sbWrapper**:
   * **display**: `true` or `false`. `false` will remove this option.
-  * **css**: here you can store all css attributes to give the sbWrapper. However I suggest to do it in your stylesheet except for these below. You can call this by its data attribute ex: `[data-ssbplugin="sbwrapper"]`.
+  * **css**: here you can store all css attributes to give the sbWrapper. However I suggest to do it in your stylesheet except for these below. You can call this by its data attribute ex: `[data-simplesidebar="sbwrapper"]`.
     * **position**: 'relative'.
     * **height**: '100%'.
     * **overflowY**: 'auto'.
