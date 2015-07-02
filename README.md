@@ -25,7 +25,7 @@ In order to let simple-sidebar work, you have to set up this template. Classes a
 <div id="wrapper">
 	<!--
 	All your content must go here.
-	This wrapper must be relative posizioned, unless Simple-Sidebar won't work properely.
+	This wrapper must be relative positioned, unless Simple-Sidebar won't work properely.
 	* Every POSITION-FIXED ELEMENT must be positioned outside of this wrapper.
 	* Every POSITION-ABSOLUTE ELEMENT must be positioned inside a POSITION-RELATIVE div.
 	-->
@@ -70,7 +70,7 @@ Call the Simple-Sidebar plug-in function and fill it with the options you need. 
 			opener: '#button',
 	        wrapper: '#wrapper',
 	        sidebar: {
-	            align: 'left', //or 'right' - This option can be ignored, the sidebar will authomatically align to right.
+	            align: 'left', //or 'right' - This option can be ignored, the sidebar will automatically align to right.
 	            width: 300, //You can ignore this option, the sidebar will automatically size itself to 300px.
 	            closingLinks: '.close-sidebar' // If you ignore this option, the plug-in will look for all links and this can be buggy. Choose a class for every object inside the sidebar that once clicked will close the sidebar.
 	            css: {
@@ -88,7 +88,7 @@ This is a full list of options.
 You can override the single option by using the plug-in API or directly in the function.
 
 ### How to use the public access to plug-in options:
-The base API is `$.fn.simpleSidebar.settings`. Check [Options List](#options-list) out to see the full list of APIs available.
+The base API is `$.fn.simpleSidebar.settings`. Check [Options List](#options-list) out to see the full list of available APIs.
 
 ```javascript
 $.fn.simpleSidebar.settings.opener = '#toggle-sidebar';
