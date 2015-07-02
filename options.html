@@ -8,17 +8,17 @@ You can override the single option by using the plug-in API or directly in the f
 <p>The base API is <code>$.fn.simpleSidebar.settings</code>. Check <a href="#options-list">Options List</a> out to see the full list of available APIs.</p>
 
 <pre>
-$.fn.simpleSidebar.settings.opener = '#button';
+$.fn.simpleSidebar.settings.opener = '#toggle-sidebar';
 $.fn.simpleSidebar.settings.wrapper = '#wrapper';
-$.fn.simpleSidebar.settings.sidebar.align = 'right';
+$.fn.simpleSidebar.settings.sidebar.align = 'left';
 $.fn.simpleSidebar.settings.sidebar.width = '300';
-$.fn.simpleSidebar.settings.sidebar.closingLinks = '.clode-sidebar';
+$.fn.simpleSidebar.settings.sidebar.closingLinks = '.close-sidebar';
 $.fn.simpleSidebar.settings.sidebar.css.zIndex = '3000';
 
 $( '#sidebar' ).simpleSidebar();
 </pre>
 
-<p>Overriding multiple options can be buggy, especially when you try to override `sidebar`, the plug-in will crash.</p>
+<p>Overriding multiple options can be buggy, especially when you try to override <code>sidebar</code>, the plug-in will crash.</p>
 
 <pre>
 $.fn.simpleSidebar.settings.mask.css = {
@@ -47,7 +47,7 @@ $.fn.simpleSidebar.settings.mask.css = {
             <li><b>align</b>: default is <code>undefined</code> which means that is aligned to <i>right</i>. If you want to align it to left, write <code>left</code>;</li>
             <li><b>width</b>: the max width of the sidebar, this option is default to 300, please change it as you please.</li>
             <li><b>gap</b>: the gap is the space between the left margin of the sidebar and the left side of the window (and viceversa). It is useful so that the user can click that space to close the sidebar.</li>
-            <li><b>closingLinks</b>: are all links or elements that close the sidebar. I suggest to choose a class and give it to all links and other elements such as icons, banner, images, etc, that are links or that are supposed to be clicked. By default it is <code>a</code> so every link in the sidebar will close the sidebar.</li>
+            <li><b>closingLinks</b>: links or elements that close the sidebar. I suggest to choose a class and give it to all links and other elements such as icons, banner, images, etc, that are links or that are supposed to be clicked. By default it is <code>a</code> so every link in the sidebar will close the sidebar.  You can use multiple selectors too but, avoid using nested selector otherwise the function will be triggered twice. For example you can select <code>'a, .close-sidebar'</code> but if an element is <code>&lt;a class=".close-sidebar"&gt;</code> the animation will be triggered twice.</li>
             <li><b>css</b>: here you can store all css, anyway I suggest not to add more css attributes to the one below.</li>
                 <ul>
                     <li><b>zIndex</b>: by default is is 3000 but you have to change it to the higher z-index number in your css plus 1.</li>
