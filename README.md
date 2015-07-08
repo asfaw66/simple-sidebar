@@ -145,15 +145,13 @@ $.fn.simpleSidebar.settings.mask.css = {
   * Add Grunt. Simple-Sidebar files are moved to `dist/` and renamed to *jquery.simple-sidebar.js* and *jquery.simple-sidebar.min.js*.
   * Add `/test` folder to better handle actual browser tests.
   * Add jQuery v1~ as dependency of NPM and Bower.
-  * Fix #10, and animations functions.
+  * Fix [#10](https://github.com/dcdeiv/simple-sidebar/issues/10), and animations functions.
   * Change *subWrapper* option to *sbWrapper*.
-* **v2.0.5** (2015-05-17) - FIXED: right align bug and resize bug.
-* **v2.0.4** (2015-05-16) -
-  * Animate LEFT and RIGHT instead of margins.
-  * Fix closingLinks AJAX and onResize bug.
+* **v2.0.5** (2015-05-17) - FIX right align bug and resize bug.
+* **v2.0.4** (2015-05-16) - Animate LEFT and RIGHT instead of margins, and fix closingLinks AJAX and onResize bug.
 * **v2.0.0** (2015-05-15) -
   * Provide public access to options: `$.fn.simpleSidebar.settings`.
-  * Users can now disable *subWrapper* and *mask* (see #6).
+  * Users can now disable *subWrapper* and *mask* (see [#6](https://github.com/dcdeiv/simple-sidebar/issues/6)).
   * Now you can download simple-sidebar via npm: `npm install simple-sidebar`.
   * Change `data` to `attr`.
   * Add `add`, `subWrapper.display`, `mask.display`.
@@ -161,6 +159,6 @@ $.fn.simpleSidebar.settings.mask.css = {
 * **v1.2.2** (2015-05-07) -
   * Change `sidebar.style` to `sidebar.css` and `mask.style` to `mask.css`.
   * Add `subWrapper.css` and `subwrapper.css.position: 'relative'`.
-* **v1.1.2** (2015-03-21) - Fix #5. Remove #4.
+* **v1.1.2** (2015-03-21) - Fix [#5](https://github.com/dcdeiv/simple-sidebar/issues/5). Remove [#4](https://github.com/dcdeiv/simple-sidebar/pull/4).
 * **v1.1.0** (2014-10-01) - Fix maskDiv double-click.
-* **v1.0.3** (2014-08-04) - Fix #3.
+* **v1.0.3** (2014-08-04) - Fix [#3](https://github.com/dcdeiv/simple-sidebar/issues/3).
