@@ -1,4 +1,4 @@
-/*! simple-sidebar v2.1.5 (https://dcdeiv.github.io/simple-sidebar)
+/*! simple-sidebar v2.2.0 (https://dcdeiv.github.io/simple-sidebar)
 ** Davide Di Criscito <davide.dicriscito@gmail.com> (http://github.com/dcdeiv)
 ** (c) 2014-2015 Licensed under GPLv2
 */
@@ -221,7 +221,7 @@
 
     //options
     $.fn.simpleSidebar.settings = {
-        attr: 'ssbplugin',
+        attr: 'simplesidebar',
         animation: {
             duration: 500,
             easing: 'swing'
