@@ -61,7 +61,7 @@ At the bottom of the web page, just before the `</body>` tag, include the **jQue
 <script src="simple-sidebar/dist/jquery.simple-sidebar.min.js"></script>
 ```
 
-Call the Simple-Sidebar plug-in function and fill it with the options you need. Here is an example of some required options.
+Call the Simple-Sidebar plugin function and fill it with the options you need. Here is an example of some required options.
 
 ```html
 <script>
@@ -72,7 +72,7 @@ Call the Simple-Sidebar plug-in function and fill it with the options you need. 
 	        sidebar: {
 	            align: 'left', //or 'right' - This option can be ignored, the sidebar will automatically align to right.
 	            width: 300, //You can ignore this option, the sidebar will automatically size itself to 300px.
-	            closingLinks: '.close-sidebar' // If you ignore this option, the plug-in will look for all links and this can be buggy. Choose a class for every object inside the sidebar that once clicked will close the sidebar.
+	            closingLinks: '.close-sidebar' // If you ignore this option, the plugin will look for all links and this can be buggy. Choose a class for every object inside the sidebar that once clicked will close the sidebar.
 	            css: {
 	                //Here you can add more css rules but you should use your own stylesheet.
 	                zIndex: 3000 //Choose the amount of zIndex you want. It must be the higher zIndex number.
@@ -85,9 +85,9 @@ Call the Simple-Sidebar plug-in function and fill it with the options you need. 
 
 ## Options
 This is a full list of options.
-You can override the single option by using the plug-in API or directly in the function.
+You can override the single option by using the plugin API or directly in the function.
 
-### How to use the public access to plug-in options:
+### How to use the public access to plugin options:
 The base API is `$.fn.simpleSidebar.settings`. Check [Options List](#options-list) out to see the full list of available APIs.
 
 ```javascript
@@ -101,7 +101,7 @@ $.fn.simpleSidebar.settings.sidebar.css.zIndex = '3000';
 $( '#sidebar' ).simpleSidebar();
 ```
 
-Overriding multiple options can be buggy, especially when you try to override `sidebar`, the plug-in will crash.
+Overriding multiple options can be buggy, especially when you try to override `sidebar`, the plugin will crash.
 
 ```javascript
 $.fn.simpleSidebar.settings.mask.css = {
@@ -113,8 +113,8 @@ $.fn.simpleSidebar.settings.mask.css = {
 * **opener**: selector for the button/icon that will trigger the animation.
 * **wrapper**: selector for the content of your entire website except all elements that are positioned fixed (for example `#navbar` and `#sidebar`), position absolute elements inside this wrapper must be wrapped inside a div with `position:relative` attribute.
 * **ignore**: selector for all elements that must be ignored.
-* **add**: selector for all elements that must be added if the plug-in is ignoring them accidentally.
-* **attr**: the `data-*` attribute to make the plug-in works. If `simplesidebar` is somehow causing you issues, you can change it.
+* **add**: selector for all elements that must be added if the plugin is ignoring them accidentally.
+* **attr**: the `data-*` attribute to make the plugin works. If `simplesidebar` is somehow causing you issues, you can change it.
 * **animation**:
   * **duration**: the duration of the animation in milliseconds.
   * **easing**: the type of animation. For more animations include the *jQuery-UI* library and check out [this page](https://jqueryui.com/easing/). I strongly suggest not to play with easing because they haven't been tested all yet. I suggest to use simple easing like `easeOutQuint`.
