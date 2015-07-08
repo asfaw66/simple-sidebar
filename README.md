@@ -25,7 +25,7 @@ In order to let simple-sidebar work, you have to set up this template. Classes a
 <div id="wrapper">
 	<!--
 	All your content must go here.
-	This wrapper must be relative positioned, unless Simple-Sidebar won't work properely.
+	This wrapper must be relative positioned, unless Simple-Sidebar won't work properly.
 	* Every POSITION-FIXED ELEMENT must be positioned outside of this wrapper.
 	* Every POSITION-ABSOLUTE ELEMENT must be positioned inside a POSITION-RELATIVE div.
 	-->
@@ -140,7 +140,9 @@ $.fn.simpleSidebar.settings.mask.css = {
     * **filter**: IE opacity 0.5 = 50 and so on: `'Alpha(opacity=50)'`.
 
 ## Release History
-
+* **v2.2.0** (2015-07-08) -
+  * Change *attr* from *ssbplugin* ([data-ssbplugin=""]) to **simplesidebar** ([data-simplesidebar=""]).
+  * Change *[data-simplesidebar="sbWrapper"]* to **[data-simplesidebar="sbwrapper"]**.
 * **v2.1.4** (2015-07-01) -
   * Add Grunt. Simple-Sidebar files are moved to `dist/` and renamed to *jquery.simple-sidebar.js* and *jquery.simple-sidebar.min.js*.
   * Add `/test` folder to better handle actual browser tests.
