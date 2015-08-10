@@ -1,0 +1,87 @@
+.toolbar {
+  font-size: 24px;
+  background-color: $primary-color;
+  color: $icons;
+  padding: 0 16px;
+
+  a {
+    text-decoration: none;
+
+    &:link,&:visited,&:hover,&:active {
+      color: white;
+    }
+  }
+
+  .toolbar-header {
+    padding-top:100px;
+    padding-bottom: 32px;
+
+    h1,p {
+      margin: 0;
+      font-weight: 300;
+    }
+  }
+
+  .toolbar-rtl {
+    direction: rtl;
+
+    .toolbar-nav-icons {
+      text-align: left;
+    }
+  }
+}
+
+.toolbar-fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 8px 16px;
+  background-color: $primary-color;
+  z-index: 300;
+  height: 30px;
+  max-height: 30px;
+  font-size: 24px;
+  color: white;
+  
+  .toolbar-nav-icons {
+    text-align: right;
+
+    ul {
+      li {
+        display: inline-block;
+        text-align: right;
+        cursor: pointer;
+      }
+    }
+  }
+  
+  .title {
+    font-family: $roboto-condensed;
+  }
+  
+  a {
+    text-decoration: none;
+
+    &:link,&:visited,&:hover,&:active {
+      color: white;
+    }
+  }
+}
+
+@media all and (max-width: 480px) {
+  .toolbar {
+    .toolbar-header {
+    padding-top: 75px;
+    padding-bottom: 16px;
+
+    h1 {
+      font-size: 32px;
+      font-weight: 400 !important;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+  }
+}
