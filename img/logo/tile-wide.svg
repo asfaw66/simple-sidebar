@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="558"
+   height="270"
+   viewBox="0 0 557.99999 269.99999"
+   id="svg4864"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="tile-wide.svg"
+   inkscape:export-filename="/home/dcdeiv/Programmazione/simpler-sidebar/tile-wide.png"
+   inkscape:export-xdpi="25.6"
+   inkscape:export-ydpi="25.6">
+  <title
+     id="title5509">Simple-Sidebar</title>
+  <defs
+     id="defs4866">
+    <linearGradient
+       id="linearGradient5516"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop5518" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.80784314"
+     inkscape:pageopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="422.43794"
+     inkscape:cy="183.21689"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     units="px"
+     inkscape:window-width="1280"
+     inkscape:window-height="751"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:showpageshadow="true"
+     borderlayer="false"
+     showborder="true"
+     showguides="true"
+     objecttolerance="20">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4938"
+       enabled="true" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata4869">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Simple-Sidebar</dc:title>
+        <dc:date>26 giugno 2015</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Davide Di Criscito</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by-nc-nd/3.0/" />
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/by-nc-nd/3.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Notice" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <cc:prohibits
+           rdf:resource="http://creativecommons.org/ns#CommercialUse" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Livello 3"
+     transform="translate(0,-230)">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       id="rect3349"
+       width="555.71429"
+       height="268.57144"
+       x="0"
+       y="231.42856"
+       inkscape:export-xdpi="25.6"
+       inkscape:export-ydpi="25.6" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Livello 2"
+     transform="translate(0,-230)" />
+  <g
+     inkscape:label="Livello 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-782.36225)">
+    <g
+       transform="matrix(0.59053981,0,0,0.675,0,342.01777)"
+       id="layer1-4"
+       inkscape:label="Livello 1">
+      <rect
+         y="652.36218"
+         x="0"
+         height="400"
+         width="400"
+         id="rect3344"
+         style="fill:#f44336;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.99750626px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <rect
+         y="832.31219"
+         x="39.600006"
+         height="40.099998"
+         width="320.79999"
+         id="rect4150"
+         style="fill:#ffffff;fill-opacity:1" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1"
+         id="rect4161"
+         width="200.5"
+         height="40.099998"
+         x="99.75"
+         y="701.98718" />
+      <rect
+         y="962.63715"
+         x="99.75"
+         height="40.099998"
+         width="200.5"
+         id="rect4165"
+         style="fill:#ffffff;fill-opacity:1" />
+      <rect
+         y="862.38715"
+         x="260.14999"
+         height="110.27499"
+         width="40.099998"
+         id="rect4171"
+         style="fill:#ffffff;fill-opacity:1" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1"
+         id="rect4173"
+         width="40.099998"
+         height="110.27499"
+         x="99.75"
+         y="732.06219" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:95.33934021px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#f44336;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="433.07831"
+       y="810.72058"
+       id="text4940"
+       sodipodi:linespacing="125%"
+       transform="scale(0.91087559,1.0978448)"><tspan
+         sodipodi:role="line"
+         id="tspan4942"
+         x="433.07831"
+         y="810.72058"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';text-align:center;text-anchor:middle;fill:#f44336;fill-opacity:1">SIMPLER</tspan><tspan
+         sodipodi:role="line"
+         x="433.07831"
+         y="926.21948"
+         id="tspan4944"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';text-align:center;text-anchor:middle;fill:#f44336;fill-opacity:1">SIDEBAR</tspan></text>
+  </g>
+</svg>
