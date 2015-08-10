@@ -21,14 +21,6 @@
       font-weight: 300;
     }
   }
-
-  .toolbar-rtl {
-    direction: rtl;
-
-    .toolbar-nav-icons {
-      text-align: left;
-    }
-  }
 }
 
 .toolbar-fixed {
@@ -43,7 +35,15 @@
   max-height: 30px;
   font-size: 24px;
   color: white;
-  
+
+  .toolbar-rtl {
+    direction: rtl;
+
+    .toolbar-nav-icons {
+      text-align: left;
+    }
+  }
+
   .toolbar-nav-icons {
     text-align: right;
 
@@ -55,11 +55,11 @@
       }
     }
   }
-  
+
   .title {
     font-family: $roboto-condensed;
   }
-  
+
   a {
     text-decoration: none;
 
