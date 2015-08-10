@@ -41,16 +41,16 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="251.6288"
-     inkscape:cy="183.21689"
+     inkscape:cx="455.59398"
+     inkscape:cy="180.35975"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
      units="px"
      inkscape:window-width="1280"
-     inkscape:window-height="701"
+     inkscape:window-height="751"
      inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-y="25"
      inkscape:window-maximized="1"
      inkscape:showpageshadow="true"
      borderlayer="false"
@@ -114,7 +114,7 @@
          height="400"
          width="400"
          id="rect3344"
-         style="fill:#f44336;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.99750626px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+         style="fill:#3f51b5;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.99750626px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
       <rect
          y="832.31219"
          x="39.600006"
@@ -153,23 +153,23 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:122.90401459px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#f44336;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
-       x="721.77356"
-       y="720.33698"
+       style="font-style:normal;font-weight:normal;font-size:137.26600647px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#3f51b5;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="648.82776"
+       y="804.51221"
        id="text4940"
        sodipodi:linespacing="125%"
-       transform="scale(0.8806721,1.1354964)"
+       transform="scale(0.98358336,1.0166906)"
        inkscape:export-xdpi="20.57143"
        inkscape:export-ydpi="20.57143"><tspan
          sodipodi:role="line"
          id="tspan4942"
-         x="721.77356"
-         y="720.33698"
-         style="text-align:center;text-anchor:middle;fill:#f44336;fill-opacity:1;">SIMPLER</tspan><tspan
+         x="648.82776"
+         y="804.51221"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';text-align:center;text-anchor:middle;fill:#3f51b5;fill-opacity:1;">SIMPLER</tspan><tspan
          sodipodi:role="line"
-         x="721.77356"
-         y="873.96698"
+         x="648.82776"
+         y="966.82196"
          id="tspan4944"
-         style="text-align:center;text-anchor:middle;fill:#f44336;fill-opacity:1;">SIDEBAR</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';text-align:center;text-anchor:middle;fill:#3f51b5;fill-opacity:1;">SIDEBAR</tspan></text>
   </g>
 </svg>
