@@ -36,14 +36,6 @@
   font-size: 24px;
   color: white;
 
-  .toolbar-rtl {
-    direction: rtl;
-
-    .toolbar-nav-icons {
-      text-align: left;
-    }
-  }
-
   .toolbar-nav-icons {
     text-align: right;
 
@@ -66,6 +58,14 @@
     &:link,&:visited,&:hover,&:active {
       color: white;
     }
+  }
+}
+
+.toolbar-rtl {
+  direction: rtl;
+
+  .toolbar-nav-icons {
+    text-align: left;
   }
 }
 
