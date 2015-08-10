@@ -1,15 +1,8 @@
-//MAIN SCSS FILE
+/* Simpler-Sidebar */
 @import 'mixins';
-@import 'var_format';
+@import 'variables';
 
 @import 'format';
-@import 'inputs';
+@import 'classes';
 
-/*
-** template
-*/
-@import 'template/classes';
-@import 'template/template';
-@import 'template/navbar';
-@import 'template/sidebar';
-@import 'template/footer';
+@import 'layout/layout';

@@ -1,58 +1,29 @@
-// FORMAT
-
 body, html {
-  font-family: $primaryFont;
-  @include fontSize($textSize);
-  font-weight: $textWeight;
+  font-family: $roboto;
+  @include fontSize(16px);
+  font-weight: 400;
+  color: $primary-text;
+  background-color: #FFF;
 }
 
 a {
-  @include fontSize($linkSize);
   text-decoration: none;
-  font-weight: $linkWeight;
-}
-  
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-  padding: 0;
-  font-weight: 400; }
 
-h1 {
-  @include fontSize(34pt)
+  &:link {
+    color: $primary-color;
+  }
+  &:visited {
+    color: darken($primary-color, 20%);
+  }
+  &:hover,&:active {
+    color: darken($primary-color, 10%);
+  }
 }
-h2 {
-  @include fontSize(24pt)
-}
-h3 {
-  @include fontSize(20pt)
-}
-h4 {
-  @include fontSize(16pt)
-}
-h5 {
-  @include fontSize(14pt)
-}
-h6 {
-  @include fontSize(12pt)
-}
+
+//Aggiustare h1~h6
 
 b, strong, dfn {
-  font-weight: $textBold;
-}
-
-blockquote {
-  margin-left: 1em;
-  margin-right: 1em;
-  padding-left: .5em;
-  border-left: 3px solid;
-  
-  p {
-    margin-bottom: .5em;
-  }
-  
-  cite:before {
-    content: "\2014";
-  }
+  font-weight: 600;
 }
 
 i {
@@ -64,43 +35,8 @@ mark {
   padding: 0 .3em;
 }
 
-dl {
-  dl {
-     margin-left: 14pt;
-  }
-}
-
-dt {
-  font-weight: 500;
-  margin-top:5pt;
-}
-dd {
-  margin: 0;
-  margin-bottom: 10pt !important;
-  
-  &:before {
-  content: "\2014";
-  }
-}
-
-small {
-    @include fontSize(($textSize * .85));
-}
-big {
-    @include fontSize(($textSize * 1,25));
-}
-
 code, samp, pre, kbd {
-    font-family: 'courier new', courier, monospase;
-    @include fontSize(12pt);
-    line-height: 1;
-}
-
-code, pre {
-    padding: .1em .3em;
-    margin-left: .5em;
-    margin-right: .5em;
-    @include borderRadius(.2em);
+  font-family: $roboto-mono;
 }
 
 img, figure {
@@ -111,38 +47,25 @@ img, figure {
     line-height: 0;
 }
 
-pre {
-  padding: .5em;
-  
-  code {
-    background-color: transparent;
-    color: iherit;
-    margin: 0;
-    padding: 0;
-    @include borderRadius(0);;
-  }
-}
-
-kbd {
-  padding: 0 .5em;
-  @include borderRadius(.2em);
-
-  kbd {
-    font-weight: 600;
-    padding: 0 0.2em;
-  }
-}
-
 nav {
-  a {
-    text-decoration: none;
-    text-transform: uppercase;
-    @include fontSize(14pt);
-  }
-  
   ul {
     padding: 0;
     margin: 0;
     list-style-type: none;
   }
+}
+
+pre, code {
+  font-size: 12px !important;
+  background-color: $primary-text;
+  color: #ffffff;
+  @include borderRadius(2px);
+}
+
+pre {
+  padding: 8px;
+}
+
+code {
+  padding: 2px 4px;
 }

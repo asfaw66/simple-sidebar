@@ -1,1 +1,3 @@
-![Simple-Sidebar Logo](assets/logo/logo-wide.svg)
+#Simple Sidebar Website
+
+Run `npm install` to install all dependencies (including Grunt).
