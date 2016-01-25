@@ -1,4 +1,4 @@
-/*! simple-sidebar v2.5.0 (https://github.com/dcdeiv/simple-sidebar)
+/*! simple-sidebar v2.8.0 (https://github.com/dcdeiv/simple-sidebar)
 ** Copyright (c) 2014 - 2016 Davide Di Criscito
 ** Dual licensed under MIT and GPL-2.0
 */
