@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
     <meta charset='utf-8'>
     <meta content='width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0' name='viewport'>
     <title>simpler-sidebar dynamic-right</title>
@@ -15,7 +16,7 @@
       <div class='section'>
         <header>
           <h1>simpler-sidebar</h1>
-          <h3>demo test of a dynamic page</h3>
+          <h3>demo test of a dynamic page loaded with ajax</h3>
           <h3>sidebar aligned to right</h3>
         </header>
       </div>
@@ -28,16 +29,10 @@
       </div>
     </div>
     <!-- div#main -->
-    <div class='main-navbar main-navbar-fixed-top' id='main-navbar'>
-      <div class='main-navbar-content'>
-        <div class='icon right' id='toggle-sidebar'>
-          <img alt='menu' height='24px' src='assets/menu32@64.png' width='24px'>
-        </div>
-      </div>
-    </div>
+    <div class='main-navbar main-navbar-fixed-top' id='main-navbar'></div>
     <!-- div#main-navbar -->
     <div class='main-sidebar main-sidebar-right' id='main-sidebar'>
-      
+      <div class='main-sidebar-wrapper' id='main-sidebar-wrapper'></div>
     </div>
     <!-- div#main-sidebar -->
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js'></script>
@@ -45,21 +40,29 @@
     <script src='simple-sidebar/dist/jquery.simple-sidebar.min.js'></script>
     <script>
       $(document).ready(function() {
-      	$('#main-sidebar').simpleSidebar({
-      		opener: '#toggle-sidebar',
-      		wrapper: '#main',
-      		animation: {
-      			easing: 'easeOutQuint'
-      		},
-      		sidebar: {
-      			align: 'right',
-      			closingLinks: '.close-sb'
-      		},
-      		sbWrapper: {
-      			display: true
-      		}
-      	})
-      })
+      	$.ajaxSetup({
+      		cache: false
+      	});
+      
+      	$('#main-navbar').load('/ajax/navbar.html', function() {
+      		$('#main-sidebar-wrapper')
+      			.load('/ajax/sidebar.html')
+      			.simpleSidebar({
+      				wrapper: '#main',
+      				opener: '#toggle-sidebar',
+      				animation: {
+      					easing: 'easeOutQuint'
+      				},
+      				sidebar: {
+      					align: 'right',
+      					closingLinks: '.close-sb'
+      				},
+      				sbWrapper: {
+      					display: false
+      				}
+      			});
+      	});
+      });
     </script>
   </body>
 </html>
