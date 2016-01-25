@@ -1,190 +1,24 @@
-<!DOCTYPE html>
-<html></html>
-<head>
-  <meta content='IE=edge' http-equiv='X-UA-Compatible'>
-  <meta charset='utf-8'>
-  <meta content='width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0' name='viewport'>
-  <meta content='#3F51B5' name='theme-color'>
-  <link href='http://dcdeiv.github.io/simple-sidebar/images/logo/192.png' rel='icon' sizes='192x192' type='image/png'>
-  <link href='http://dcdeiv.github.io/simple-sidebar/images/logo/favicon.ico' rel='shortcut icon' type='image/ico'>
-  <meta content='simpler-sidebar, simpler sidebar, simple, simpler, sidebar, jquery, javascript, plugin, jquery plugin, dcdeiv, davidedc, sidebar left, sidebar right' name='keywords'>
-  <meta content='A simple side nav in jQuery' name='description'>
-  <meta content='en' name='language'>
-  <meta content='Davide Di Criscito' name='author'>
-  <meta content='Davide Di Criscito' name='owner'>
-  <meta content='Global' name='coverage'>
-  <meta content='General' name='rating'>
-  <meta content='all' name='target'>
-  <meta content='True' name='HandheldFriendly'>
-  <meta content='http://dcdeiv.github.io/simple-sidebar' name='url'>
-  <meta content='http://dcdeiv.github.io/simple-sidebar' name='identifier-URL'>
-  <title>simple-sidebar</title>
-  <link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700|Roboto+Condensed:400,700,300|Roboto+Mono:400,700' rel='stylesheet' type='text/css'>
-  <link href='http://cdn.materialdesignicons.com/1.4.57/css/materialdesignicons.min.css' rel='stylesheet' type='text/css'>
-  <link href='http://yui.yahooapis.com/pure/0.6.0/pure-min.css' rel='stylesheet' type='text/css'>
-  <link href='http://dcdeiv.github.io/simple-sidebar/stylesheets/main.css' rel='stylesheet' type='text/css'>
-  <!--[if lte IE 8]>
-    <link href='http://yui.yahooapis.com/combo?pure/0.6.0/base-min.css&amp;pure/0.6.0/grids-min.css&amp;pure/0.6.0/grids-responsive-old-ie-min.css' rel='stylesheet' type='text/css'>
-  <![endif]-->
-  <!--[if gt IE 8]>
-    <link href='http://yui.yahooapis.com/combo?pure/0.6.0/base-min.css&amp;pure/0.6.0/grids-min.css&amp;pure/0.6.0/grids-responsive-min.css' rel='stylesheet' type='text/css'>
-  <![endif]-->
-  <!--[if lt IE 9]>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js'></script>
-  <![endif]-->
-</head>
-<body>
-  <div id='wrapper'>
-    <div class='toolbar'>
-      <div class='toolbar-fixed-gap'>
-        <div class='pure-g toolbar-header'>
-          <div class='pure-u-1'>
-            <h1>simple-sidebar</h1>
-            <p></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class='main'>
-      <div class='section' id='guide'>
-        <p>Press the <i class="mdi mdi-menu"></i> icon in the top  corner of this page to run simple-sidebar.</p>
-      </div>
-      <div class='pure-u-5-8'>
-        <div class='title'>
-          <a href='http://dcdeiv.github.io/simple-sidebar'>simple-sidebar</a>
-        </div>
-      </div>
-      <div class='toolbar-nav-icons pure-u-3-8'>
-        <nav>
-          <ul>
-            <li class='icon'>
-              <a href='https://www.github.com/dcdeiv' target='_blank'>
-                <i class='mdi mdi-github-circle'></i>
-              </a>
-            </li>
-            <li class='icon'>
-              <a href='https://github.com/dcdeiv/simple-sidebar/releases/latest' target='_blank'>
-                <i class='mdi mdi-package-down'></i>
-              </a>
-            </li>
-            <li>
-              <div class='mdi mdi-menu' id='toggle-sidenav'></div>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-    <div class='toolbar-fixed pure-g' id='toolbar'>
-      <div class='pure-u-5-8'>
-        <div class='title'>
-          <a href='http://dcdeiv.github.io/simple-sidebar'>simple-sidebar</a>
-        </div>
-      </div>
-      <div class='toolbar-nav-icons pure-u-3-8'>
-        <nav>
-          <ul>
-            <li class='icon'>
-              <a href='https://www.github.com/dcdeiv' target='_blank'>
-                <i class='mdi mdi-github-circle'></i>
-              </a>
-            </li>
-            <li class='icon'>
-              <a href='https://github.com/dcdeiv/simple-sidebar/releases/latest' target='_blank'>
-                <i class='mdi mdi-package-down'></i>
-              </a>
-            </li>
-            <li>
-              <div class='mdi mdi-menu' id='toggle-sidenav'></div>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-    <div class='sidenav sidenav-' id='sidenav'>
-      <div class='sidenav-wrapper'>
-        <header class='sidenav-header'>
-          simple-sidebar
-        </header>
-        <nav class='sidenav-menu'>
-          <ul>
-            <li>
-              <a href='http://dcdeiv.github.io/simple-sidebar'>Home</a>
-            </li>
-            <li>
-              <a href='http://dcdeiv.github.io/simple-sidebar/index.html#download'>Download</a>
-            </li>
-            <li>
-              <a href='http://dcdeiv.github.io/simple-sidebar/index.html#getting-started'>Getting Started</a>
-            </li>
-            <li>
-              <a href='http://dcdeiv.github.io/simple-sidebar/index.html#options'>Options</a>
-              <ul>
-                <li>
-                  <a href='http://dcdeiv.github.io/simple-sidebar/index.html#options-list'>Options List</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href='http://dcdeiv.github.io/simple-sidebar/index.html#contributing'>Contributing</a>
-            </li>
-            <li>
-              <a href='http://dcdeiv.github.io/simple-sidebar/index.html#release-history'>Release History</a>
-            </li>
-            <li>
-              <a href='http://dcdeiv.github.io/simple-sidebar/index.html#license'>License</a>
-            </li>
-          </ul>
-        </nav>
-        <nav class='sidenav-menu'>
-          <header class='sidenav-menu-header'>Demos</header>
-          <ul>
-            <li>
-              <a href='http://dcdeiv.github.io/simple-sidebar/right'>Right</a>
-            </li>
-            <li>
-              <a href='http://dcdeiv.github.io/simple-sidebar/left'>Right-Top</a>
-            </li>
-            <li>
-              <a href='http://dcdeiv.github.io/simple-sidebar/ajax'>Left</a>
-            </li>
-          </ul>
-        </nav>
-        <nav class='sidenav-menu'>
-          <ul>
-            <li>
-              <a href='http://dcdeiv.github.io/simple-sidebar/development'>Development Playgroung</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
+<div class='pure-u-5-8'>
+  <div class='title'>
+    <a href='http://dcdeiv.github.io/simple-sidebar'>simple-sidebar</a>
   </div>
-  <script src='javascripts/googleanalytics.js'></script>
-  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js'></script>
-  <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js'></script>
-  <script src='http://dcdeiv.github.io/simple-sidebar/bower_components/simple-sidebar/dist/jquery.simple-sidebar.min.js'></script>
-  <script>
-    $( document ).ready(function() {
-    
-    	$('#sidenav').simpleSidebar({
-    		wrapper: '#wrapper',
-    		opener: '#toggle-sidenav',
-    		animation: {
-    			easing: 'easeOutQuint'
-    		},
-    		sidebar: {
-    			align: '',
-    			width: 320,
-    			closingLinks: 'a',
-    			css: {
-    				zIndex: 3000
-    			}
-    		},
-    		sbWrapper: {
-    			display: false
-    		}
-    	});
-    });
-  </script>
-</body>
+</div>
+<div class='toolbar-nav-icons pure-u-3-8'>
+  <nav>
+    <ul>
+      <li class='icon'>
+        <a href='https://www.github.com/dcdeiv' target='_blank'>
+          <i class='mdi mdi-github-circle'></i>
+        </a>
+      </li>
+      <li class='icon'>
+        <a href='https://github.com/dcdeiv/simple-sidebar/releases/latest' target='_blank'>
+          <i class='mdi mdi-package-down'></i>
+        </a>
+      </li>
+      <li>
+        <div class='mdi mdi-menu' id='toggle-sidenav'></div>
+      </li>
+    </ul>
+  </nav>
+</div>
