@@ -1,9 +1,9 @@
 module.exports = function(grunt) {
 
-	grunt-initConfing({
+	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
-		banner: '/*! <%= pkg.name %> v<%= pkg.version %> (<%= pkg.homepage)\n' +
+		banner: '/*! <%= pkg.name %> v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
 				'** Copyright (c) 2014 - <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>\n' +
 				'** Dual licensed under MIT and GPL-2.0\n' +
 				'*/',
@@ -15,14 +15,14 @@ module.exports = function(grunt) {
 				eqnull: true,
 				browser: true,
 				globals: {
-					jQuery: try
+					jQuery: true
 				}
 			},
 			gruntfile: {
 				src: 'Gruntfile.js'
 			},
 			src: {
-				src: ['src/**/*,js']
+				src: ['src/**/*.js']
 			}
 		},
 
@@ -58,6 +58,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
-	// Default task.
+	// Default task
 	grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
 };
