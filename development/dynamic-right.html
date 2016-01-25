@@ -50,24 +50,22 @@
       		cache: false
       	});
       
-      	$('#main-navbar').load('ajax/navbar.html', function() {
-      		$('#main-sidebar-wrapper')
-      			.load('ajax/sidebar.html')
-      			.simpleSidebar({
-      				wrapper: '#main',
-      				opener: '#toggle-sidebar',
-      				animation: {
-      					easing: 'easeOutQuint'
-      				},
-      				sidebar: {
-      					align: 'right',
-      					closingLinks: '.close-sb'
-      				},
-      				sbWrapper: {
-      					display: false
-      				}
-      			});
-      	});
+      	$('#main-sidebar-wrapper')
+      		.load('ajax/sidebar.html')
+      		.simpleSidebar({
+      			wrapper: '#main',
+      			opener: '#toggle-sidebar',
+      			animation: {
+      				easing: 'easeOutQuint'
+      			},
+      			sidebar: {
+      				align: 'right',
+      				closingLinks: '.close-sb'
+      			},
+      			sbWrapper: {
+      				display: false
+      			}
+      		});
       });
     </script>
   </body>
