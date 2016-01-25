@@ -188,8 +188,9 @@ $.fn.simpleSidebar.settings.mask.css = {
 ## Release History
 * **v2.5.0** (unreleased) -
   * Fix README.
+  * Fix identation.
+  * Add support to jQuery v.1.12.0.
   * Rename `test` folder to `demo`.
-  * Add support to jQuery v1.12.0.
   * Update copyright.
   * Release under MIT and GPL-2.0 licenses ([#9](https://github.com/dcdeiv/simple-sidebar/issues/9)).
 * **v2.2.0** (2015-07-08) -
