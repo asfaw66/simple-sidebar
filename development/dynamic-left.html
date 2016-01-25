@@ -50,9 +50,8 @@
       		cache: false
       	});
       
-      	$('#main-sidebar-wrapper')
-      		.load('ajax/sidebar.html')
-      		.simpleSidebar({
+      	$('#main-sidebar-wrapper').load('ajax/sidebar.html', function() {
+      		$('#main-sidebar').simpleSidebar({
       			wrapper: '#main',
       			opener: '#toggle-sidebar',
       			animation: {
@@ -66,6 +65,7 @@
       				display: false
       			}
       		});
+      	});
       });
     </script>
   </body>
