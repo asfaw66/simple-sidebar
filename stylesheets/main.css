@@ -1,0 +1,186 @@
+/* Simpler-Sidebar */
+body, html {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  -ms-text-size-adjust: 16px;
+  -webkit-text-size-adjust: 16px;
+  font-weight: 400;
+  color: #212121;
+  background-color: #FFF; }
+
+a {
+  text-decoration: none; }
+  a:link {
+    color: #3F51B5; }
+  a:visited {
+    color: #252f69; }
+  a:hover, a:active {
+    color: #32408f; }
+
+b, strong, dfn {
+  font-weight: 600; }
+
+i {
+  font-weight: inherit;
+  font-style: italic; }
+
+mark {
+  padding: 0 .3em; }
+
+code, samp, pre, kbd {
+  font-family: "Roboto Mono", Courier, monospace; }
+
+img, figure {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  height: auto;
+  line-height: 0; }
+
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none; }
+
+pre, code {
+  font-size: 12px !important;
+  background-color: #212121;
+  color: #ffffff;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px; }
+
+pre {
+  padding: 8px; }
+
+code {
+  padding: 2px 4px; }
+
+.icon {
+  text-align: center; }
+  .icon i {
+    font-size: 24px; }
+
+.container {
+  margin: 0 1em; }
+
+.anchor:before {
+  content: "";
+  display: block;
+  height: 30px;
+  /* fixed header height*/
+  margin: -30px 0 0;
+  /* negative fixed header height */ }
+
+.toolbar {
+  font-size: 24px;
+  background-color: #3F51B5;
+  color: #FFFFFF;
+  padding: 0 16px; }
+  .toolbar a {
+    text-decoration: none; }
+    .toolbar a:link, .toolbar a:visited, .toolbar a:hover, .toolbar a:active {
+      color: white; }
+  .toolbar .toolbar-header {
+    padding-top: 100px;
+    padding-bottom: 32px; }
+    .toolbar .toolbar-header h1, .toolbar .toolbar-header p {
+      margin: 0;
+      font-weight: 300; }
+
+.toolbar-fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 8px 16px;
+  background-color: #3F51B5;
+  z-index: 300;
+  height: 30px;
+  max-height: 30px;
+  font-size: 24px;
+  color: white; }
+  .toolbar-fixed .toolbar-nav-icons {
+    text-align: right; }
+    .toolbar-fixed .toolbar-nav-icons ul li {
+      display: inline-block;
+      text-align: right;
+      cursor: pointer; }
+  .toolbar-fixed .title {
+    font-family: "Roboto Condensed", Arial, Helvetica, sans-serif; }
+  .toolbar-fixed a {
+    text-decoration: none; }
+    .toolbar-fixed a:link, .toolbar-fixed a:visited, .toolbar-fixed a:hover, .toolbar-fixed a:active {
+      color: white; }
+
+.toolbar-rtl {
+  direction: rtl; }
+  .toolbar-rtl .toolbar-nav-icons {
+    text-align: left; }
+
+@media all and (max-width: 480px) {
+  .toolbar .toolbar-header {
+    padding-top: 75px;
+    padding-bottom: 16px; }
+    .toolbar .toolbar-header h1 {
+      font-size: 32px;
+      font-weight: 400 !important; }
+    .toolbar .toolbar-header p {
+      font-size: 18px; } }
+.sidenav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 320px;
+  background-color: white; }
+  .sidenav .sidenav-wrapper {
+    height: 100%; }
+  .sidenav header {
+    font-size: 20px;
+    font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
+    text-transform: uppercase; }
+  .sidenav .sidenav-header {
+    padding: 100px 1em 1em;
+    background-color: #3F51B5;
+    color: white; }
+  .sidenav .sidenav-menu {
+    margin-top: 24px;
+    padding: 0 1em; }
+    .sidenav .sidenav-menu header {
+      margin-bottom: 4px;
+      font-weight: 300; }
+    .sidenav .sidenav-menu li, .sidenav .sidenav-menu a {
+      display: block; }
+    .sidenav .sidenav-menu li {
+      padding: 4px 0; }
+
+.sidenav-right {
+  right: -320px;
+  text-align: right; }
+
+.sidenav-left {
+  left: -320px;
+  text-align: left; }
+
+#wrapper {
+  position: relative; }
+
+.main {
+  padding: 16px;
+  margin: 0 auto;
+  max-width: 800px; }
+
+.section {
+  margin-bottom: 2em; }
+
+.section h2, .section h3, .section h4, .section h5, .section h6 {
+  font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
+  text-transform: uppercase; }
+
+#support {
+  margin-top: 32px; }
+
+#guide {
+  text-align: center;
+  font-size: 24px; }

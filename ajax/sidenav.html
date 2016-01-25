@@ -41,24 +41,73 @@
         <div class='pure-g toolbar-header'>
           <div class='pure-u-1'>
             <h1>simple-sidebar</h1>
-            <p>left</p>
+            <p></p>
           </div>
         </div>
       </div>
     </div>
     <div class='main'>
       <div class='section' id='guide'>
-        <p>Press the <i class="mdi mdi-menu"></i> icon in the top left corner of this page to run simple-sidebar.</p>
+        <p>Press the <i class="mdi mdi-menu"></i> icon in the top  corner of this page to run simple-sidebar.</p>
       </div>
-      <div class='section'>
-        <p>Read the entire set-up guide &lt;a href="http://dcdeiv.github.io/simple-sidebar/index.html#getting-started</p>
-      </div>
-      <div class='section'>
-        <h2 id="simple-sidebar-left-options">simple-sidebar left options</h2>
-        <pre>$( document ).ready(function() {&#x000A;	$('#sidebar').simpleSidebar({&#x000A;		opener: '#toggle-sidebar',&#x000A;		wrapper: '#main',&#x000A;		animation: {&#x000A;			easing: easeOutQuint&#x000A;		},&#x000A;		sidebar: {&#x000A;			align: 'left',&#x000A;			closingLinks: '.close-sb',&#x000A;			subWrapper: false&#x000A;		}&#x000A;	});&#x000A;});&#x000A;end</pre>
+      <div class='sidenav-wrapper'>
+        <header class='sidenav-header'>
+          simple-sidebar
+        </header>
+        <nav class='sidenav-menu'>
+          <ul>
+            <li>
+              <a href='http://dcdeiv.github.io/simple-sidebar'>Home</a>
+            </li>
+            <li>
+              <a href='../index.html#download'>Download</a>
+            </li>
+            <li>
+              <a href='../index.html#getting-started'>Getting Started</a>
+            </li>
+            <li>
+              <a href='../index.html#options'>Options</a>
+              <ul>
+                <li>
+                  <a href='../index.html#options-list'>Options List</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href='../index.html#contributing'>Contributing</a>
+            </li>
+            <li>
+              <a href='../index.html#release-history'>Release History</a>
+            </li>
+            <li>
+              <a href='../index.html#license'>License</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class='sidenav-menu'>
+          <header class='sidenav-menu-header'>Demos</header>
+          <ul>
+            <li>
+              <a href='../right'>Right</a>
+            </li>
+            <li>
+              <a href='../left'>Right-Top</a>
+            </li>
+            <li>
+              <a href='../ajax'>Left</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class='sidenav-menu'>
+          <ul>
+            <li>
+              <a href='../development'>Development Playgroung</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
-    <div class='pure-g toolbar-fixed toolbar-rtl' id='toolbar'>
+    <div class='toolbar-fixed pure-g' id='toolbar'>
       <div class='pure-u-5-8'>
         <div class='title'>
           <a href='http://dcdeiv.github.io/simple-sidebar'>simple-sidebar</a>
@@ -84,7 +133,7 @@
         </nav>
       </div>
     </div>
-    <div class='sidenav sidenav-left' id='sidenav'>
+    <div class='sidenav sidenav-' id='sidenav'>
       <div class='sidenav-wrapper'>
         <header class='sidenav-header'>
           simple-sidebar
@@ -157,7 +206,7 @@
     			easing: 'easeOutQuint'
     		},
     		sidebar: {
-    			align: 'left',
+    			align: '',
     			width: 320,
     			closingLinks: 'a',
     			css: {

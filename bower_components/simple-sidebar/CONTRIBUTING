@@ -1,0 +1,31 @@
+<h1 id="contributing">Contributing</h1>
+
+<h2 id="important-notes">Important notes</h2>
+<p>Please don't edit files in the <code>dist</code> subdirectory as they are generated via Grunt. You'll find source code in the <code>src</code> subdirectory!</p>
+
+<h3 id="code-style">Code style</h3>
+<p>Regarding code style like indentation and whitespace, <strong>follow the conventions you see used in the source already.</strong></p>
+
+<h2 id="modifying-the-code">Modifying the code</h2>
+<p>First, ensure that you have the latest <a href="http://nodejs.org/">Node.js</a> and <a href="http://npmjs.org/">npm</a> installed.</p>
+
+<p>Test that Grunt's CLI is installed by running <code>grunt --version</code>.  If the command isn't found, run <code>npm install -g grunt-cli</code>.  For more information about installing Grunt, see the <a href="http://gruntjs.com/getting-started">getting started guide</a>.</p>
+
+<ol>
+  <li>Fork and clone the repo.</li>
+  <li>Run <code>npm install</code> to install all dependencies (including Grunt).</li>
+  <li>Run <code>grunt</code> to grunt this project.</li>
+  <li>Run <code>grunt watch</code> to watch all changes.</li>
+</ol>
+
+<p>Assuming that you don't see any red, you're ready to go. Just be sure to run <code>grunt</code> after making any changes, to ensure that nothing is broken.</p>
+
+<h2 id="submitting-pull-requests">Submitting pull requests</h2>
+
+<ol>
+  <li>Create a new branch. You should not work in your <code>master</code> branch directly.</li>
+  <li>Fix stuff.</li>
+  <li>Test changes in actual browser using all the pages in the <code>tests</code> folder.</li>
+  <li>Update the documentation to reflect any changes.</li>
+  <li>Push to your fork and submit a pull request.</li>
+</ol>
