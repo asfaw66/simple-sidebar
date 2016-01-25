@@ -51,11 +51,14 @@
         <p>Press the <i class="mdi mdi-menu"></i> icon in the top right corner of this page to run simple-sidebar.</p>
       </div>
       <div class='section'>
+        <p>With this plugin you can dynamically load content such as the sidebar/sidenav itself and the toolbar.
+        Here below the code used in this page.</p>
+        
         <p>Read the entire set-up guide <a href="http://dcdeiv.github.io/simple-sidebar/index.html#getting-started">here</a>.</p>
       </div>
       <div class='section'>
         <h2 id="simple-sidebar-ajax-options">simple-sidebar ajax options</h2>
-        <pre>ahahah&#x000A;end</pre>
+        <pre>$(document).ready(function() {&#x000A;	$.ajaxSetup({&#x000A;		cache: false&#x000A;	});&#x000A;&#x000A;	$('#toolbar').load('http://dcdeiv.github.io/simple-sidebar/ajax/toolbar.html', function() {&#x000A;		$('#sidenav')&#x000A;			.load('http://dcdeiv.github.io/simple-sidebar/ajax/sidenav.html')&#x000A;			.simpleSidebar({&#x000A;				wrapper: '#wrapper',&#x000A;				opener: '#toggle-sidenav',&#x000A;				animation: {&#x000A;					easing: 'easeOutQuint'&#x000A;				},&#x000A;				sidebar: {&#x000A;					align: 'right',&#x000A;					width: 320,&#x000A;					closingLinks: 'a',&#x000A;					css: {&#x000A;						zIndex: 3000&#x000A;					}&#x000A;				},&#x000A;				sbWrapper: {&#x000A;					display: false&#x000A;				}&#x000A;			});&#x000A;	});&#x000A;});</pre>
       </div>
     </div>
     <div class='toolbar-fixed pure-g' id='toolbar'></div>
