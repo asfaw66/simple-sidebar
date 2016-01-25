@@ -23,7 +23,7 @@ For an even simpler and stable version of this plugin check the [**simpler-sideb
 ## Download
 Run one of these commands in your bash according to your needs.
 
-`git clone https://github.com/dcdeiv/simpler-sidebar.git`
+`git clone https://github.com/dcdeiv/simple-sidebar.git`
 
 `bower install simple-sidebar`
 
@@ -35,9 +35,6 @@ If you are updating, remember to read the [Release History](#release-history) an
 
 ## Getting Started
 You will need to prepare a specific HTML template in order to make it work properly. The code below is just an example from which you can and have to draw inspiration. Along with this plugin you are provided with some demo pages in the [demo](/demo) directory.
-
-## Getting Started
-Download the [production version][min] of the [development version][max].
 
 ```html
 <div id="wrapper">
