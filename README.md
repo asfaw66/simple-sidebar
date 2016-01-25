@@ -1,25 +1,43 @@
-# Simple-Sidebar
-[![Flattr Button](https://button.flattr.com/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=dcdeiv&url=https%3A%2F%2Fgithub.com%2Fdcdeiv%2Fsimple-sidebar)
+Simple-Sidebar
+===
+[![GitHub version](https://img.shields.io/badge/version-2.5.0-brightgreen.svg)](https://github.com/dcdeiv/simple-sidebar/releases/latest)
+[![Bower version](https://img.shields.io/badge/bower-2.5.0-brightgreen.svg)](https://github.com/dcdeiv/simple-sidebar)
+[![npm version](https://img.shields.io/badge/npm-2.5.0-brightgreen.svg)](https://www.npmjs.com/package/simple-sidebar)
+[![MIT and GPL-2 license](https://img.shields.io/badge/license-MIT%20and%20GPL--2.0-blue.svg)](#license)
 
-A simple jQuery sidebar.
 
-* [Simple-Sidebar Home Page](http://dcdeiv.github.io/simple-sidebar)
-* A *much more simpler* fork: [simpler-sidebar](http://www.github.com/dcdeiv/simpler-sidebar)!
+A jQuery plugin that allows to *create a side nav* as in modern mobile apps. It aims to *simplicity* so that *everybody can use it* no matter if expert programmers or not.
 
-[![NPM](https://nodei.co/npm/simple-sidebar.png)](https://nodei.co/npm/simple-sidebar/)
+For an even simpler and stable version of this plugin check the [**simpler-sidebar**](https://github.com/dcdeiv/simpler-sidebar) fork.
+
+- [Download](#download)
+- [Getting Started](#getting-started)
+- [Options](#options)
+  - [Options List](#options-list)
+- [Contributing](#contributing)
+- [Release History](#release-history)
+- [License](#license)
+
+***
+
+## Download
+Run one of these commands in your bash according to your needs.
+
+`git clone https://github.com/dcdeiv/simpler-sidebar.git`
+
+`bower install simple-sidebar`
+
+`npm install simple-sidebar`
+
+Or download the latest version from the [releases](https://github.com/dcdeiv/simple-sidebar/releases) page.
+
+If you are updating, remember to read the [Release History](#release-history) and to check for incompatibility issues.
+
+## Getting Started
+You will need to prepare a specific HTML template in order to make it work properly. The code below is just an example from which you can and have to draw inspiration. Along with this plugin you are provided with some demo pages in the [demo](/demo) directory.
 
 ## Getting Started
 Download the [production version][min] of the [development version][max].
-
-[min]: https://raw.github.com/dcdeiv/simple-sidebar/master/dist/simple-sidebar.min.js
-[max]: https://raw.github.com/dcdeiv/simple-sidebar/master/dist/simple-sidebar.js
-
-Simple-Sidebar is also available via **NPM** and **Bower**:
-
-* `bower install simple-sidebar`.
-* `npm install simple-sidebar`.
-
-In order to let simple-sidebar work, you have to set up this template. Classes and Ids are at your discretion.
 
 ```html
 <div id="wrapper">
@@ -56,56 +74,84 @@ In order to let simple-sidebar work, you have to set up this template. Classes a
 At the bottom of the web page, just before the `</body>` tag, include the **jQuery** library. If you are interested in better *easing*, include the **jQuery-UI** library too. Eventually include Simple-Sidebar.
 
 ```html
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script src="simple-sidebar/dist/jquery.simple-sidebar.min.js"></script>
 ```
 
-Call the Simple-Sidebar plugin function and fill it with the options you need. Here is an example of some required options.
+Call the simpler-sidebar plugin function and fill it with the options you need. Here is an example of some required options. Read the [Options](#options) section for further informations.
 
 ```html
 <script>
 	$(document).ready(function() {
 		$('#sidebar').simpleSidebar({
 			opener: '#button',
-	        wrapper: '#wrapper',
-	        sidebar: {
-	            align: 'left', //or 'right' - This option can be ignored, the sidebar will automatically align to right.
-	            width: 300, //You can ignore this option, the sidebar will automatically size itself to 300px.
-	            closingLinks: '.close-sidebar' // If you ignore this option, the plugin will look for all links and this can be buggy. Choose a class for every object inside the sidebar that once clicked will close the sidebar.
-	            css: {
-	                //Here you can add more css rules but you should use your own stylesheet.
-	                zIndex: 3000 //Choose the amount of zIndex you want. It must be the higher zIndex number.
-	            }
-        	}
+			wrapper: '#wrapper',
+			sidebar: {
+				align: 'left', //or 'right' - This option can be ignored, the sidebar will automatically align to right.
+				width: 300, //You can ignore this option, the sidebar will automatically size itself to 300px.
+				closingLinks: '.close-sidebar' // If you ignore this option, the plugin will look for all links and this can be buggy. Choose a class for every object inside the sidebar that once clicked will close the sidebar.
+				css: {
+					//Here you can add more css rules but you should use your own stylesheet.
+					zIndex: 3000 //Choose the amount of zIndex you want. It must be the higher zIndex number.
+				}
+			}
 		});
 	});
 </script>
 ```
 
 ## Options
-This is a full list of options.
-You can override the single option by using the plugin API or directly in the function.
+You can access options in two ways.
 
-### How to use the public access to plugin options:
-The base API is `$.fn.simpleSidebar.settings`. Check [Options List](#options-list) out to see the full list of available APIs.
+The first way is to add an option in the plugin itself. For example:
 
 ```javascript
-$.fn.simpleSidebar.settings.opener = '#toggle-sidebar';
-$.fn.simpleSidebar.settings.wrapper = '#wrapper';
-$.fn.simpleSidebar.settings.sidebar.align = 'left';
-$.fn.simpleSidebar.settings.sidebar.width = '300';
-$.fn.simpleSidebar.settings.sidebar.closingLinks = '.close-sidebar';
-$.fn.simpleSidebar.settings.sidebar.css.zIndex = '3000';
-
-$( '#sidebar' ).simpleSidebar();
+$('#sidebar').simpleSidebar({
+	opener: '#button',
+	wrapper: '#wrapper',
+	sidebar: {
+		align: 'left',
+		width: 300,
+		closingLinks: '.close-sidebar'
+		css: {
+			zIndex: 3000
+		}
+	}
+});
 ```
 
-Overriding multiple options can be buggy, especially when you try to override `sidebar`, the plugin will crash.
+The second way to access options is by using the following key:
+
+`$.fn.simpleSidebar.settings`
+
+After this key, you have to add the proper option, for example:
+
+`$.fn.simpleSidebar.settings.animation.duration = 1000`
+
+All keys must be put above the main plugin function and there should not be duplicates between them since keys override the options in the plugin function. Read the [Options List](#options-list) for further informations about all available options.
+
+According to the example above, here is the other way to tweak options by using the key:
+
+```javascript
+$.fn.simpleSidebar.settings.sidebar.align = 'left';
+$.fn.simpleSidebar.settings.sidebar.width = 300;
+$.fn.simpleSidebar.settings.sidebar.closingLinks = '.close-sidebar';
+$.fn.simpleSidebar.settings.css.zIndex = 3000;
+
+$('#sidebar').simpleSidebar({
+	opener: '#toggle-sidebar',
+	wrapper: '#wrapper'
+});
+```
+
+You can also override multiple options by using the key but it is not safe and it could be buggy, especially when you try to override `sidebar`. However you can safely override `css` such as `$.fn.simpleSidebar.settings.mask.css`, for example:
 
 ```javascript
 $.fn.simpleSidebar.settings.mask.css = {
-	//your style
+	backgroundColor: 'black',
+	opacity: 0.5,
+	filter: 'Alpha(opacity=50)'
 };
 ```
 
@@ -164,3 +210,8 @@ $.fn.simpleSidebar.settings.mask.css = {
 * **v1.1.2** (2015-03-21) - Fix [#5](https://github.com/dcdeiv/simple-sidebar/issues/5). Remove [#4](https://github.com/dcdeiv/simple-sidebar/pull/4).
 * **v1.1.0** (2014-10-01) - Fix maskDiv double-click.
 * **v1.0.3** (2014-08-04) - Fix [#3](https://github.com/dcdeiv/simple-sidebar/issues/3).
+
+## License
+Copyright (c) 2015 - 2016 Davide Di Criscito
+
+Dual licensed under the [MIT](LICENSE-MIT) and [GPL-2.0](LICENSE-GPL) licenses.
