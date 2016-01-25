@@ -71,8 +71,9 @@
     		cache: false
     	});
     
-    	$('#toolbar').load('ajax/toolbar.html', function() {
-    		$('#sidenav').load('ajax/sidenav.html')
+    	$('#toolbar').load('http://dcdeiv.github.io/simple-sidebar/ajax/toolbar.html', function() {
+    		$('#sidenav')
+    			.load('http://dcdeiv.github.io/simple-sidebar/ajax/sidenav.html')
     			.simpleSidebar({
     				wrapper: '#wrapper',
     				opener: '#toggle-sidenav',
