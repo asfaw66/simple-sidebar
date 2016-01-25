@@ -186,6 +186,12 @@ $.fn.simpleSidebar.settings.mask.css = {
     * **filter**: IE opacity 0.5 = 50 and so on: `'Alpha(opacity=50)'`.
 
 ## Release History
+* **v2.5.0** (unreleased) -
+  * Fix README.
+  * Rename `test` folder to `demo`.
+  * Add support to jQuery v1.12.0.
+  * Update copyright.
+  * Release under MIT and GPL-2.0 licenses ([#9](https://github.com/dcdeiv/simple-sidebar/issues/9)).
 * **v2.2.0** (2015-07-08) -
   * Change *attr* from *ssbplugin* ([data-ssbplugin=""]) to **simplesidebar** ([data-simplesidebar=""]).
   * Change *[data-simplesidebar="sbWrapper"]* to **[data-simplesidebar="sbwrapper"]**.
