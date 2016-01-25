@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 	grunt-initConfing({
 		pkg: grunt.file.readJSON('package.json'),
 
-		banner: '/* <%= pkg.name %> v<%= pkg.version %> (<%= pkg.homepage)\n' +
+		banner: '/*! <%= pkg.name %> v<%= pkg.version %> (<%= pkg.homepage)\n' +
 				'** Copyright (c) 2014 - <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>\n' +
 				'** Dual licensed under MIT and GPL-2.0\n' +
 				'*/',
@@ -34,6 +34,16 @@ module.exports = function(grunt) {
 			dist: {
 				src: ['src/simple-sidebar.js'],
 				dest: 'dist/jquery.<%= pkg.name %>.js'
+			}
+		},
+
+		uglify: {
+			options: {
+				banner: '<%= banner %>\n'
+			},
+			dist: {
+				src: '<%= concat.dist.dest %>',
+				dest: 'dist/jquery.<%= pkg.name %>.min.js'
 			}
 		},
 
