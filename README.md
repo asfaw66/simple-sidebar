@@ -183,7 +183,7 @@ $.fn.simpleSidebar.settings.mask.css = {
     * **filter**: IE opacity 0.5 = 50 and so on: `'Alpha(opacity=50)'`.
 
 ## Release History
-* **v2.8.0** (unreleased) -
+* **v2.8.0** (2016-01-27) -
   * Fix README.
   * Fix identation.
   * Add support to jQuery v.1.12.0.
