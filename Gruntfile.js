@@ -1,22 +1,15 @@
 module.exports = function(grunt) {
 
 	grunt.initConfig({
-		pkg: grunt.file.readJSON('package.json'),
+		pkg: grunt.file.readJSON( "package.json" ),
 
-		banner: '/*! <%= pkg.name %> v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
-				'** Copyright (c) 2014 - <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>\n' +
-				'** Dual licensed under MIT and GPL-2.0\n' +
-				'*/',
+		banner: "/*! <%= pkg.name %> v<%= pkg.version %> (<%= pkg.homepage %>)\n" +
+				"** Copyright (c) 2014 - <%= grunt.template.today( \"yyyy\" ) %> <%= pkg.author.name %>\n" +
+				"** Dual licensed under MIT and GPL-2.0\n*/",
 
 		jshint: {
 			options: {
-				curly: true,
-				eqeqeq: true,
-				eqnull: true,
-				browser: true,
-				globals: {
-					jQuery: true
-				}
+				jshintrc: true
 			},
 			gruntfile: {
 				src: 'Gruntfile.js'

@@ -82,21 +82,21 @@ Call the simpler-sidebar plugin function and fill it with the options you need. 
 
 ```html
 <script>
-	$(document).ready(function() {
-		$('#sidebar').simpleSidebar({
-			opener: '#button',
-			wrapper: '#wrapper',
+	$( document ).ready( function() {
+		$( "#sidebar" ).simpleSidebar({
+			opener: "#button",
+			wrapper: "#wrapper",
 			sidebar: {
-				align: 'left', //or 'right' - This option can be ignored, the sidebar will automatically align to right.
+				align: "left", //or "right" - This option can be ignored, the sidebar will automatically align to right.
 				width: 300, //You can ignore this option, the sidebar will automatically size itself to 300px.
-				closingLinks: '.close-sidebar' // If you ignore this option, the plugin will look for all links and this can be buggy. Choose a class for every object inside the sidebar that once clicked will close the sidebar.
+				closingLinks: ".close-sidebar" // If you ignore this option, the plugin will look for all links and this can be buggy. Choose a class for every object inside the sidebar that once clicked will close the sidebar.
 				css: {
 					//Here you can add more css rules but you should use your own stylesheet.
 					zIndex: 3000 //Choose the amount of zIndex you want. It must be the higher zIndex number.
 				}
 			}
-		});
-	});
+		} );
+	} );
 </script>
 ```
 
@@ -106,13 +106,13 @@ You can access options in two ways.
 The first way is to add an option in the plugin itself. For example:
 
 ```javascript
-$('#sidebar').simpleSidebar({
-	opener: '#button',
-	wrapper: '#wrapper',
+$( "#sidebar" ).simpleSidebar({
+	opener: "#button",
+	wrapper: "#wrapper",
 	sidebar: {
-		align: 'left',
+		align: "left",
 		width: 300,
-		closingLinks: '.close-sidebar'
+		closingLinks: ".close-sidebar"
 		css: {
 			zIndex: 3000
 		}
@@ -133,14 +133,14 @@ All keys must be put above the main plugin function and there should not be dupl
 According to the example above, here is the other way to tweak options by using the key:
 
 ```javascript
-$.fn.simpleSidebar.settings.sidebar.align = 'left';
+$.fn.simpleSidebar.settings.sidebar.align = "left";
 $.fn.simpleSidebar.settings.sidebar.width = 300;
-$.fn.simpleSidebar.settings.sidebar.closingLinks = '.close-sidebar';
+$.fn.simpleSidebar.settings.sidebar.closingLinks = ".close-sidebar";
 $.fn.simpleSidebar.settings.css.zIndex = 3000;
 
-$('#sidebar').simpleSidebar({
-	opener: '#toggle-sidebar',
-	wrapper: '#wrapper'
+$("#sidebar").simpleSidebar({
+	opener: "#toggle-sidebar",
+	wrapper: "#wrapper"
 });
 ```
 
@@ -148,9 +148,9 @@ You can also override multiple options by using the key but it is not safe and i
 
 ```javascript
 $.fn.simpleSidebar.settings.mask.css = {
-	backgroundColor: 'black',
+	backgroundColor: "black",
 	opacity: 0.5,
-	filter: 'Alpha(opacity=50)'
+	filter: "Alpha(opacity=50)"
 };
 ```
 
@@ -167,24 +167,29 @@ $.fn.simpleSidebar.settings.mask.css = {
   * **align**: default is `undefined` which means that is aligned to *right*. If you want to align it to left, write `left`.
   * **width**: the max width of the sidebar, this option is default to 300, please change it as you please.
   * **gap**: the gap is the space between the left margin of the sidebar and the left side of the window (and viceversa). It is useful so that the user can click that space to close the sidebar.
-  * **closingLinks**: links or elements that close the sidebar. I suggest to choose a class and give it to all links and other elements such as icons, banner, images, etc, that are links or that are supposed to be clicked. By default it is `a` so every link in the sidebar will close the sidebar. You can use multiple selectors too but, avoid using nested selector otherwise the function will be triggered twice. For example you can select `'a, .close-sidebar'` but if an element is `<a class=".close-sidebar">` the animation will be triggered twice.
+  * **closingLinks**: links or elements that close the sidebar. I suggest to choose a class and give it to all links and other elements such as icons, banner, images, etc, that are links or that are supposed to be clicked. By default it is `a` so every link in the sidebar will close the sidebar. You can use multiple selectors too but, avoid using nested selector otherwise the function will be triggered twice. For example you can select `"a, .close-sidebar"` but if an element is `<a class=".close-sidebar">` the animation will be triggered twice.
   * **css** here you can store all css, anyway I suggest not to add more css attributes to the one below.
     * **zIndex**: by default is is 3000 but you have to change it to the higher z-index number in your css plus 1.
 * **sbWrapper**:
   * **display**: `true` or `false`. `false` will remove this option.
   * **css**: here you can store all css attributes to give the sbWrapper. However I suggest to do it in your stylesheet except for these below. You can call this by its data attribute ex: `[data-simplesidebar="sbwrapper"]`.
-    * **position**: 'relative'.
-    * **height**: '100%'.
-    * **overflowY**: 'auto'.
-    * **overflowX**: 'hidden'.
+    * **position**: "relative".
+    * **height**: "100%".
+    * **overflowY**: "auto".
+    * **overflowX**: "hidden".
 * **mask**:
   * **display**: `true` or `false`. `false` will remove this option.
   * **css**: here you can store all css attributes to give the mask div. However I suggest to do it in your css file except for these below. You can call this div by its data attribute for example: `[data-simplesidebar="mask"]`.
-    * **backgroundColor**: the color of the mask. By default is `'black'`.
+    * **backgroundColor**: the color of the mask. By default is `"black"`.
     * **opacity**: by default is 0.5.
-    * **filter**: IE opacity 0.5 = 50 and so on: `'Alpha(opacity=50)'`.
+    * **filter**: IE opacity 0.5 = 50 and so on: `"Alpha(opacity=50)"`.
 
 ## Release History
+* **v2.8.3** (2016-02-17) -
+  * Add Gitter chat badge. Join the chat [here](http://gitter.im/dcdeiv/simple-sidebar).
+  * Add `.editorconfig` to maintain consistency in the coding style.
+    * Please, download the [editorconfig plugin](http://editorconfig.org/#download) for your favourite editor if you want to contribute.
+  * Fix coding style according to the jQuery coding style guidelines.
 * **v2.8.0** (2016-01-27) -
   * Fix README.
   * Fix identation.
@@ -212,7 +217,7 @@ $.fn.simpleSidebar.settings.mask.css = {
   * Fix absolute elements inside `wrapper` that moved twice.
 * **v1.2.2** (2015-05-07) -
   * Change `sidebar.style` to `sidebar.css` and `mask.style` to `mask.css`.
-  * Add `subWrapper.css` and `subwrapper.css.position: 'relative'`.
+  * Add `subWrapper.css` and `subwrapper.css.position: "relative"`.
 * **v1.1.2** (2015-03-21) - Fix [#5](https://github.com/dcdeiv/simple-sidebar/issues/5). Remove [#4](https://github.com/dcdeiv/simple-sidebar/pull/4).
 * **v1.1.0** (2014-10-01) - Fix maskDiv double-click.
 * **v1.0.3** (2014-08-04) - Fix [#3](https://github.com/dcdeiv/simple-sidebar/issues/3).
