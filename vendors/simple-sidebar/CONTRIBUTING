@@ -4,7 +4,7 @@
 <p>Please don't edit files in the <code>dist</code> subdirectory as they are generated via Grunt. You'll find source code in the <code>src</code> subdirectory!</p>
 
 <h3 id="code-style">Code style</h3>
-<p>Regarding code style like indentation and whitespace, <strong>follow the conventions you see used in the source already.</strong></p>
+<p>Regarding code style like indentation and whitespace, <strong>follow the conventions you see used in the source already</strong> or read the <strong>.editorconfig</strong> file. Regarding the <em>.editorconfig</em> file you should install in your favourite editor the <strong>editorconfig</strong> plugin.</p>
 
 <h2 id="modifying-the-code">Modifying the code</h2>
 <p>First, ensure that you have the latest <a href="http://nodejs.org/">Node.js</a> and <a href="http://npmjs.org/">npm</a> installed.</p>
@@ -25,7 +25,7 @@
 <ol>
   <li>Create a new branch. You should not work in your <code>master</code> branch directly.</li>
   <li>Fix stuff.</li>
-  <li>Test changes in actual browser using all the pages in the <code>tests</code> folder.</li>
+  <li>Test changes in actual browser using all the pages in the <code>demo</code> folder.</li>
   <li>Update the documentation to reflect any changes.</li>
   <li>Push to your fork and submit a pull request.</li>
 </ol>

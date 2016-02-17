@@ -1,12 +1,12 @@
 {
   "name": "simple-sidebar",
-  "version": "2.2.0",
+  "version": "2.8.3",
+  "description": "A simple side nav in jQuery",
   "homepage": "https://github.com/dcdeiv/simple-sidebar",
   "authors": [
-    "dcdeiv <davide.dicriscito@gmail.com>"
+    "Davide Di Criscito (https://github.com/dcdeiv)"
   ],
-  "description": "A simple jQuery sidebar.",
-  "main": "dist/jquery.simple-sidebar.min.js",
+  "license": "MIT AND GPL-2.0",
   "keywords": [
     "simple",
     "sidebar",
@@ -18,9 +18,9 @@
     "javascript",
     "js"
   ],
-  "license": "GPLv2",
+  "main": "dist/jquery.simplesidebar.js",
   "ignore": [
-    "**/.*",
+    "**./*",
     "bower_components",
     "node_modules",
     "npm-debug.log",
@@ -31,14 +31,14 @@
   "dependencies": {
     "jquery": "1"
   },
-  "_release": "2.2.0",
+  "_release": "2.8.3",
   "_resolution": {
     "type": "version",
-    "tag": "v2.2.0",
-    "commit": "06725eb2ac3f5f1b1336a9aa8675204579773442"
+    "tag": "v2.8.3",
+    "commit": "c184ee1779a3e85285e0c223fa76fde60653a9c7"
   },
   "_source": "git://github.com/dcdeiv/simple-sidebar.git",
-  "_target": "~2.2.0",
+  "_target": "^2.8.3",
   "_originalSource": "simple-sidebar",
   "_direct": true
 }
