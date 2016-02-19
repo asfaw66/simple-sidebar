@@ -1,57 +1,95 @@
 module.exports = function(grunt) {
 
-grunt.initConfig({
-	pkg: grunt.file.readJSON( "package.json" ),
+	grunt.initConfig({
 
-	banner: "/*! <%= pkg.name %> v<%= pkg.version %> (<%= pkg.homepage %>)\n" +
-			"** Copyright (c) 2014 - <%= grunt.template.today( \"yyyy\" ) %> <%= pkg.author.name %>\n" +
-			"** Dual licensed under MIT and GPL-2.0\n*/",
+		// Import package manifest
+		pkg: grunt.file.readJSON("package.json"),
 
-	jshint: {
-		options: {
-			jshintrc: true
+		// Banner definitions
+		meta: {
+			banner: "/*\n" +
+				" *  <%= pkg.title || pkg.name %> - v<%= pkg.version %>\n" +
+				" *  <%= pkg.description %>\n" +
+				" *  <%= pkg.homepage %>\n" +
+				" *\n" +
+				" *  Made by <%= pkg.author.name %>\n" +
+				" *  Under <%= pkg.license %> License\n" +
+				" */\n"
 		},
-		gruntfile: {
-			src: "Gruntfile.js"
+
+		// Concat definitions
+		concat: {
+			options: {
+				banner: "<%= meta.banner %>"
+			},
+			dist: {
+				src: ["src/jquery.boilerplate.js"],
+				dest: "dist/jquery.boilerplate.js"
+			}
 		},
-		src: {
-			src: [ "src/**/*.js" ]
+
+		// Lint definitions
+		jshint: {
+			files: ["src/jquery.boilerplate.js", "test/**/*"],
+			options: {
+				jshintrc: ".jshintrc"
+			}
+		},
+
+		// Minify definitions
+		uglify: {
+			my_target: {
+				src: ["dist/jquery.boilerplate.js"],
+				dest: "dist/jquery.boilerplate.min.js"
+			},
+			options: {
+				banner: "<%= meta.banner %>"
+			}
+		},
+
+		// CoffeeScript compilation
+		coffee: {
+			compile: {
+				files: {
+					"dist/jquery.boilerplate.js": "src/jquery.boilerplate.coffee"
+				}
+			}
+		},
+
+		// karma test runner
+		karma: {
+		  unit: {
+		    configFile: "karma.conf.js",
+				background: true,
+				singleRun: false,
+				browsers: ["PhantomJS", "Firefox"]
+		  },
+		  //continuous integration mode: run tests once in PhantomJS browser.
+		  travis: {
+		    configFile: "karma.conf.js",
+		    singleRun: true,
+		    browsers: ["PhantomJS"]
+		  },
+		},
+
+		// watch for changes to source
+		// Better than calling grunt a million times
+		// (call 'grunt watch')
+		watch: {
+	    files: ["src/*", "test/**/*"],
+	    tasks: ["default"]
 		}
-	},
 
-	concat: {
-		options: {
-			banner: "<%= banner %>\n",
-			stripBanners: true
-		},
-		dist: {
-			src: [ "src/simple-sidebar.js" ],
-			dest: "dist/jquery.<%= pkg.name %>.js"
-		}
-	},
+	});
 
-	uglify: {
-		options: {
-			banner: "<%= banner %>\n"
-		},
-		dist: {
-			src: "<%= concat.dist.dest %>",
-			dest: "dist/jquery.<%= pkg.name %>.min.js"
-		}
-	},
+	grunt.loadNpmTasks("grunt-contrib-concat");
+	grunt.loadNpmTasks("grunt-contrib-jshint");
+	grunt.loadNpmTasks("grunt-contrib-uglify");
+	grunt.loadNpmTasks("grunt-contrib-coffee");
+	grunt.loadNpmTasks("grunt-contrib-watch");
+	grunt.loadNpmTasks("grunt-karma");
 
-	watch: {
-		files: [ "src/simple-sidebar.js" ],
-		tasks: [ "jshint", "concat", "uglify" ]
-	}
-});
-
-grunt.loadNpmTasks( "grunt-contrib-concat" );
-grunt.loadNpmTasks( "grunt-contrib-uglify" );
-grunt.loadNpmTasks( "grunt-contrib-jshint" );
-grunt.loadNpmTasks( "grunt-contrib-watch" );
-
-// Default task
-grunt.registerTask( "default", [ "jshint", "concat", "uglify" ] );
-
+	grunt.registerTask("travis", ["jshint", "karma:travis"]);
+	grunt.registerTask("build", ["concat", "uglify"]);
+	grunt.registerTask("default", ["jshint", "build", "karma:unit:run"]);
 };
