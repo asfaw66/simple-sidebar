@@ -1,0 +1,7 @@
+.editorconfig
+.gitignore
+.jshintrc
+bower.json
+Gruntfile.js
+bower_components/
+src/
