@@ -1,18 +1,37 @@
 {
-	"name": "jquery-boilerplate",
-	"version": "4.0.0",
-	"homepage": "http://jqueryboilerplate.com",
-	"authors": [
-		"Zeno Rocha <hi@zenorocha.com>"
-	],
-	"description": "A jump-start for jQuery plugins development.",
-	"main": "src/jquery.boilerplate.js",
-	"keywords": [
-		"jquery",
-		"plugin",
-		"boilerplate",
-		"jquery-plugin",
-		"jquery-boilerplate"
-	],
-	"license": "MIT"
+  "name": "simple-sidebar",
+  "version": "3.0.0",
+  "license": "MIT AND GPL-2.0",
+  "authors": [
+    "Davide Di Criscito (https://github.com/dcdeiv)"
+  ],
+  "description": "A simple side nav in jQuery",
+  "homepage": "https://github.com/dcdeiv/simple-sidebar",
+  "keywords": [
+    "simple",
+    "sidebar",
+    "sidenav",
+    "side",
+    "nav",
+    "simple-sidebar",
+    "jquery",
+    "jquery-plugin",
+    "plugin",
+    "plug-in",
+    "javascript",
+    "js"
+  ],
+  "main": "dist/jquery.simplersidebar.js",
+  "ignore": [
+    "**./*",
+    "node_modules",
+    "bower_components",
+    "npm-debug.log",
+    "Gruntfile.js",
+    "package.json",
+    "src"
+  ],
+  "dependencies": {
+    "jquery": "1"
+  }
 }
