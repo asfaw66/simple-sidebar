@@ -1,10 +1,15 @@
 var options = {
+	opener: "",
+	wrapper: "",
+	ignore: "",
+	add: "",
 	attr: "simplesidebar",
 	animation: {
 		duration: 500,
 		easing: "swing"
 	},
 	sidebar: {
+		align: "",
 		width: 300,
 		gap: 64,
 		closingLinks: "a",
