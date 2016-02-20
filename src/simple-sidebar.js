@@ -42,63 +42,27 @@
 		// Avoid Plugin.prototype conflicts
 		$.extend( Plugin.prototype, {
 			init: function() {
-				var $sidebar = $( this.element ),
-					windowWidth = $( window ).width(),
-					sidebarWidth = this.setSidebarWidth(
-						windowWidth
-					);
+				var w = $( window ).width(),
+					sidebarWidth = this.setSidebarWidth( w );
 
-				$sidebar.css(
-					this.setSidebarCSS( sidebarWidth )
-				);
+				console.log(sidebarWidth);
+
+				$(window).resize(function(){
+					var w = $( window ).width(),
+						sidebarWidth = this.setSidebarWidth( w );
+
+					console.log(sidebarWidth);
+				});
 			},
 
-			// Initialize sidebar css
-			setSidebarCSS: function( sidebarWidth ) {
-				var privateCSS = this._privateCfgs.sidebar.css,
-					customCSS = this.cfg.sidebar.css;
-
-				this.initAlign( sidebarWidth );
-				this.injectPrivateStyle( "width", sidebarWidth );
-
-				return $.extend( {}, customCSS, privateCSS );
-			},
-
-			// Fix sidebar alignment
-			initAlign: function( sidebarWidth ) {
-				this.injectPrivateStyle(
-					this.checkAlign(), -sidebarWidth
-				);
-			},
-
-			// Check sidebar alignment
-			checkAlign: function() {
-				var isRight = [
-						undefined,
-						"right"
-					];
-
-				if ( isRight.indexOf( this.cfg.align ) !== -1 ) {
-					return "right";
-				} else {
-					return "left";
-				}
-			},
-
-			// Set and fix sidebar width
-			setSidebarMaxWidth: function() {
-				return this.cfg.sidebar.css.width + this.cfg.sidebar.gap;
-			},
 			setSidebarWidth: function( windowWidth ) {
-				if ( windowWidth < this.setSidebarMaxWidth() ) {
+				var sidebarMaxWidth = this.cfg.sidebar.css.width + this.cfg.sidebar.gap;
+
+				if ( windowWidth < sidebarMaxWidth ) {
 					return windowWidth - this.cfg.sidebar.gap;
 				} else {
 					return this.cfg.sidebar.css.width;
 				}
-			},
-
-			injectPrivateStyle: function( key, value ) {
-				this._privateCfgs.sidebar.css[ key ] = value;
 			},
 
 			// For development
