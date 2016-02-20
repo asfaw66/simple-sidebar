@@ -129,7 +129,16 @@
     <script src='../dist/jquery.simple-sidebar.min.js'></script>
     <script>
       $(document).ready(function() {
-      	$('#main-sidebar').simpleSidebar();
+      	$('#main-sidebar').simpleSidebar({
+          sidebar: {
+            css: {
+              width: 400,
+              zIndex: 4000,
+              position: "relative",
+              top: 50
+            }
+          }
+        });
       })
     </script>
   </body>
