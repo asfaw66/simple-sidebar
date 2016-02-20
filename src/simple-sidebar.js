@@ -1,40 +1,41 @@
-;( function( $, window, document, undefined ) {
-
+;(function ( $, window, document, undefined ) {
 	"use strict";
 
+		// Set plugin name and default options
 		var pluginName = "simpleSidebar",
-			defaults = {
-			propertyName: "value"
-		};
+			publicOptions = {
+				propertyName: "value"
+			};
 
-		function Plugin( element, options ) {
+		// The actual plugin constructor
+		function Plugin ( element, options ) {
 			this.element = element;
-			this.settings = $.extend( {}, defaults, options );
-			this._defaults = defaults;
+			this.settings = $.extend( {}, publicOptions, options );
+			this._publicOptions = publicOptions;
 			this._name = pluginName;
 			this.init();
 		}
 
-		$.extend(Plugin.prototype, {
+		// Avoid Plugin.prototype conflicts
+		$.extend( Plugin.prototype, {
 			init: function() {
-				var cfg = this.settings;
 
-				this.echo( cfg );
+				printToConsole( this );
 			},
-			echo: function( e ) {
+			printToConsole: function( e ) {
 				console.log( e );
 			}
-		});
+		} );
 
 		// A really lightweight plugin wrapper around the constructor,
 		// preventing against multiple instantiations
 		$.fn[ pluginName ] = function( options ) {
 			return this.each( function() {
-				if ( !$.data( this, "plugin_" + pluginName ) ) {
-					$.data( this, "plugin_" +
-						pluginName, new Plugin( this, options ) );
-				}
-			});
+					if ( !$.data( this, "plugin_" + pluginName ) ) {
+						$.data( this, "plugin_" +
+							pluginName, new Plugin( this, options ) );
+					}
+			} );
 		};
 
 } )( jQuery, window, document );

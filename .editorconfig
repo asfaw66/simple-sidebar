@@ -16,10 +16,6 @@ tab_width = 4
 indent_style = space
 indent_size = 2
 
-[Makefile]
-indent_style = tab
-tab_width = 2
-
-[{.bowerrc,bower.json,package.json}]
+[{.bowerrc,*.json,*.yml}]
 indent_style = space
 indent_size = 2
